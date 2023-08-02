@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinLengthValidator
+from django.utils.translation import ngettext
 
 
 class Address(models.Model):
@@ -12,6 +13,9 @@ class Address(models.Model):
 
     def __str__(self):
         return f'{self.number} {self.street}'
+
+    class Meta:
+        verbose_name_plural = "Addresses"
 
 
 class Letting(models.Model):
