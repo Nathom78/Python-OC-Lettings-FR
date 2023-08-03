@@ -6,7 +6,7 @@ def index(request):
     """
     View for lettings" list
     :param request:
-    :return:
+    :return: lettings_list
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
@@ -18,7 +18,7 @@ def letting(request, letting_id):
     View for a letting detail
     :param request:
     :param letting_id:
-    :return:
+    :return: letting_detail
     """
     letting_detail = Letting.objects.get(id=letting_id)
     context = {

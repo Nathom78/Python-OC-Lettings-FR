@@ -5,6 +5,6 @@ def index(request):
     """
     View for the home index
     :param request:
-    :return:
+    :return: Home’s template
     """
     return render(request, "index.html")
