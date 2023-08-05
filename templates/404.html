@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}error 404{% endblock title %}
+
+{% block content %}
+
+<h5>Pages du site</h5>
+<ul>
+    <li><a href="/" title="">Home</a></li>
+    <li><a href="{% url 'profiles_index' %}" title="Profiles">Profiles</a></li>
+    <li><a href="{% url 'lettings_index' %}" title="Lettings">Lettings</a></li>
+</ul>
+
+<div>
+    <div>
+        <div>
+            <h1>Erreur 404.</h1>
+            <p>
+                Oooooops! Looks like nothing was found there.<br>
+                Maybe try one of the links above, or click on the menu at the top<br><br>
+                or try a search :
+            </p>
+
+            <div>
+                <form>
+                    <input type="text" placeholder="Tapez Votre recherche ici" id="in"
+                           style="width:70%;margin-left:5rem">
+                    <span id="search" onclick="getValue();" style="padding:5px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </span>|
+                    <button type="reset">X</button>
+                    <script>
+                        function getValue() {
+                        var input = document.getElementById("in").value;
+                        var url='https://www.google.com/search?q=' + input;
+                        window.open('https://www.google.com/search?q=' + input);
+                    }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
