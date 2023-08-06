@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}error 500{% endblock title %}
+
+{% block content %}
+
+<h5>Pages on site</h5>
+<ul>
+    <li><a href="/" title="">Home</a></li>
+    <li><a href="{% url 'profiles_index' %}" title="Profiles">Profiles</a></li>
+    <li><a href="{% url 'lettings_index' %}" title="Lettings">Lettings</a></li>
+</ul>
+
+<div>
+    <h1>Erreur 500.</h1>
+    <p>
+        Oooooops! Looks like somethings went wrong! <br>
+        We track automatically, but if the problem persists feel free to contact us.<br><br>
+    </p>
+</div>
+
+{% endblock %}

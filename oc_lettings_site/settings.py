@@ -1,4 +1,6 @@
 import os
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 from pathlib import Path
 
@@ -112,19 +114,19 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# sentry_sdk.init(
-#     dsn="https://1d25966b8db34f9badcc76237a3a52c9@o4505539706814464.ingest.sentry.io/4505539709435904",
-#     # Set traces_sample_rate to 1.0 to capture 100%
-#     # of transactions for performance monitoring.
-#     # We recommend adjusting this value in production,
-#     traces_sample_rate=1.0,
-#     integrations=[
-#         DjangoIntegration(
-#             transaction_style='url',
-#             middleware_spans=True,
-#             signals_spans=False,
-#             cache_spans=False,
-#         ),
-#     ],
-#     send_default_pii=True
-# )
+sentry_sdk.init(
+    dsn="https://7a83d0aa21be11a29138bda53be260e0@o4505539706814464.ingest.sentry.io/4505657522323456",
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+    integrations=[
+        DjangoIntegration(
+            transaction_style='url',
+            middleware_spans=True,
+            signals_spans=True,
+            cache_spans=True,
+        ),
+    ],
+    send_default_pii=True
+)
