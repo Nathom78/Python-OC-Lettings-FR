@@ -7,6 +7,8 @@ from pytest_django.asserts import assertTemplateUsed
 from profiles.models import Profile
 from django.contrib.auth.models import User
 
+C = Client()
+
 
 @pytest.mark.django_db
 def test_profiles_index_url():
@@ -30,7 +32,7 @@ def test_profiles_letting_url():
 
 @pytest.mark.django_db
 def test_profiles_index_view():
-    client = Client()
+    client = C
     user = User.objects.create_user(username="TestUser")
     Profile.objects.create(user=user, favorite_city="FavoriteCost")
     path = reverse("profiles_index")
@@ -46,7 +48,7 @@ def test_profiles_index_view():
 
 @pytest.mark.django_db
 def test_profiles_profile_view():
-    client = Client()
+    client = C
     user = User.objects.create_user(username="TestUser")
     Profile.objects.create(user=user, favorite_city="FavoriteCost")
     path = reverse("profile", kwargs={'username': 'TestUser'})

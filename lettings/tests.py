@@ -6,6 +6,8 @@ from pytest_django.asserts import assertTemplateUsed
 
 from lettings.models import Letting, Address
 
+C = Client()
+
 
 def test_lettings_index_url():
     path = reverse("lettings_index")
@@ -23,7 +25,7 @@ def test_lettings_letting_url():
 
 @pytest.mark.django_db
 def test_lettings_index_view():
-    client = Client()
+    client = C
     address_1 = Address.objects.create(number=1601,
                                        street="California street",
                                        city="Palo Alto",
@@ -44,7 +46,7 @@ def test_lettings_index_view():
 
 @pytest.mark.django_db
 def test_lettings_letting_view():
-    client = Client()
+    client = C
     address_1 = Address.objects.create(number=1601,
                                        street="California street",
                                        city="Palo Alto",
