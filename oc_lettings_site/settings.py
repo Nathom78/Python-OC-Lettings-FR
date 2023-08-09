@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -21,7 +21,6 @@ ALLOWED_HOSTS = ['.localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -114,12 +113,26 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+def profiles_sampler(sampling_context):
+    # ...
+    # return a number between 0 and 1 or a boolean
+    return True
+
+
 sentry_sdk.init(
-    dsn="https://7a83d0aa21be11a29138bda53be260e0@o4505539706814464.ingest.sentry.io/4505657522323456",
+    dsn=os.environ.get('DSN'),
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     # We recommend adjusting this value in production.
     traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production
+    profiles_sample_rate=1.0,
+
+    # Alternatively, to control sampling dynamically
+    profiles_sampler=profiles_sampler,
     integrations=[
         DjangoIntegration(
             transaction_style='url',

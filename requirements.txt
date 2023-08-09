@@ -1,2 +1,8 @@
 Django==4.2.4
 sentry-sdk[django]==1.29.2
+coverage==7.2.7
+flake8==6.1.0
+flake8-html==0.4.3
+pytest==7.4.0
+pytest-django==4.5.2
+pytest-html==3.2.0
