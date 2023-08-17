@@ -6,13 +6,13 @@ LABEL Author="Nathom78"
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
-ENV PYTHONBUFFERED 1
-
-#copy requirements file to image 
-COPY ./requirements.txt /requirements.txt
-
-#let pip install required packages
-RUN pip install -r requirements.txt
+#ENV PYTHONBUFFERED 1
+#
+##copy requirements file to image
+#COPY ./requirements.txt /requirements.txt
+#
+##let pip install required packages
+#RUN pip install -r requirements.txt
 
 
 
