@@ -1,3 +1,4 @@
 /.github/*
 /doc/*
 /reports/*
+/.pytest_cache/*
