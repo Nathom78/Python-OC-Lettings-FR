@@ -15,7 +15,7 @@ jobs:
   job_1:
       name: Tests
       env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        SECRET_KEY: ${{ env.SECRET_KEY }}
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v3
