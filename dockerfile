@@ -14,8 +14,8 @@ ENV PYTHONBUFFERED 1
 #
 ##let pip install required packages
 #RUN pip install -r requirements.txt
-COPY ./code *.*
-CMD CD code
+#COPY ./code *.*
+#CMD CD code
 RUN python manage.py
 
 
