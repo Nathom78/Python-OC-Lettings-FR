@@ -34,7 +34,7 @@ jobs:
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
         - name: Test with pytest
           env:
-            SECRET_KEY: ${{ env.SECRET_KEY }}
+            SECRET_KEY: "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
           run: |
             pytest --html=reports/junit/report.html
             pytest --junitxml=reports/junit/junit.xml
