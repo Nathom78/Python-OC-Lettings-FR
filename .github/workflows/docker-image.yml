@@ -42,8 +42,7 @@ jobs:
 
 
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
-  jobs-2:
-    push_to_registries:
+  push_to_registries:
     name: Push Docker image to multiple registries
     needs: job_1
     runs-on: ubuntu-latest
