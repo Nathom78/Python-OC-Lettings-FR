@@ -2,7 +2,7 @@
 FROM python:3.11-alpine
 
 #maintainer
-LABEL Author="Nathom78"
+LABEL Author="Arteymis78"
 
 
 # The enviroment variable ensures that the python output is set straight
