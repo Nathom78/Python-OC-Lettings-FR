@@ -1,13 +1,13 @@
 #base image
-FROM python:3.11-alpine
+#FROM python:3.11-alpine
 
 #maintainer
-LABEL Author="Arteymis78"
+#LABEL Author="Arteymis78"
 
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
-ENV PYTHONBUFFERED 1
+#ENV PYTHONBUFFERED 1
 #
 ##copy requirements file to image
 #COPY ./requirements.txt /requirements.txt
@@ -16,7 +16,7 @@ ENV PYTHONBUFFERED 1
 #RUN pip install -r requirements.txt
 #COPY ./code *.*
 #CMD CD code
-RUN python manage.py
+#RUN python manage.py
 
 
 
