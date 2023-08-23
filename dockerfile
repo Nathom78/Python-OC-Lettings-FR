@@ -1,8 +1,8 @@
 #base image
-#FROM python:3.11-alpine
+FROM python:3.11-alpine
 
 #maintainer
-#LABEL Author="Arteymis78"
+LABEL Author="Arteymis78"
 
 
 # The enviroment variable ensures that the python output is set straight
