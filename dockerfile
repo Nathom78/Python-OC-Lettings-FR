@@ -1,10 +1,8 @@
 # escape=`
 
 #base image
-ARG VERSION=latest
-FROM python:$VERSION-alpine
-ARG VERSION
-RUN echo $VERSION > image_version
+
+FROM python:3.11-alpine
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
