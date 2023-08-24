@@ -8,7 +8,7 @@ FROM python:3.11-alpine
 # to the terminal with out buffering it first
 ENV PYTHONBUFFERED 1
 ARG SECRET_KEY
-ENV SECRET_KEY $SECRET_KEY
+ENV SECRET_KEY ${SECRET_KEY}
 #
 ##copy requirements file to image
 #COPY ./requirements.txt /requirements.txt
