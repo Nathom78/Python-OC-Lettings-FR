@@ -79,7 +79,6 @@ jobs:
           build-args: |
             SECRET_KEY=${{ secrets.SECRET_KEY }}
             DSN=${{ secrets.DSN }}
-
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

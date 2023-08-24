@@ -9,6 +9,9 @@ FROM python:3.11-alpine
 ENV PYTHONBUFFERED 1
 ARG SECRET_KEY
 ENV SECRET_KEY ${SECRET_KEY}
+ARG DSN
+ENV DSN ${DSN}
+
 #
 ##copy requirements file to image
 #COPY ./requirements.txt /requirements.txt
