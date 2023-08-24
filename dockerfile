@@ -1,22 +1,30 @@
+# escape=`
+
 #base image
-FROM python:3.11-alpine
-
-#maintainer
-LABEL Author="Arteymis78"
-
+ARG VERSION=latest
+FROM python:$VERSION-alpine
+ARG VERSION
+RUN echo $VERSION > image_version
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
-#ENV PYTHONBUFFERED 1
+ENV PYTHONBUFFERED 1
+ARG SECRET_KEY
+ENV SECRET_KEY $SECRET_KEY
 #
 ##copy requirements file to image
 #COPY ./requirements.txt /requirements.txt
+#COPY ./code *.*
 #
 ##let pip install required packages
-#RUN pip install -r requirements.txt
-#COPY ./code *.*
-#CMD CD code
-#RUN python manage.py
+EXPOSE 8000
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt --no-cache-dir
+COPY . .
+ENTRYPOINT ["python3"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
+
+RUN python manage.py
 
 
 
