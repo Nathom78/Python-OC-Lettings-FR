@@ -38,15 +38,6 @@ jobs:
           run: |
             pytest --html=reports/junit/report.html
             pytest --junitxml=reports/junit/junit.xml
-        - uses: actions/download-artifact@v3
-          with:
-            name: tests_reports
-            path: reports
-
-        - name: Display structure of downloaded files
-          run: ls -R
-          working-directory: reports
-
 
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
   push_to_registries:
