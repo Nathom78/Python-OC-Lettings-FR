@@ -1,6 +1,7 @@
 **/__pycache__
 *.pyc
 venv
+staticfiles/
 
 sent_emails/
 
@@ -12,6 +13,7 @@ sent_emails/
 __pycache__
 db.sqlite3
 media
+
 
 # Backup files #
 *.bak

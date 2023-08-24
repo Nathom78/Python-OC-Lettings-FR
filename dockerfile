@@ -17,13 +17,14 @@ ENV DSN ${DSN}
 #COPY ./requirements.txt /requirements.txt
 #COPY ./code *.*
 #
+RUN pip install --upgrade pip
 ##let pip install required packages
 EXPOSE 8000
 COPY requirements.txt .
-RUN pip install -r requirements.txt --no-cache-dir
+RUN pip install -r requirements.txt
 COPY . .
-ENTRYPOINT ["python3"]
-CMD ["manage.py", "runserver", "127.0.0.1:8000"]
+CMD python manage.py collectstatic
+CMD python manage.py runserver
 
 # RUN python manage.py
 
