@@ -1,6 +1,2 @@
-# genbadge[all]==1.1.0
-flake8==6.1.0
-flake8-html==0.4.3
-pytest==7.4.0
-pytest-django==4.5.2
-pytest-html==3.2.0
+genbadge[all]==1.1.0
+
