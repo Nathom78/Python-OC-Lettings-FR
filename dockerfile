@@ -22,9 +22,9 @@ RUN pip install -r requirements.txt
 # copy the app code to image working directory
 COPY . .
 #
-CMD python manage.py collectstatic
+RUN python manage.py collectstatic
 #
-CMD python manage.py runserver && gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
+CMD python manage.py runserver && gunicorn oc_lettings_site.wsgi:application --bind 127.0.0.1:8000
 
 #switch to /app directory so that everything runs from here
 
