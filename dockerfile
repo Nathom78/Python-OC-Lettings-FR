@@ -16,6 +16,7 @@ ENV DSN ${DSN}
 RUN pip install --upgrade pip
 #
 EXPOSE 8000
+EXPOSE 8080
 #
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -24,7 +25,7 @@ COPY . .
 #
 RUN python manage.py collectstatic
 #
-CMD python manage.py runserver --insecure && gunicorn oc_lettings_site.wsgi:application -b 127.0.0.1:8000
+CMD python manage.py runserver --insecure && gunicorn oc_lettings_site.wsgi:application -b 127.0.0.1:8080
 
 #switch to /app directory so that everything runs from here
 #CMD python manage.py runserver
