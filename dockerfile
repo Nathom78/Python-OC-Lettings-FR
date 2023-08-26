@@ -24,7 +24,7 @@ COPY . .
 #
 RUN python manage.py collectstatic
 #
-CMD python manage.py && gunicorn oc_lettings_site.wsgi:application -b 127.0.0.1:8000
+CMD python manage.py runserver && gunicorn oc_lettings_site.wsgi:application -b 127.0.0.1:8000
 
 #switch to /app directory so that everything runs from here
 #CMD python manage.py runserver
