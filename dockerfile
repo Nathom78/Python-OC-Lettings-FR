@@ -16,18 +16,15 @@ ENV DSN ${DSN}
 RUN pip install --upgrade pip
 #
 EXPOSE 8000
-EXPOSE 8080
 #
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 # copy the app code to image working directory
 COPY . .
 #
-RUN python manage.py makemigrations
-RUN python manage.py migrate
 RUN python manage.py collectstatic
 #
-CMD python manage.py runserver 0:8000 && gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8080
+CMD python manage.py runserver 0:8000
 
 #switch to /app directory so that everything runs from here
 #CMD python manage.py runserver
