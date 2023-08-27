@@ -50,9 +50,9 @@ jobs:
     name: Push Docker image to multiple registries
     needs: job_1
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
+#    permissions:
+#      packages: write
+#      contents: read
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -82,6 +82,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          file: ./Dockerfile
           build-args: |
             SECRET_KEY=${{ secrets.SECRET_KEY }}
             DSN=${{ secrets.DSN }}
