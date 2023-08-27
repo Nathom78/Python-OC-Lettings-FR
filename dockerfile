@@ -6,13 +6,14 @@ FROM python:3.11-alpine
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
+# prevents python buffering stdout and stderr
 ENV PYTHONBUFFERED 1
 ARG SECRET_KEY
 ENV SECRET_KEY ${SECRET_KEY}
 ARG DSN
 ENV DSN ${DSN}
 
-# upgrade pip &&
+# install dependencies
 RUN pip install --upgrade pip
 #
 EXPOSE 8000
