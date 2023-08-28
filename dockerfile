@@ -8,6 +8,9 @@ FROM python:3.11-alpine
 # to the terminal with out buffering it first
 # prevents python buffering stdout and stderr
 ENV PYTHONBUFFERED 1
+# prevents Python from copying pyc files to the container
+ENV PYTHONDONTWRITEBYTECODE 1
+# Environement key for django and sentry
 ARG SECRET_KEY
 ENV SECRET_KEY ${SECRET_KEY}
 ARG DSN
@@ -19,17 +22,13 @@ RUN pip install --upgrade pip
 EXPOSE 8000
 #
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 # copy the app code to image working directory
 COPY . .
 #
 RUN python manage.py collectstatic
 #
 CMD python manage.py runserver --insecure 0:8000
-
-#switch to /app directory so that everything runs from here
-#CMD python manage.py runserver
-
 
 #create user to run the app(it is not recommended to use root)
 #we create user called user with -D -> meaning no need for home directory
