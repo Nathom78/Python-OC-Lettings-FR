@@ -129,14 +129,20 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'OC-LETTINGS'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c371cb015c6a4a38b5925a917f5f0f01 }}
-        images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ steps.meta.outputs.tags }}'
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@0f8c876bafbf5dbce05c36682ec68e9a0274a48a
+        with:
+          images: |
+            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'OC-LETTINGS'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_c371cb015c6a4a38b5925a917f5f0f01 }}
+          images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ steps.meta.outputs.tags }}'
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
