@@ -142,7 +142,7 @@ jobs:
           app-name: 'OC-LETTINGS'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_c371cb015c6a4a38b5925a917f5f0f01 }}
-          images: 'index.docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ steps.meta.outputs.tags }}'
+          images: 'index.docker.io/${{ steps.meta.outputs.tags }}'
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
