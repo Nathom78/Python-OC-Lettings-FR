@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy the app code to image working directory
 COPY . .
 #
-RUN python manage.py collectstatic
+# RUN python manage.py collectstatic
 #
 CMD gunicorn --bind=0.0.0.0 --timeout 600 oc_lettings_site.wsgi
 
