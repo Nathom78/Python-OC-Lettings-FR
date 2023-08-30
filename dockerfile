@@ -28,7 +28,7 @@ COPY . .
 #
 # RUN python manage.py collectstatic
 #
-CMD gunicorn --bind=0.0.0.0 --timeout 600 oc_lettings_site.wsgi
+#CMD gunicorn --bind=0.0.0.0 --timeout 600 oc_lettings_site.wsgi
 
 #create user to run the app(it is not recommended to use root)
 #we create user called user with -D -> meaning no need for home directory
