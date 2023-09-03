@@ -14,9 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+DEBUG = bool(os.environ.get('DEBUG', default=False))
+ALLOWED_HOSTS = ['oc-lettings.azurewebsites.net',
+                 '127.0.0.1',
+                 '.localhost',
+                 '0.0.0.0',
+                 '[::1]'] if DEBUG is False else []
 
 # Application definition
 
@@ -123,11 +127,11 @@ STORAGES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # SECURE_SSL_REDIRECT = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 def profiles_sampler(sampling_context):
     # ...
@@ -143,7 +147,7 @@ sentry_sdk.init(
     traces_sample_rate=1.0,
     # Set profiles_sample_rate to 1.0 to profile 100%
     # of sampled transactions.
-    # We recommend adjusting this value in production
+    # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
 
     # Alternatively, to control sampling dynamically
