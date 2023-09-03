@@ -115,7 +115,7 @@ jobs:
         with:
           app-name: 'OC-LETTINGS'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_c371cb015c6a4a38b5925a917f5f0f01 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_53B827B89A5441F08CC07C89355A1 }}
           images: 'docker.io/${{ steps.meta.outputs.tags }}'
 
 
