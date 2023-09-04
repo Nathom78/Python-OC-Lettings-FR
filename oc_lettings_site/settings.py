@@ -17,6 +17,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = bool(os.environ.get('DEBUG', default=False))
 ALLOWED_HOSTS = ['oc-lettings.azurewebsites.net',
+                 'orange-county-lettings.azurewebsites.net',
                  '127.0.0.1',
                  '.localhost',
                  '0.0.0.0',
