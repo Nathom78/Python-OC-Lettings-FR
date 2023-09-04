@@ -20,6 +20,7 @@ ALLOWED_HOSTS = ['oc-lettings.azurewebsites.net',
                  '127.0.0.1',
                  '.localhost',
                  '0.0.0.0',
+                 'google.com',
                  '[::1]'] if DEBUG is False else []
 
 # Application definition
@@ -104,7 +105,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+# USE_L10N = True depreciate
 
 USE_TZ = True
 
