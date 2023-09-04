@@ -113,7 +113,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'orange-county-letting'
+          app-name: 'Orange-County-Lettings'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_orange }}
           images: 'docker.io/${{ steps.meta.outputs.tags }}'
