@@ -118,15 +118,15 @@ jobs:
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_orange }}
           images: 'docker.io/${{ steps.meta.outputs.tags }}'
-      - name: Login via Az module
-        id: azure-login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - name: Restart Web App
-        id: azure-cli
-        run: |
-          az webapp restart --name ${{ secrets.APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
+#      - name: Login via Az module
+#        id: azure-login
+#        uses: azure/login@v1
+#        with:
+#          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#      - name: Restart Web App
+#        id: azure-cli
+#        run: |
+#          az webapp restart --name ${{ secrets.APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -138,5 +138,4 @@ jobs:
 # You can also reference a tag or branch, but the action may change without warning.
 # https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
 # https://github.com/docker/metadata-action
-
 
