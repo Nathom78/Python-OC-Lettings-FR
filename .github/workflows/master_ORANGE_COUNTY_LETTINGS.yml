@@ -1,54 +1,19 @@
-#
-name: Build and deploy container app to Azure Web App - OC-LETTINGS
-
+# run-name pourrait se servir de Deploy to ${{ inputs.deploy_target }}
+name: Build and deploy container app to Azure Web App - Orange-County-Lettings
+run-name: Test, Build and deploy container to Azure Web App by @${{ github.actor }}
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
     branches: ['master']
 
-# Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
-  job_1:
-      name: Tests
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: Set up Python 3.11
-          uses: actions/setup-python@v4
-          with:
-            python-version: "3.11"
-            cache: 'pip'
-        - name: Install dependencies
-          run: |
-            python -m pip install --upgrade pip
-            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        - name: Lint with flake8
-          run: |
-            # stop the build if there are Python syntax errors or undefined names
-            flake8 --exit-zero --format=html --htmldir ./reports/flake8 --max-line-length=99 --statistics --tee --output-file ./reports/flake8/flake8stats.txt
-            flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-            # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-        - name: Test with pytest
-          env:
-            SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          run: |
-            pytest --html=reports/junit/report.html
-            pytest --junitxml=reports/junit/junit.xml
-        - name: Archive tests results results
-          uses: actions/upload-artifact@v3
-          with:
-            name: tests-reports
-            path: reports/
+  call-tests:
+    uses: ./.github/workflows/tests.yml
 
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
   push_to_registries:
     name: Push Docker image to multiple registries
-    needs: job_1
+    needs: call-tests
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -82,6 +47,11 @@ jobs:
           images: |
             ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
             ghcr.io/${{ github.repository }}
+          # here tag
+          tags: |
+          # dynamically set the branch name and sha as a custom tag
+            type=raw,value={{tag}}-{{branch}}-{{sha}}
+          # see latest
 
       - name: Build and push Docker images
         uses: docker/build-push-action@9311bf5263ae5b36f3ec67aff768790c6e2344ad
