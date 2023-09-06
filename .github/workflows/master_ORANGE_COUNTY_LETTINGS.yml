@@ -8,8 +8,9 @@ on:
 
 jobs:
   call-tests:
+    name: Call the workflow Test
     uses: ./.github/workflows/tests.yml
-
+    secrets: inherit
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
   push_to_registries:
     name: Push Docker image to multiple registries
