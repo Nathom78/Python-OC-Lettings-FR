@@ -27,6 +27,8 @@ jobs:
           run: |
             pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html
         - name: Test with Coverage
+          env:
+            SECRET_KEY: ${{ secrets.SECRET_KEY }}
           run: |
             coverage run -m pytest
             coverage report --data-file=reports/coverage/.coverage
