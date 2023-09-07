@@ -78,6 +78,9 @@ jobs:
         with:
           images: |
             ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
+          tags: |
+            type=raw,value={{branch}}@{{sha}}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -86,6 +89,7 @@ jobs:
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_orange }}
           images: 'docker.io/${{ steps.meta.outputs.tags }}'
+
 #      - name: Login via Az module
 #        id: azure-login
 #        uses: azure/login@v1
