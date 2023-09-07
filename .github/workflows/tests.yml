@@ -30,8 +30,8 @@ jobs:
           run: |
             coverage run
             coverage report --data-file=reports/coverage/.coverage
-            coverage xml --data-file=reports/coverage/.coverage
-            coverage html --data-file=reports/coverage/.coverage
+            coverage xml --data-file=reports/coverage/.coverage --fail-under=80
+            coverage html --data-file=reports/coverage/.coverage --fail-under=80
 
         - name: Archive tests results
           uses: actions/upload-artifact@v3
