@@ -28,7 +28,7 @@ jobs:
             pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html
         - name: Test with Coverage
           run: |
-            coverage run
+            coverage run -m pytest
             coverage report --data-file=reports/coverage/.coverage 
             coverage xml --data-file=reports/coverage/.coverage
             coverage html --data-file=reports/coverage/.coverage
