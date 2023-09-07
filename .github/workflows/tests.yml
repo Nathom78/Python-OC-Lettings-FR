@@ -29,9 +29,9 @@ jobs:
         - name: Test with Coverage
           run: |
             coverage run
-            coverage report
-            coverage xml
-            coverage html
+            coverage report --data-file=reports/coverage/.coverage
+            coverage xml --data-file=reports/coverage/.coverage
+            coverage html --data-file=reports/coverage/.coverage
 
         - name: Archive tests results
           uses: actions/upload-artifact@v3
