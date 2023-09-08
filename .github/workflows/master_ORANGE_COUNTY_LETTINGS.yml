@@ -48,12 +48,6 @@ jobs:
           images: |
             ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
             ghcr.io/${{ github.repository }}
-          flavor: |
-            latest=auto
-            prefix=
-            suffix=
-#          tags: |
-#             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
 
       - name: Build and push Docker images
         uses: docker/build-push-action@9311bf5263ae5b36f3ec67aff768790c6e2344ad
@@ -84,18 +78,18 @@ jobs:
           app-name: '${{ secrets.APP_NAME }}'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_orange }}
-          images: 'docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest'
+          images: 'docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:master'
 #          images: 'docker.io/${{ steps.meta.outputs.tags }}'
 
-#      - name: Login via Az module
-#        id: azure-login
-#        uses: azure/login@v1
-#        with:
-#          creds: ${{ secrets.AZURE_CREDENTIALS }}
-#      - name: Restart Web App
-#        id: azure-cli
-#        run: |
-#          az webapp restart --name ${{ secrets.APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
+      - name: Login via Az module
+        id: azure-login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Restart Web App
+        id: azure-cli
+        run: |
+          az webapp restart --name ${{ secrets.APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
