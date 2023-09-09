@@ -16,9 +16,6 @@ jobs:
     name: Push Docker image to multiple registries
     needs: call-tests
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -34,24 +31,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Log in to the Container registry
-        uses: docker/login-action@553b6f090f15b58451081ce157ff1929a266131d
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@0f8c876bafbf5dbce05c36682ec68e9a0274a48a
         with:
           images: |
             ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
-            ghcr.io/${{ github.repository }}
 #          flavor: |
 #            latest=true
+#            prefix={{branch}},onlatest=false
           tags: |
-            type=ref,enable=true,event=branch, type=sha,format=long
+            master
 
       - name: Build and push Docker images
         uses: docker/build-push-action@9311bf5263ae5b36f3ec67aff768790c6e2344ad
@@ -61,7 +51,7 @@ jobs:
             SECRET_KEY=${{ secrets.SECRET_KEY }}
             DSN=${{ secrets.DSN }}
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}, {{ sha }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -82,7 +72,7 @@ jobs:
           app-name: '${{ secrets.APP_NAME }}'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_orange }}
-          images: 'docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:master'
+          images: 'docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest'
 #          images: 'docker.io/${{ steps.meta.outputs.tags }}'
 
       - name: Login via Az module
