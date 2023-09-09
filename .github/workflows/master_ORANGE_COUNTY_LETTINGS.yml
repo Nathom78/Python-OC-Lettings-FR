@@ -60,15 +60,6 @@ jobs:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@0f8c876bafbf5dbce05c36682ec68e9a0274a48a
-        with:
-          images: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
-          tags: |
-            type=sha,format=long
-
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
