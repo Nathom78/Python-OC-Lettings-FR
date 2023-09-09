@@ -65,7 +65,14 @@ jobs:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
-#      - name: Extract metadata (tags, labels) for Docker
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@0f8c876bafbf5dbce05c36682ec68e9a0274a48a
+        with:
+          images: |
+            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
+          tags: |
+            type=sha,format=long
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -74,8 +81,7 @@ jobs:
           app-name: '${{ secrets.APP_NAME }}'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_orange }}
-          images: 'docker.io/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest'
-#          images: 'docker.io/${{ steps.meta.outputs.tags }}'
+          images: 'docker.io/${{ steps.meta.outputs.tags }}'
 
       - name: Login via Az module
         id: azure-login
