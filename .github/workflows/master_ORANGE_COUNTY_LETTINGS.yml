@@ -1,7 +1,7 @@
-# run-name pourrait se servir de Deploy to ${{ inputs.deploy_target }}
 name: Build and deploy container app to Azure Web App - Orange-County-Lettings
 run-name: Test, Build and deploy container to Azure Web App by @${{ github.actor }}
-# Configures this workflow to run every time a change is pushed to the branch called `release`.
+
+# Configures this workflow to run every time a change is pushed to the branch called 'master'
 on:
   push:
     branches: ['master']
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # This is the a separate action that sets up buildx runner
       - name: Set up Docker Buildx
@@ -74,15 +74,12 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Restart Web App
         id: azure-cli
         run: |
           az webapp restart --name ${{ secrets.APP_NAME }} --resource-group ${{ secrets.RESOURCE_GROUP }}
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
 
 # GitHub recommends pinning actions to a commit SHA.
 # To get a newer version, you will need to update the SHA.

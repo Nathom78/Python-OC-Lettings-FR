@@ -1,7 +1,7 @@
 [![Tests Status](./reports/junit/tests-badge.svg?dummy=8484744)](./reports/junit/report.html)
 [![Coverage Status](./reports/coverage/coverage-badge.svg?dummy=8484744)](./reports/coverage/index.html)
 [![Flake8 Status](./reports/flake8/flake8-badge.svg?dummy=8484744)](./reports/flake8/index.html)
-[![Create and publish a Docker image](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/docker-image.yml/badge.svg?branch=master)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
+[![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
 
 ## Résumé
 
