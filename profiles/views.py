@@ -6,8 +6,10 @@ from .models import Profile
 def index(request):
     """
     View for the list of profiles.
-    :param request:
-    :return: profiles_list
+
+    :param request: The request for this page.
+
+    :return: profiles_list HTML template.
     """
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
@@ -17,9 +19,11 @@ def index(request):
 def profile(request, username):
     """
     View for the detail of one profile.
-    :param request:
-    :param username:
-    :return: profile_detail
+
+    :param request: The request for this page.
+    :param username: The reference to the profile's name.
+
+    :return: profile_detail HTML template.
     """
     profile_detail = Profile.objects.get(user__username=username)
     context = {"profile": profile_detail}

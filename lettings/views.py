@@ -4,9 +4,11 @@ from .models import Letting
 
 def index(request):
     """
-    View for lettings" list
-    :param request:
-    :return: lettings_list
+    View for lettings list.
+
+    :param request: the request for this page.
+
+    :return: lettings_list in html.
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
@@ -15,10 +17,13 @@ def index(request):
 
 def letting(request, letting_id):
     """
-    View for a letting detail
-    :param request:
-    :param letting_id:
-    :return: letting_detail
+    View for a letting detail.
+
+    :param request: the request for this page.
+
+    :param letting_id: the reference to the letting.
+
+    :return: letting_detail in html.
     """
     letting_detail = Letting.objects.get(id=letting_id)
     context = {
@@ -26,3 +31,4 @@ def letting(request, letting_id):
         "address": letting_detail.address,
     }
     return render(request, "lettings/letting.html", context)
+

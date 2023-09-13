@@ -6,12 +6,19 @@
 Welcome to Orange County Lettings's documentation!
 ==================================================
 
+.. image:: _static/Orange_County_Lettings_Ad.png
+        :height: 150
+        :scale: 100
+        :align: center
+        :alt: Ad_Orange
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    usage
    modules
+   ./../README.md
 
 
 Indices and tables
@@ -24,3 +31,4 @@ Indices and tables
 Check out the :doc:`usage` section for further information.
 :ref:`install <installation>` the project.
 :ref:`run <running>` the project.
+
