@@ -44,11 +44,11 @@ lettings.urls module
 
 lettings.views module
 ---------------------
-.. autofunction:: lettings.views.index
 
-
-.. autofunction:: lettings.views.letting
-
+.. automodule:: lettings.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Module contents
 ---------------

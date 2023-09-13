@@ -145,7 +145,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="README.html">
-                        Résumé
+                        <no title>
                       </a>
                     </li>
                 
@@ -258,7 +258,7 @@ document.write(`
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="README.html">
-                        Résumé
+                        <no title>
                       </a>
                     </li>
                 
@@ -355,174 +355,6 @@ document.write(`
 <h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
 <section id="installation">
 <span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>[<span class="nt">![Tests Status</span>](<span class="na">./reports/junit/tests-badge.svg?dummy=8484744</span>)](./reports/junit/report.html)
-[<span class="nt">![Coverage Status</span>](<span class="na">./reports/coverage/coverage-badge.svg?dummy=8484744</span>)](./reports/coverage/index.html)
-[<span class="nt">![Flake8 Status</span>](<span class="na">./reports/flake8/flake8-badge.svg?dummy=8484744</span>)](./reports/flake8/index.html)
-[<span class="nt">![Build and deploy container app to Azure Web App - Orange-County-Lettings</span>](<span class="na">https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg</span>)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
-
-<span class="gu">## Résumé</span>
-
-Site web d&#39;Orange County Lettings
-
-<span class="gu">## Développement local</span>
-
-<span class="gu">### Prérequis</span>
-
-<span class="k">-</span><span class="w"> </span>Compte GitHub avec accès en lecture à ce repository
-<span class="k">-</span><span class="w"> </span>Git CLI
-<span class="k">-</span><span class="w"> </span>SQLite3 CLI
-<span class="k">-</span><span class="w"> </span>Interpréteur Python, version 3.6 ou supérieure
-
-Dans le reste de la documentation sur le développement local, il est supposé que la commande <span class="sb">`python`</span> de votre OS shell exécute l&#39;interpréteur Python ci-dessus (à moins qu&#39;un environnement virtuel ne soit activé).
-
-<span class="gu">### macOS / Linux</span>
-
-<span class="gu">#### Cloner le repository</span>
-
-<span class="k">-</span><span class="w"> </span><span class="sb">`cd /path/to/put/project/in`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`</span>
-
-<span class="gu">#### Créer l&#39;environnement virtuel</span>
-
-<span class="k">-</span><span class="w"> </span><span class="sb">`cd /path/to/Python-OC-Lettings-FR`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`python -m venv venv`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`apt-get install python3-venv`</span> (Si l&#39;étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-<span class="k">-</span><span class="w"> </span>Activer l&#39;environnement <span class="sb">`source venv/bin/activate`</span>
-<span class="k">-</span><span class="w"> </span>Confirmer que la commande <span class="sb">`python`</span> exécute l&#39;interpréteur Python dans l&#39;environnement virtuel
-<span class="sb">`which python`</span>
-<span class="k">-</span><span class="w"> </span>Confirmer que la version de l&#39;interpréteur Python est la version 3.6 ou supérieure <span class="sb">`python --version`</span>
-<span class="k">-</span><span class="w"> </span>Confirmer que la commande <span class="sb">`pip`</span> exécute l&#39;exécutable pip dans l&#39;environnement virtuel, <span class="sb">`which pip`</span>
-<span class="k">-</span><span class="w"> </span>Pour désactiver l&#39;environnement, <span class="sb">`deactivate`</span>
-
-<span class="gu">#### Exécuter le site</span>
-
-<span class="k">-</span><span class="w"> </span><span class="sb">`cd /path/to/Python-OC-Lettings-FR`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`source venv/bin/activate`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`pip install --requirement requirements.txt`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`python manage.py runserver`</span>
-<span class="k">-</span><span class="w"> </span>Aller sur <span class="sb">`http://localhost:8000`</span> dans un navigateur.
-<span class="k">-</span><span class="w"> </span>Confirmer que le site fonctionne et qu&#39;il est possible de naviguer (vous devriez voir plusieurs profils et locations).
-
-<span class="gu">#### Linting</span>
-
-<span class="k">-</span><span class="w"> </span><span class="sb">`cd /path/to/Python-OC-Lettings-FR`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`source venv/bin/activate`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`flake8`</span>
-
-<span class="gu">#### Tests unitaires</span>
-
-<span class="k">-</span><span class="w"> </span><span class="sb">`cd /path/to/Python-OC-Lettings-FR`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`source venv/bin/activate`</span>
-<span class="k">-</span><span class="w"> </span><span class="sb">`pytest`</span>
-
-<span class="gu">#### Base de données</span>
-
-<span class="k">-</span><span class="w"> </span><span class="sb">`cd /path/to/Python-OC-Lettings-FR`</span>
-<span class="k">-</span><span class="w"> </span>Ouvrir une session shell <span class="sb">`sqlite3`</span>
-<span class="k">-</span><span class="w"> </span>Se connecter à la base de données <span class="sb">`.open oc-lettings-site.sqlite3`</span>
-<span class="k">-</span><span class="w"> </span>Afficher les tables dans la base de données <span class="sb">`.tables`</span>
-<span class="k">-</span><span class="w"> </span>Afficher les colonnes dans le tableau des profils, <span class="sb">`pragma table_info(Python-OC-Lettings-FR_profile);`</span>
-<span class="k">-</span><span class="w"> </span>Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like &#39;B%&#39;;`
-<span class="k">-</span><span class="w"> </span><span class="sb">`.quit`</span> pour quitter
-
-<span class="gu">#### Panel d&#39;administration</span>
-
-<span class="k">-</span><span class="w"> </span>Aller sur <span class="sb">`http://localhost:8000/admin`</span>
-<span class="k">-</span><span class="w"> </span>Connectez-vous avec l&#39;utilisateur <span class="sb">`admin`</span>, mot de passe <span class="sb">`Abc1234!`</span>
-
-<span class="gu">### Windows</span>
-
-Utilisation de PowerShell, comme ci-dessus sauf :
-
-<span class="k">-</span><span class="w"> </span>Pour activer l&#39;environnement virtuel, <span class="sb">`.\venv\Scripts\Activate.ps1`</span>
-<span class="k">-</span><span class="w"> </span>Remplacer <span class="sb">`which &lt;my-command&gt;`</span> par <span class="sb">`(Get-Command &lt;my-command&gt;).Path`</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[![Tests Status](./reports/junit/tests-badge.svg?dummy=8484744)](./reports/junit/report.html)
-[![Coverage Status](./reports/coverage/coverage-badge.svg?dummy=8484744)](./reports/coverage/index.html)
-[![Flake8 Status](./reports/flake8/flake8-badge.svg?dummy=8484744)](./reports/flake8/index.html)
-[![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
-
-## Résumé
-
-Site web d&#39;Orange County Lettings
-
-## Développement local
-
-### Prérequis
-
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
-
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l&#39;interpréteur Python ci-dessus (à moins qu&#39;un environnement virtuel ne soit activé).
-
-### macOS / Linux
-
-#### Cloner le repository
-
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
-
-#### Créer l&#39;environnement virtuel
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l&#39;étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l&#39;environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l&#39;interpréteur Python dans l&#39;environnement virtuel
-`which python`
-- Confirmer que la version de l&#39;interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l&#39;exécutable pip dans l&#39;environnement virtuel, `which pip`
-- Pour désactiver l&#39;environnement, `deactivate`
-
-#### Exécuter le site
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu&#39;il est possible de naviguer (vous devriez voir plusieurs profils et locations).
-
-#### Linting
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
-
-#### Tests unitaires
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
-
-#### Base de données
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like &#39;B%&#39;;`
-- `.quit` pour quitter
-
-#### Panel d&#39;administration
-
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l&#39;utilisateur `admin`, mot de passe `Abc1234!`
-
-### Windows
-
-Utilisation de PowerShell, comme ci-dessus sauf :
-
-- Pour activer l&#39;environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which &lt;my-command&gt;` par `(Get-Command &lt;my-command&gt;).Path`
-</pre></div>
-</div>
 </section>
 <section id="running">
 <span id="id2"></span><h2>Running<a class="headerlink" href="#running" title="Link to this heading">#</a></h2>
