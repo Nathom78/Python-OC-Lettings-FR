@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Module Index &#8212; Orange County Lettings  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Configuration et sécurité &#8212; Orange County Lettings  documentation</title>
   
   
   
@@ -36,14 +37,13 @@
     <script src="_static/documentation_options.js?v=8a448e45"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'py-modindex';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'configuration_and_security';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-
+    <link rel="next" title="Base de donnée" href="database.html" />
+    <link rel="prev" title="Démarrage rapide" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-
-
   </head>
   
   
@@ -136,8 +136,8 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="configuration_and_security.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Configuration et sécurité
                       </a>
                     </li>
@@ -238,6 +238,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -270,8 +274,8 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="configuration_and_security.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Configuration et sécurité
                       </a>
                     </li>
@@ -363,7 +367,33 @@ document.write(`
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article"></div>
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Configuration et sécurité</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
               
               
               
@@ -371,134 +401,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
+  <section id="configuration-et-securite">
+<h1>Configuration et sécurité<a class="headerlink" href="#configuration-et-securite" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#django" id="id2"><em>Django</em></a></p>
+<ul>
+<li><p><a class="reference internal" href="#django-settings" id="id3">Django settings:</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="django">
+<span id="id1"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink"><em>Django</em></a><a class="headerlink" href="#django" title="Link to this heading">#</a></h2>
+<section id="django-settings">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Django settings:</a><a class="headerlink" href="#django-settings" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
 
-   <h1>Python Module Index</h1>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orange-county-lettings.azurewebsites.net&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;.localhost&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;google.com&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;[::1]&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">DEBUG</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Une variable d’environnement  DEBUG ($Env:DEBUG = True) peut être crée afin de lancer Django en mode developpement.</p></li>
+<li><p>ALLOWED_HOSTS sont les adresses que le serveur Django ou Gunicorn peuvent desservir. Ici sont les adresses du site de
+déploiement et les adresses afin de pouvoir utiliser le conteneur Docker en locale.</p></li>
+</ul>
+<p id="whitenoise"><a class="reference external" href="https://whitenoise.readthedocs.io/en/latest/django.html">Link WhiteNoise</a></p>
+<p>WhiteNoise permet de servir les fichiers “static”, de django et de l’application Python, en les compressant.
+Il est conçu pour fonctionner sur un serveur WSGI, avec des fonctions intégré pour Django. Adapter pour être déployé,
+même sur des CDN, avec sa compression Gzip et Brotli, gérant les en tête Accept-Encoding,
+et Vary pour la réutilisation du cache.</p>
+<p>Afin d’utiliser whitenoise :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;whitenoise.middleware.WhiteNoiseMiddleware&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Static files (CSS, JavaScript, Images)</span>
+<span class="c1"># https://docs.djangoproject.com/en/3.0/howto/static-files/</span>
 
-   <div class="modindex-jumpbox">
-   <a href="#cap-l"><strong>l</strong></a> | 
-   <a href="#cap-o"><strong>o</strong></a> | 
-   <a href="#cap-p"><strong>p</strong></a>
-   </div>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;staticfiles&#39;</span><span class="p">)</span>
 
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-l"><td></td><td>
-       <strong>l</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-       <td>
-       <a href="lettings.html#module-lettings"><code class="xref">lettings</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="lettings.html#module-lettings.admin"><code class="xref">lettings.admin</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="lettings.html#module-lettings.apps"><code class="xref">lettings.apps</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="lettings.html#module-lettings.models"><code class="xref">lettings.models</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="lettings.html#module-lettings.tests"><code class="xref">lettings.tests</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="lettings.html#module-0"><code class="xref">lettings.urls</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-o"><td></td><td>
-       <strong>o</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-2" style="display: none" alt="-" /></td>
-       <td>
-       <a href="oc_lettings_site.html#module-oc_lettings_site"><code class="xref">oc_lettings_site</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.apps"><code class="xref">oc_lettings_site.apps</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.asgi"><code class="xref">oc_lettings_site.asgi</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.settings"><code class="xref">oc_lettings_site.settings</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.tests"><code class="xref">oc_lettings_site.tests</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.urls"><code class="xref">oc_lettings_site.urls</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.views"><code class="xref">oc_lettings_site.views</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="oc_lettings_site.html#module-oc_lettings_site.wsgi"><code class="xref">oc_lettings_site.wsgi</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-p"><td></td><td>
-       <strong>p</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-3" style="display: none" alt="-" /></td>
-       <td>
-       <a href="profiles.html#module-profiles"><code class="xref">profiles</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="profiles.html#module-profiles.admin"><code class="xref">profiles.admin</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="profiles.html#module-profiles.apps"><code class="xref">profiles.apps</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="profiles.html#module-profiles.models"><code class="xref">profiles.models</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="profiles.html#module-profiles.tests"><code class="xref">profiles.tests</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="profiles.html#module-profiles.urls"><code class="xref">profiles.urls</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="profiles.html#module-profiles.views"><code class="xref">profiles.views</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;staticfiles/&#39;</span>
+<span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span> <span class="p">]</span>
+
+<span class="n">STORAGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.core.files.storage.FileSystemStorage&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;staticfiles&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;whitenoise.storage.CompressedManifestStaticFilesStorage&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
 
 
                 </article>
@@ -508,6 +474,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#django"><em>Django</em></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#django-settings">Django settings:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="_sources/configuration_and_security.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
               
             
           </div>

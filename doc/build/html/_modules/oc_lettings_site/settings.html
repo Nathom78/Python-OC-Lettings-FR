@@ -127,6 +127,27 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../usage.html">
                         Usage
                       </a>
@@ -136,13 +157,6 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         code
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../README.html">
-                        Résumé
                       </a>
                     </li>
                 
@@ -236,6 +250,27 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../usage.html">
                         Usage
                       </a>
@@ -245,13 +280,6 @@ document.write(`
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         code
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../README.html">
-                        Résumé
                       </a>
                     </li>
                 
@@ -386,157 +414,156 @@ document.write(`
 <span class="linenos"> 16</span><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
 <span class="linenos"> 17</span>
 <span class="linenos"> 18</span><span class="n">DEBUG</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="linenos"> 19</span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oc-lettings.azurewebsites.net&#39;</span><span class="p">,</span>
-<span class="linenos"> 20</span>                 <span class="s1">&#39;orange-county-lettings.azurewebsites.net&#39;</span><span class="p">,</span>
-<span class="linenos"> 21</span>                 <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
-<span class="linenos"> 22</span>                 <span class="s1">&#39;.localhost&#39;</span><span class="p">,</span>
-<span class="linenos"> 23</span>                 <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span>
-<span class="linenos"> 24</span>                 <span class="s1">&#39;google.com&#39;</span><span class="p">,</span>
-<span class="linenos"> 25</span>                 <span class="s1">&#39;[::1]&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">DEBUG</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="p">[]</span>
-<span class="linenos"> 26</span>
-<span class="linenos"> 27</span><span class="c1"># Application definition</span>
-<span class="linenos"> 28</span>
-<span class="linenos"> 29</span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos"> 30</span>    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
-<span class="linenos"> 31</span>    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
-<span class="linenos"> 32</span>    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
-<span class="linenos"> 33</span>    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
-<span class="linenos"> 34</span>    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
-<span class="linenos"> 35</span>    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
-<span class="linenos"> 36</span>    <span class="s1">&#39;oc_lettings_site&#39;</span><span class="p">,</span>
-<span class="linenos"> 37</span>    <span class="s1">&#39;lettings&#39;</span><span class="p">,</span>
-<span class="linenos"> 38</span>    <span class="s1">&#39;profiles&#39;</span><span class="p">,</span>
-<span class="linenos"> 39</span><span class="p">]</span>
-<span class="linenos"> 40</span>
-<span class="linenos"> 41</span><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos"> 42</span>    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 43</span>    <span class="s1">&#39;whitenoise.middleware.WhiteNoiseMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 44</span>    <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 45</span>    <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 46</span>    <span class="s1">&#39;django.middleware.csrf.CsrfViewMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 47</span>    <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 48</span>    <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 49</span>    <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
-<span class="linenos"> 50</span><span class="p">]</span>
-<span class="linenos"> 51</span>
-<span class="linenos"> 52</span><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s1">&#39;oc_lettings_site.urls&#39;</span>
-<span class="linenos"> 53</span>
-<span class="linenos"> 54</span><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos"> 55</span>    <span class="p">{</span>
-<span class="linenos"> 56</span>        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
-<span class="linenos"> 57</span>        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
-<span class="linenos"> 58</span>        <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="linenos"> 59</span>        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
-<span class="linenos"> 60</span>            <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
-<span class="linenos"> 61</span>                <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
-<span class="linenos"> 62</span>                <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
-<span class="linenos"> 63</span>                <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
-<span class="linenos"> 64</span>                <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
-<span class="linenos"> 65</span>            <span class="p">],</span>
-<span class="linenos"> 66</span>        <span class="p">},</span>
-<span class="linenos"> 67</span>    <span class="p">},</span>
-<span class="linenos"> 68</span><span class="p">]</span>
-<span class="linenos"> 69</span>
-<span class="linenos"> 70</span><span class="n">WSGI_APPLICATION</span> <span class="o">=</span> <span class="s1">&#39;oc_lettings_site.wsgi.application&#39;</span>
-<span class="linenos"> 71</span>
-<span class="linenos"> 72</span><span class="c1"># Database</span>
-<span class="linenos"> 73</span><span class="c1"># https://docs.djangoproject.com/en/3.0/ref/settings/#databases</span>
-<span class="linenos"> 74</span>
-<span class="linenos"> 75</span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos"> 76</span>    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
-<span class="linenos"> 77</span>        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
-<span class="linenos"> 78</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;oc-lettings-site.sqlite3&#39;</span><span class="p">),</span>
-<span class="linenos"> 79</span>    <span class="p">}</span>
-<span class="linenos"> 80</span><span class="p">}</span>
-<span class="linenos"> 81</span>
-<span class="linenos"> 82</span><span class="c1"># Password validation</span>
-<span class="linenos"> 83</span><span class="c1"># https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators</span>
-<span class="linenos"> 84</span>
-<span class="linenos"> 85</span><span class="n">AUTH_PASSWORD_VALIDATORS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos"> 86</span>    <span class="p">{</span>
-<span class="linenos"> 87</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;</span><span class="p">,</span>
-<span class="linenos"> 88</span>    <span class="p">},</span>
-<span class="linenos"> 89</span>    <span class="p">{</span>
-<span class="linenos"> 90</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;</span><span class="p">,</span>
-<span class="linenos"> 91</span>    <span class="p">},</span>
-<span class="linenos"> 92</span>    <span class="p">{</span>
-<span class="linenos"> 93</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;</span><span class="p">,</span>
-<span class="linenos"> 94</span>    <span class="p">},</span>
-<span class="linenos"> 95</span>    <span class="p">{</span>
-<span class="linenos"> 96</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;</span><span class="p">,</span>
-<span class="linenos"> 97</span>    <span class="p">},</span>
-<span class="linenos"> 98</span><span class="p">]</span>
-<span class="linenos"> 99</span>
-<span class="linenos">100</span><span class="c1"># Internationalization</span>
-<span class="linenos">101</span><span class="c1"># https://docs.djangoproject.com/en/3.0/topics/i18n/</span>
-<span class="linenos">102</span>
-<span class="linenos">103</span><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;en-us&#39;</span>
-<span class="linenos">104</span>
-<span class="linenos">105</span><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;UTC&#39;</span>
-<span class="linenos">106</span>
-<span class="linenos">107</span><span class="n">USE_I18N</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="linenos">108</span>
-<span class="linenos">109</span><span class="c1"># USE_L10N = True depreciate</span>
-<span class="linenos">110</span>
-<span class="linenos">111</span><span class="n">USE_TZ</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="linenos">112</span>
-<span class="linenos">113</span><span class="c1"># Static files (CSS, JavaScript, Images)</span>
-<span class="linenos">114</span><span class="c1"># https://docs.djangoproject.com/en/3.0/howto/static-files/</span>
-<span class="linenos">115</span>
-<span class="linenos">116</span><span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;staticfiles&#39;</span><span class="p">)</span>
-<span class="linenos">117</span>
-<span class="linenos">118</span><span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;staticfiles/&#39;</span>
-<span class="linenos">119</span><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span> <span class="p">]</span>
-<span class="linenos">120</span>
-<span class="linenos">121</span><span class="n">STORAGES</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">122</span>    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="linenos">123</span>        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.core.files.storage.FileSystemStorage&quot;</span><span class="p">,</span>
-<span class="linenos">124</span>    <span class="p">},</span>
-<span class="linenos">125</span>    <span class="s2">&quot;staticfiles&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="linenos">126</span>        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;whitenoise.storage.CompressedManifestStaticFilesStorage&quot;</span><span class="p">,</span>
-<span class="linenos">127</span>    <span class="p">},</span>
-<span class="linenos">128</span><span class="p">}</span>
-<span class="linenos">129</span>
-<span class="linenos">130</span><span class="n">DEFAULT_AUTO_FIELD</span> <span class="o">=</span> <span class="s1">&#39;django.db.models.BigAutoField&#39;</span>
-<span class="linenos">131</span>
-<span class="linenos">132</span><span class="c1"># SECURE_PROXY_SSL_HEADER = (&#39;HTTP_X_FORWARDED_PROTO&#39;, &#39;https&#39;)</span>
-<span class="linenos">133</span><span class="c1"># SECURE_SSL_REDIRECT = True</span>
-<span class="linenos">134</span><span class="c1"># SESSION_COOKIE_SECURE = True</span>
-<span class="linenos">135</span><span class="c1"># CSRF_COOKIE_SECURE = True</span>
+<span class="linenos"> 19</span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orange-county-lettings.azurewebsites.net&#39;</span><span class="p">,</span>
+<span class="linenos"> 20</span>                 <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+<span class="linenos"> 21</span>                 <span class="s1">&#39;.localhost&#39;</span><span class="p">,</span>
+<span class="linenos"> 22</span>                 <span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span>
+<span class="linenos"> 23</span>                 <span class="s1">&#39;google.com&#39;</span><span class="p">,</span>
+<span class="linenos"> 24</span>                 <span class="s1">&#39;[::1]&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">DEBUG</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="p">[]</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="c1"># Application definition</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 29</span>    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+<span class="linenos"> 30</span>    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+<span class="linenos"> 31</span>    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+<span class="linenos"> 32</span>    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+<span class="linenos"> 33</span>    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+<span class="linenos"> 34</span>    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+<span class="linenos"> 35</span>    <span class="s1">&#39;oc_lettings_site&#39;</span><span class="p">,</span>
+<span class="linenos"> 36</span>    <span class="s1">&#39;lettings&#39;</span><span class="p">,</span>
+<span class="linenos"> 37</span>    <span class="s1">&#39;profiles&#39;</span><span class="p">,</span>
+<span class="linenos"> 38</span><span class="p">]</span>
+<span class="linenos"> 39</span>
+<span class="linenos"> 40</span><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 41</span>    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 42</span>    <span class="s1">&#39;whitenoise.middleware.WhiteNoiseMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 43</span>    <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 44</span>    <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 45</span>    <span class="s1">&#39;django.middleware.csrf.CsrfViewMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 46</span>    <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 47</span>    <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 48</span>    <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
+<span class="linenos"> 49</span><span class="p">]</span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s1">&#39;oc_lettings_site.urls&#39;</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 54</span>    <span class="p">{</span>
+<span class="linenos"> 55</span>        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
+<span class="linenos"> 56</span>        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
+<span class="linenos"> 57</span>        <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos"> 58</span>        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 59</span>            <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos"> 60</span>                <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
+<span class="linenos"> 61</span>                <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
+<span class="linenos"> 62</span>                <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
+<span class="linenos"> 63</span>                <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
+<span class="linenos"> 64</span>            <span class="p">],</span>
+<span class="linenos"> 65</span>        <span class="p">},</span>
+<span class="linenos"> 66</span>    <span class="p">},</span>
+<span class="linenos"> 67</span><span class="p">]</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="n">WSGI_APPLICATION</span> <span class="o">=</span> <span class="s1">&#39;oc_lettings_site.wsgi.application&#39;</span>
+<span class="linenos"> 70</span>
+<span class="linenos"> 71</span><span class="c1"># Database</span>
+<span class="linenos"> 72</span><span class="c1"># https://docs.djangoproject.com/en/3.0/ref/settings/#databases</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 75</span>    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 76</span>        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
+<span class="linenos"> 77</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;oc-lettings-site.sqlite3&#39;</span><span class="p">),</span>
+<span class="linenos"> 78</span>    <span class="p">}</span>
+<span class="linenos"> 79</span><span class="p">}</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span><span class="c1"># Password validation</span>
+<span class="linenos"> 82</span><span class="c1"># https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators</span>
+<span class="linenos"> 83</span>
+<span class="linenos"> 84</span><span class="n">AUTH_PASSWORD_VALIDATORS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos"> 85</span>    <span class="p">{</span>
+<span class="linenos"> 86</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;</span><span class="p">,</span>
+<span class="linenos"> 87</span>    <span class="p">},</span>
+<span class="linenos"> 88</span>    <span class="p">{</span>
+<span class="linenos"> 89</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;</span><span class="p">,</span>
+<span class="linenos"> 90</span>    <span class="p">},</span>
+<span class="linenos"> 91</span>    <span class="p">{</span>
+<span class="linenos"> 92</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;</span><span class="p">,</span>
+<span class="linenos"> 93</span>    <span class="p">},</span>
+<span class="linenos"> 94</span>    <span class="p">{</span>
+<span class="linenos"> 95</span>        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;</span><span class="p">,</span>
+<span class="linenos"> 96</span>    <span class="p">},</span>
+<span class="linenos"> 97</span><span class="p">]</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="c1"># Internationalization</span>
+<span class="linenos">100</span><span class="c1"># https://docs.djangoproject.com/en/3.0/topics/i18n/</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;en-us&#39;</span>
+<span class="linenos">103</span>
+<span class="linenos">104</span><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;UTC&#39;</span>
+<span class="linenos">105</span>
+<span class="linenos">106</span><span class="n">USE_I18N</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span><span class="c1"># USE_L10N = True depreciate</span>
+<span class="linenos">109</span>
+<span class="linenos">110</span><span class="n">USE_TZ</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="c1"># Static files (CSS, JavaScript, Images)</span>
+<span class="linenos">113</span><span class="c1"># https://docs.djangoproject.com/en/3.0/howto/static-files/</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;staticfiles&#39;</span><span class="p">)</span>
+<span class="linenos">116</span>
+<span class="linenos">117</span><span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;staticfiles/&#39;</span>
+<span class="linenos">118</span><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span> <span class="p">]</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span><span class="n">STORAGES</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">121</span>    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">122</span>        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.core.files.storage.FileSystemStorage&quot;</span><span class="p">,</span>
+<span class="linenos">123</span>    <span class="p">},</span>
+<span class="linenos">124</span>    <span class="s2">&quot;staticfiles&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">125</span>        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;whitenoise.storage.CompressedManifestStaticFilesStorage&quot;</span><span class="p">,</span>
+<span class="linenos">126</span>    <span class="p">},</span>
+<span class="linenos">127</span><span class="p">}</span>
+<span class="linenos">128</span>
+<span class="linenos">129</span><span class="n">DEFAULT_AUTO_FIELD</span> <span class="o">=</span> <span class="s1">&#39;django.db.models.BigAutoField&#39;</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span><span class="c1"># SECURE_PROXY_SSL_HEADER = (&#39;HTTP_X_FORWARDED_PROTO&#39;, &#39;https&#39;)</span>
+<span class="linenos">132</span><span class="c1"># SECURE_SSL_REDIRECT = True</span>
+<span class="linenos">133</span><span class="c1"># SESSION_COOKIE_SECURE = True</span>
+<span class="linenos">134</span><span class="c1"># CSRF_COOKIE_SECURE = True</span>
+<span class="linenos">135</span>
 <span class="linenos">136</span>
-<span class="linenos">137</span>
 <div class="viewcode-block" id="profiles_sampler">
 <a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.settings.profiles_sampler">[docs]</a>
-<span class="linenos">138</span><span class="k">def</span> <span class="nf">profiles_sampler</span><span class="p">(</span><span class="n">sampling_context</span><span class="p">):</span>
-<span class="linenos">139</span>    <span class="c1"># ...</span>
-<span class="linenos">140</span>    <span class="c1"># return a number between 0 and 1 or a boolean</span>
-<span class="linenos">141</span>    <span class="k">return</span> <span class="kc">True</span></div>
+<span class="linenos">137</span><span class="k">def</span> <span class="nf">profiles_sampler</span><span class="p">(</span><span class="n">sampling_context</span><span class="p">):</span>
+<span class="linenos">138</span>    <span class="c1"># ...</span>
+<span class="linenos">139</span>    <span class="c1"># return a number between 0 and 1 or a boolean</span>
+<span class="linenos">140</span>    <span class="k">return</span> <span class="kc">True</span></div>
 
+<span class="linenos">141</span>
 <span class="linenos">142</span>
-<span class="linenos">143</span>
-<span class="linenos">144</span><span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
-<span class="linenos">145</span>    <span class="n">dsn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DSN&#39;</span><span class="p">),</span>
-<span class="linenos">146</span>    <span class="c1"># Set traces_sample_rate to 1.0 to capture 100%</span>
-<span class="linenos">147</span>    <span class="c1"># of transactions for performance monitoring.</span>
-<span class="linenos">148</span>    <span class="c1"># We recommend adjusting this value in production.</span>
-<span class="linenos">149</span>    <span class="n">traces_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-<span class="linenos">150</span>    <span class="c1"># Set profiles_sample_rate to 1.0 to profile 100%</span>
-<span class="linenos">151</span>    <span class="c1"># of sampled transactions.</span>
-<span class="linenos">152</span>    <span class="c1"># We recommend adjusting this value in production.</span>
-<span class="linenos">153</span>    <span class="n">profiles_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-<span class="linenos">154</span>
-<span class="linenos">155</span>    <span class="c1"># Alternatively, to control sampling dynamically</span>
-<span class="linenos">156</span>    <span class="n">profiles_sampler</span><span class="o">=</span><span class="n">profiles_sampler</span><span class="p">,</span>
-<span class="linenos">157</span>    <span class="n">integrations</span><span class="o">=</span><span class="p">[</span>
-<span class="linenos">158</span>        <span class="n">DjangoIntegration</span><span class="p">(</span>
-<span class="linenos">159</span>            <span class="n">transaction_style</span><span class="o">=</span><span class="s1">&#39;url&#39;</span><span class="p">,</span>
-<span class="linenos">160</span>            <span class="n">middleware_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="linenos">161</span>            <span class="n">signals_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="linenos">162</span>            <span class="n">cache_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="linenos">163</span>        <span class="p">),</span>
-<span class="linenos">164</span>    <span class="p">],</span>
-<span class="linenos">165</span>    <span class="n">send_default_pii</span><span class="o">=</span><span class="kc">True</span>
-<span class="linenos">166</span><span class="p">)</span>
+<span class="linenos">143</span><span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+<span class="linenos">144</span>    <span class="n">dsn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DSN&#39;</span><span class="p">),</span>
+<span class="linenos">145</span>    <span class="c1"># Set traces_sample_rate to 1.0 to capture 100%</span>
+<span class="linenos">146</span>    <span class="c1"># of transactions for performance monitoring.</span>
+<span class="linenos">147</span>    <span class="c1"># We recommend adjusting this value in production.</span>
+<span class="linenos">148</span>    <span class="n">traces_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="linenos">149</span>    <span class="c1"># Set profiles_sample_rate to 1.0 to profile 100%</span>
+<span class="linenos">150</span>    <span class="c1"># of sampled transactions.</span>
+<span class="linenos">151</span>    <span class="c1"># We recommend adjusting this value in production.</span>
+<span class="linenos">152</span>    <span class="n">profiles_sample_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="linenos">153</span>
+<span class="linenos">154</span>    <span class="c1"># Alternatively, to control sampling dynamically</span>
+<span class="linenos">155</span>    <span class="n">profiles_sampler</span><span class="o">=</span><span class="n">profiles_sampler</span><span class="p">,</span>
+<span class="linenos">156</span>    <span class="n">integrations</span><span class="o">=</span><span class="p">[</span>
+<span class="linenos">157</span>        <span class="n">DjangoIntegration</span><span class="p">(</span>
+<span class="linenos">158</span>            <span class="n">transaction_style</span><span class="o">=</span><span class="s1">&#39;url&#39;</span><span class="p">,</span>
+<span class="linenos">159</span>            <span class="n">middleware_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">160</span>            <span class="n">signals_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">161</span>            <span class="n">cache_spans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">162</span>        <span class="p">),</span>
+<span class="linenos">163</span>    <span class="p">],</span>
+<span class="linenos">164</span>    <span class="n">send_default_pii</span><span class="o">=</span><span class="kc">True</span>
+<span class="linenos">165</span><span class="p">)</span>
 </pre></div>
 
                 </article>

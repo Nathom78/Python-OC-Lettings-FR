@@ -10,12 +10,19 @@ import sys
 import os
 import django
 
+BASE_DIR = pathlib.Path(__file__).resolve().parents[2].resolve().as_posix()
+REPORT = BASE_DIR + '/reports/'
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
 sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 sys.path.insert(1, "/oc_lettings_site/")
 sys.path.insert(1, "/lettings/")
 sys.path.insert(1, "/profiles/")
+sys.path.insert(1, os.path.abspath('.'))
+sys.path.insert(1, os.path.abspath('../../'))
+sys.path.insert(1, REPORT)
 
+print(sys.path)
 
 # Setup Django
 django.setup()
@@ -26,7 +33,6 @@ django.setup()
 project = 'Orange County Lettings'
 copyright = '2023, LECOMTE Thomas'
 author = 'LECOMTE Thomas'
-
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -67,24 +73,32 @@ exclude_patterns = []
 html_logo = '_static/logo.png'
 html_theme = 'pydata_sphinx_theme'
 html_sidebars = {
-    "**": ["search-field.html", "sidebar-nav-bs.html", "sidebar-ethical-ads.html"],
-    "index": [],
-    "usage": []
+    "**": ["sidebar-nav-bs.html"],
 }
 html_theme_options = {
     "collapse_navigation": True,
+    "navigation_depth": 4,
+    "show_nav_level": 4,
+    "show_toc_level": 3,
     "show_prev_next": False,
     "icon_links": [
         {
             # Label for this link
             "name": "GitHub",
             # URL where the link will redirect
-            "url": "https://github.com/Nathom78/Python-OC-Lettings-FR",  # required
+            "url": "https://github.com/Nathom78/Python-OC-Lettings-FR",
+            # required
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fa-brands fa-square-github",
             # The type of image to be used (see below for details)
             "type": "fontawesome",
+        },
+        {
+            "name": "Azure site",
+            "url": "https://orange-county-lettings.azurewebsites.net/",
+            "icon": "_static/Microsoft-Azure.png",
+            "type": "local",
         }
-   ]
+    ]
 }
 html_static_path = ['_static']

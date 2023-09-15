@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lettings.views &#8212; Orange County Lettings  documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Base de donnée &#8212; Orange County Lettings  documentation</title>
   
   
   
@@ -17,28 +18,30 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/lettings/views';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <script src="_static/documentation_options.js?v=8a448e45"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'database';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Configuration et sécurité" href="configuration_and_security.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -66,7 +69,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -94,7 +97,7 @@
       <div class="navbar-item">
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -104,8 +107,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -127,22 +130,36 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../usage.html">
+                      <a class="nav-link nav-internal" href="README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="usage.html">
                         Usage
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../modules.html">
-                        code
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../README.html">
-                        Résumé
+                      <a class="nav-link nav-internal" href="modules.html">
+                        Code
                       </a>
                     </li>
                 
@@ -191,6 +208,17 @@ document.write(`
           <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
 </ul></div>
       
     </div>
@@ -210,6 +238,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -217,7 +249,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -236,22 +268,36 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../usage.html">
+                      <a class="nav-link nav-internal" href="README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="usage.html">
                         Usage
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../modules.html">
-                        code
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../README.html">
-                        Résumé
+                      <a class="nav-link nav-internal" href="modules.html">
+                        Code
                       </a>
                     </li>
                 
@@ -289,31 +335,22 @@ document.write(`
           <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
 </ul></div>
         
       </div>
     
   </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search the docs ..."
-         aria-label="Search the docs ..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -343,14 +380,11 @@ document.write(`
   <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">lettings.views</li>
+    <li class="breadcrumb-item active" aria-current="page">Base de donnée</li>
   </ul>
 </nav>
 </div>
@@ -367,48 +401,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <h1>Source code for lettings.views</h1><div class="highlight"><pre>
-<span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Letting</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span>
-<div class="viewcode-block" id="index">
-<a class="viewcode-back" href="../../lettings.html#lettings.views.index">[docs]</a>
-<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 7</span><span class="sd">    View for lettings list.</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="sd">    :param request: the request for this page.</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="sd">    :return: lettings_list in html.</span>
-<span class="linenos">12</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">13</span>    <span class="n">lettings_list</span> <span class="o">=</span> <span class="n">Letting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="linenos">14</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lettings_list&quot;</span><span class="p">:</span> <span class="n">lettings_list</span><span class="p">}</span>
-<span class="linenos">15</span>    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;lettings/index.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+  <section id="base-de-donnee">
+<h1>Base de donnée<a class="headerlink" href="#base-de-donnee" title="Link to this heading">#</a></h1>
+</section>
 
-<span class="linenos">16</span>
-<span class="linenos">17</span>
-<div class="viewcode-block" id="letting">
-<a class="viewcode-back" href="../../lettings.html#lettings.views.letting">[docs]</a>
-<span class="linenos">18</span><span class="k">def</span> <span class="nf">letting</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">letting_id</span><span class="p">):</span>
-<span class="linenos">19</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">20</span><span class="sd">    View for a letting detail.</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="sd">    :param request: the request for this page.</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="sd">    :param letting_id: the reference to the letting.</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="sd">    :return: letting_detail in html.</span>
-<span class="linenos">27</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">28</span>    <span class="n">letting_detail</span> <span class="o">=</span> <span class="n">Letting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">letting_id</span><span class="p">)</span>
-<span class="linenos">29</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">30</span>        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">letting_detail</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
-<span class="linenos">31</span>        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">letting_detail</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
-<span class="linenos">32</span>    <span class="p">}</span>
-<span class="linenos">33</span>    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;lettings/letting.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
-
-<span class="linenos">34</span>
-</pre></div>
 
                 </article>
               
@@ -417,6 +413,18 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="_sources/database.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
               
             
           </div>
@@ -429,8 +437,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

@@ -1,35 +1,58 @@
-[![Tests Status](./reports/junit/tests-badge.svg?dummy=8484744)](./reports/junit/report.html)
-[![Coverage Status](./reports/coverage/coverage-badge.svg?dummy=8484744)](./reports/coverage/index.html)
-[![Flake8 Status](./reports/flake8/flake8-badge.svg?dummy=8484744)](./reports/flake8/index.html)
-[![Tests Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/junit/tests-badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/junit/report.html)
-[![Coverage Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/coverage/coverage-badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/coverage/index.html)
-[![Flake8 Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/flake8/flake8-badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/flake8/index.html)
+[![Tests Status](../../reports/junit/tests-badge.svg)](./reports/junit/report.html)
+[![Coverage Status](./reports/coverage/coverage-badge.svg)](./reports/coverage/index.html)
+[![Flake8 Status](/reports/flake8/flake8-badge.svg)](./reports/flake8/index.html)
+
+[![Tests Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/junit/tests-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/junit/report.html)
+[![Coverage Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/coverage/coverage-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/coverage/index.html)
+[![Flake8 Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/flake8/flake8-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/flake8/index.html)
 [![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
-[![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
+Documentation avec readthedocs:
 
-## Résumé
+[![Documentation Status](https://readthedocs.org/projects/thomas-python-oc-lettings-fr/badge/?version=latest)](https://thomas-python-oc-lettings-fr.readthedocs.io/en/latest/?badge=latest)
 
-Site web d'Orange County Lettings
+[**Projet 13** du parcours OpenClassrooms Développeur d'application - Python](https://openclassrooms.com/fr/paths/518/projects/841/assignment)
 
-## Développement local
+# *Résumé*
 
-### Prérequis
+Orange County Lettings est une start-up dans le secteur de la location de biens immobiliers.
+La start-up est en pleine phase d’expansion aux États-Unis. 
+
+L'objectif de ce projet est :
+- de mettre à l'échelle une application Django en utilisant une architecture modulaire.
+- La réduction de divers problèmes technique. Et du coup une mise en place de test, voir de les automatiser est organisé.
+- Surveillance de l'application et suivi des erreurs via Sentry.
+- Mettre en place un pipeline CI/CD et le déploiement du site web vers un hébergeur.(Azure de choisi).
+- Ainsi qu'une documentation publiée en ligne sur le site readthedocs.io.
+
+Plusieurs domaines du site *OC Lettings* ont été améliorés à partir du projet d'OpenClassrooms forker et cloner depuis l'adresse suivante :
+[Python-OC-Lettings-FR](https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR).
+
+Avec le
+[Cahier des charges site 2.0](https://s3.eu-west-1.amazonaws.com/course.oc-static.com/projects/Python+FR/841+Mettez+%C3%A0+l'%C3%A9chelle+une+application+Django+en+utilisant+une+architecture+modulaire/Site+web+2.0+-+caracte%CC%81ristiques+et+ame%CC%81liorations.pdf).
+
+# *Développement local*
+
+## - Prérequis
 
 - Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+- [Git CLI](https://git-scm.com/downloads)
+- [SQLite3 CLI](https://sqlite.org/download.html) *incorporé à Django ou avec son IDE
+- [Interpréteur Python](https://www.python.org/downloads/), version 3.11 minimum
+- [Docker](https://www.docker.com/products/docker-desktop/) 
+- [Compte Sentry](https://sentry.io/signup/)
+- [Azure](https://azure.microsoft.com/fr-fr/free/)
 
 Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
 
-### macOS / Linux
+## - macOS / Linux
 
-#### Cloner le repository
+### Cloner le repository
+
 
 - `cd /path/to/put/project/in`
 - `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
 
-#### Créer l'environnement virtuel
+### Créer l'environnement virtuel
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `python -m venv venv`
@@ -40,7 +63,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
 - Pour désactiver l'environnement, `deactivate`
 
-#### Exécuter le site
+### Exécuter le site
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
@@ -49,19 +72,19 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - Aller sur `http://localhost:8000` dans un navigateur.
 - Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
 
-#### Linting
+### Linting
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
 - `flake8`
 
-#### Tests unitaires
+### Tests unitaires
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
 - `pytest`
 
-#### Base de données
+### Base de données
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - Ouvrir une session shell `sqlite3`
@@ -72,14 +95,72 @@ Dans le reste de la documentation sur le développement local, il est supposé q
   Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
 - `.quit` pour quitter
 
-#### Panel d'administration
+### Panel d'administration
 
 - Aller sur `http://localhost:8000/admin`
 - Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
 
-### Windows
+## - Windows
 
 Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+***
+
+# *Variables d'environnements*
+Afin que le déploiement se réalise, et que le site puisse via Django être sécurisé, il y a plusieurs variables 
+d'environnements misent en place.
+Ici se trouve juste la liste exhaustive, pour de plus ample explication, voir dans la documentation.
+
+## - En locale
+
+Utilisé par Django pour le setup dans settings.py :
+
+Il y a la clé secréte de Django pour la sécurité.
+Et la clé DSN afin d'avoir toute la journalisation centralisé sur Sentry.
+
+* sous windows :
+
+  `$Env:SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"`
+
+  `$Env:DSN = "https://7a83d0aa21be11a29138bda53be260e0@o4505539706814464.ingest.sentry.io/4505657522323456`
+* sous Linux :
+
+  `export SECRET_KEY="fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"`
+
+  de même avec DSN.
+* sous Apple :
+
+  `% SECRET_KEY="fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"`
+
+  de même avec DSN.
+
+
+## - En production 
+
+Via GitHub, d'autre variables sont utilisé pour le déploiement vers Azure, aussi bien pour se connecter à Docker et le passage à l'environemment final , avec le maximum 
+de sécurité de ces var
+
+
+[GitHub Action for Azure Login](https://github.com/azure/login#github-action-for-azure-login)
+
+
+***
+
+# *Technologies*
+<p>
+<img src="https://skillicons.dev/icons?i=git,github,githubactions,python,django,sqlite,docker,linux,azure,sentry,powershell,css,html,bootstrap&theme=dark">
+</p>
+
+***
+
+# *Conventions de nommage et de codes :*
+<p>PEP 8 – Style Guide for Python Code
+<a href="https://peps.python.org/pep-0008/">ici</a>.
+</p>
+
+Un rapport **flake8** au format HTML est disponible dans le repertoire `\reports\flake8`, à la racine du projet.
+
+PS: De cliquer sur les badges ou le nom du projet vous dirige vers les rapports des tests, ou le site concerné pour la documentation
