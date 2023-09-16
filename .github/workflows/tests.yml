@@ -38,8 +38,10 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-            pip install -r reports/requirements.txt
-            if [ -f /reports/requirements.txt ]; then pip install -r reports/requirements.txt; fi
+
+        - name: Install dependencies2.
+          run: |
+            if [ -f reports/requirements.txt ]; then pip install -r reports/requirements.txt; fi
 
         - name: Lint with flake8.
           # stop the build if there are Python syntax errors or undefined names, and make a report.
