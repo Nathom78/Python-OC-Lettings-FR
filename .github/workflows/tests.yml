@@ -1,42 +1,85 @@
-name: Tests with pytest, Flake8, and Coverage
+name: Tests with pytest, Flake8, and Coverage.
 
 on: workflow_call
 
 jobs:
-  job_1:
-      name: Tests
+  build:
+      name: Tests.
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
-        - name: Set up Python 3.11
-          uses: actions/setup-python@v4
+        - name: Extract branch name
+          id: extract_branch
+          shell: bash
+          run: echo "branch=${GITHUB_REF#refs/heads/}" >> "${GITHUB_OUTPUT}"
+
+        - uses: actions/checkout@v4
+          # Can use files setup.cfg, and requirements.txt on the branch of the test
+
+        - uses: actions/checkout@v4
           with:
-            python-version: "3.11"
-            cache: 'pip'
-        - name: Install dependencies
+            ref: 'badges'
+
+        # Create the directory where badges will be saved, if needed
+        - name: Create destination directory
+          env:
+            REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}
+          run: |
+            mkdir -p "${REPORTS_PATH%/reports}"
+
+        - name: Install dependencies.
           run: |
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        - name: Lint with flake8
+            if [ -f /reports/requirements.txt]; then pip install -r reports/requirements.txt; fi
+
+        - name: Lint with flake8.
+          # stop the build if there are Python syntax errors or undefined names, and make a report.
           run: |
-            # stop the build if there are Python syntax errors or undefined names
-            flake8 --exit-zero --format=html --htmldir ./reports/flake8 --max-line-length=99 --statistics --tee --output-file ./reports/flake8/flake8stats.txt
-        - name: Test with pytest
+            flake8 --exit-zero
+
+        - name: Test with pytest.
           env:
             SECRET_KEY: ${{ secrets.SECRET_KEY }}
+            # stop the build if there are fell tests, and make reports.
           run: |
             pytest --junitxml=reports/junit/junit.xml --html=reports/junit/report.html
-        - name: Test with Coverage
+
+        - name: Test with Coverage.
           env:
             SECRET_KEY: ${{ secrets.SECRET_KEY }}
+            # stop the build if there isn't 80% code covered by tests.
           run: |
             coverage run -m pytest
             coverage report --data-file=reports/coverage/.coverage
             coverage xml --data-file=reports/coverage/.coverage
             coverage html --data-file=reports/coverage/.coverage
 
-        - name: Archive tests results
+        - name: Create all badges
+          run: |
+            genbadge tests -o /reports/badge.svg
+            genbadge coverage -o /reports/badge.svg
+            genbadge flake8 -o /reports/badge.svg
+
+        - name: Archive tests results.
           uses: actions/upload-artifact@v3
           with:
             name: tests-reports
             path: reports/
+            if-no-files-found: error
+
+        - name: Commit result
+          continue-on-error: true
+          env:
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
+          run: |
+            cp -r reports/ ${NEW_REP/reports}
+            git config --local user.email github-actions@github.com
+            git config --local user.name "GitHub Action"
+            git add "${NEW_REP/}"
+            git commit -m "Add/Update badge"
+
+        - name: Push badge commit
+          uses: ad-m/github-push-action@master
+          if: ${{ success() }}
+          with:
+            branch: ${{ steps.extract_branch.outputs.branch }}
