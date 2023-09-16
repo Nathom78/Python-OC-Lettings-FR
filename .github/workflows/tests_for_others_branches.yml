@@ -4,7 +4,7 @@ name: Tests for code on others branch (pytest coverage lint)
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
-    branches-ignore: ['master']
+    branches-ignore: ['master','badges']
 
 jobs:
   call-tests:
