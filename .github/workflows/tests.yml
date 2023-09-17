@@ -67,9 +67,9 @@ jobs:
 
         - name: Create all badges
           run: |
-            genbadge tests -o reports/badge.svg
-            genbadge coverage -o reports/badge.svg
-            genbadge flake8 -o reports/badge.svg
+            genbadge tests -o reports/
+            genbadge coverage -o reports/
+            genbadge flake8 -o reports/
 
         - name: Archive tests results.
           uses: actions/upload-artifact@v3
@@ -83,7 +83,7 @@ jobs:
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            cp reports/ ${NEW_REP/reports/}
+            cp -r reports/ ${NEW_REP/reports/}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/}"
