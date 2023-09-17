@@ -46,7 +46,7 @@ jobs:
         - name: Lint with flake8.
           # stop the build if there are Python syntax errors or undefined names, and make a report.
           run: |
-            flake8 --exit-zero --output-file=reports/flake8/flake8stats.txt
+            flake8 --count --output-file=reports/flake8/flake8stats.txt
 
         - name: Test with pytest.
           env:
