@@ -83,7 +83,7 @@ jobs:
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            cp -r reports ${NEW_REP}
+            cp -r reports ${NEW_REP}/reports
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/}"
@@ -94,4 +94,4 @@ jobs:
           if: ${{ success() }}
           with:
             branch: 'badges'
-            file_pattern: "${NEW_REP}/*"
+            file_pattern: "${NEW_REP}/reports/*.*"
