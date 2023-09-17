@@ -94,3 +94,4 @@ jobs:
           if: ${{ success() }}
           with:
             branch: 'badges'
+            force: true
