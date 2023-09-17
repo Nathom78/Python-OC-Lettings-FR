@@ -82,13 +82,4 @@ jobs:
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/reports/}"
             git commit -m "Add/Update badge"
-            
-
-        - name: Push badge commit
-          env:
-            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
-          uses: stefanzweifel/git-auto-commit-action@v4
-          if: ${{ success() }}
-          with:
-            branch: 'badges'
-            repository: "${NEW_REP}/"
+            git push origin master:badges
