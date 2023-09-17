@@ -21,9 +21,9 @@ jobs:
         # Create the directory where badges will be saved, if needed
         - name: Create destination directory
           env:
-            REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}
+            REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}/reports
           run: |
-            mkdir -p "${REPORTS_PATH/reports}"
+            mkdir -p ${REPORTS_PATH}
 
         - uses: actions/checkout@v4
           # Can use files setup.cfg, and requirements.txt on the branch of the test
@@ -81,9 +81,9 @@ jobs:
         - name: Commit result
           continue-on-error: true
           env:
-            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}/reports
           run: |
-            cp -r reports ${NEW_REP}/reports
+            cp -r reports ${NEW_REP}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/}"
@@ -95,4 +95,4 @@ jobs:
           if: ${{ success() }}
           with:
             branch: 'badges'
-            file_pattern: "${NEW_REP}/reports/*.*"
+            file_pattern: "${NEW_REP}/*.*"
