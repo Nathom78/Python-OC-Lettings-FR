@@ -1,6 +1,10 @@
 **/__pycache__
 *.pyc
 
+reports/coverage/*
+reports/flake8/*
+reports/junit/*
+
 # use pycharm alone with ext. backup
 .idea/
 
