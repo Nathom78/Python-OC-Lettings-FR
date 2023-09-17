@@ -74,9 +74,9 @@ jobs:
         - name: Commit result
           continue-on-error: true
           env:
-            NEW_REP: ${{ steps.extract_branch.outputs.branch }}/report
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            mkdir -p -v ${NEW_REP}/tests-badge.svg
+            mkdir -p -v ${NEW_REP}/reports/tests-badge.svg
             cp -r -v reports ${NEW_REP}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
