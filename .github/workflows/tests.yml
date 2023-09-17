@@ -23,7 +23,7 @@ jobs:
           env:
             REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}/reports/test-badge.svg
           run: |
-            mkdir -p ${REPORTS_PATH}
+            mkdir -p -v ${REPORTS_PATH}
 
         - uses: actions/checkout@v4
           # Can use files setup.cfg, and requirements.txt on the branch of the test
@@ -81,14 +81,13 @@ jobs:
         - name: Commit result
           continue-on-error: true
           env:
-            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}/report
           run: |            
             cp -r -v reports ${NEW_REP}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/reports/}"
             git commit -m "Add/Update badge"
-            git push master:badges
 
         - name: Push badge commit
           uses: stefanzweifel/git-auto-commit-action@v4
