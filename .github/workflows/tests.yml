@@ -6,8 +6,7 @@ jobs:
   build:
       name: Tests.
       runs-on: ubuntu-latest
-      permissions:
-        contents: write
+
       steps:
         - name: Extract branch name
           id: extract_branch
@@ -82,4 +81,4 @@ jobs:
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/reports/}"
             git commit -m "Add/Update badge"
-            git push origin master:badges
+            git push -f origin master:badges
