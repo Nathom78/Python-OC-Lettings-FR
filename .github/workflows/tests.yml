@@ -21,7 +21,7 @@ jobs:
         # Create the directory where badges will be saved, if needed
         - name: Create destination directory
           env:
-            REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}/reports
+            REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}/reports/test-badge.svg
           run: |
             mkdir -p ${REPORTS_PATH}
 
@@ -81,7 +81,7 @@ jobs:
         - name: Commit result
           continue-on-error: true
           env:
-            NEW_REP: ${{ steps.extract_branch.outputs.branch }}/reports
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
             cp -r reports ${NEW_REP}
             git config --local user.email github-actions@github.com
