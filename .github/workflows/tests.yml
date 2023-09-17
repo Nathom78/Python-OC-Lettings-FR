@@ -91,4 +91,4 @@ jobs:
           if: ${{ success() }}
           with:
             branch: 'badges'
-            file_pattern: "${NEW_REP}/*.*"
+            repository: "${NEW_REP}/"
