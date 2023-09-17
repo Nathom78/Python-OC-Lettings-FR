@@ -77,11 +77,12 @@ jobs:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
             mkdir -p -v ${NEW_REP}/reports/tests-badge.svg
-            cp -r -f -v reports ${NEW_REP}
+            cp -r --remove-destination -v reports ${NEW_REP}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/reports/}"
             git commit -m "Add/Update badge"
+            
 
         - name: Push badge commit
           uses: stefanzweifel/git-auto-commit-action@v4
