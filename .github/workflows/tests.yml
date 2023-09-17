@@ -67,9 +67,9 @@ jobs:
 
         - name: Create all badges
           run: |
-            genbadge tests -o reports/
-            genbadge coverage -o reports/
-            genbadge flake8 -o reports/
+            genbadge tests -o reports/tests-badge.svg
+            genbadge coverage -o reports/coverage-badge.svg
+            genbadge flake8 -o reports/flake8-badge.svg
 
         - name: Archive tests results.
           uses: actions/upload-artifact@v3
