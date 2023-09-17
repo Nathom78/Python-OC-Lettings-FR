@@ -23,7 +23,7 @@ jobs:
           env:
             REPORTS_PATH: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            mkdir -p ${REPORTS_PATH}
+            mkdir -p "${REPORTS_PATH/reports}"
 
         - uses: actions/checkout@v4
           # Can use files setup.cfg, and requirements.txt on the branch of the test
