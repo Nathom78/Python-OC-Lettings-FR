@@ -13,7 +13,7 @@ jobs:
     secrets: inherit
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
   push_to_registries:
-    name: Push Docker image to multiple registries
+    name: Push Docker image to Docker Hub
     needs: call-tests
     runs-on: ubuntu-latest
     steps:
