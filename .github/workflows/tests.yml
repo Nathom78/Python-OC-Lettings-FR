@@ -103,12 +103,11 @@ jobs:
             ls
 
         - name: Commit result and push
-          continue-on-error: true
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
-            git add "${NEW_REP/reports/}"
+            git add ${NEW_REP}
             git commit -m "Add/Update badge"
             git push
