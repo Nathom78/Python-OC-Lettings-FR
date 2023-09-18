@@ -14,10 +14,6 @@ jobs:
           run: echo "branch=${GITHUB_REF#refs/heads/}" >> "${GITHUB_OUTPUT}"
 
         - uses: actions/checkout@v4
-          with:
-            ref: 'badges'
-
-        - uses: actions/checkout@v4
           # Can use files setup.cfg, and requirements.txt on the branch of the test
 
         - name: Set up Python 3.11
@@ -79,9 +75,10 @@ jobs:
             cd ${NEW_REP}
             mkdir -p -v reports
             cd ..
+            git checkout badges
             cp -r -v reports ${NEW_REP}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/reports/}"
             git commit -a -m "Add/Update badge"
-            git push -f origin master:badges
+            git push 
