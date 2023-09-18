@@ -108,6 +108,6 @@ jobs:
           run: |
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
-            git add ${NEW_REP}
+            git add ${NEW_REP}/
             git commit -m "Add/Update badge"
             git push
