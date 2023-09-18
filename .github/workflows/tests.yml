@@ -71,6 +71,7 @@ jobs:
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
+            dir
             cd ..
             dir
             mkdir -p -v ${NEW_REP}
@@ -78,8 +79,8 @@ jobs:
             mkdir -p -v reports
             cd ..
             ls
-            cp -r -v bin/reports ${NEW_REP}
-            cd bin
+            cp -r -v Python-OC-Lettings-FR/reports ${NEW_REP}
+            cd Python-OC-Lettings-FR
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
             git add "../${NEW_REP/reports/}"
