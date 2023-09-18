@@ -1,10 +1,6 @@
-[![Tests Status](../../reports/junit/tests-badge.svg)](./reports/junit/report.html)
-[![Coverage Status](./reports/coverage/coverage-badge.svg)](./reports/coverage/index.html)
-[![Flake8 Status](/reports/flake8/flake8-badge.svg)](./reports/flake8/index.html)
-
-[![Tests Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/junit/tests-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/junit/report.html)
-[![Coverage Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/coverage/coverage-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/coverage/index.html)
-[![Flake8 Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/flake8/flake8-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/reports/flake8/index.html)
+[![Tests Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/tests-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/junit/report.html)
+[![Coverage Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/coverage-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/coverage/index.html)
+[![Flake8 Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/flake8-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/flake8/index.html)
 [![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
 Documentation avec readthedocs:
 
