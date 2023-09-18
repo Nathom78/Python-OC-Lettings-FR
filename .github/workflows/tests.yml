@@ -66,12 +66,10 @@ jobs:
             path: reports/
             if-no-files-found: error
 
-        - name: Commit result
-          continue-on-error: true
+        - name: backup report
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            dir
             cd ..
             dir
             mkdir -p -v ${NEW_REP}
@@ -81,8 +79,36 @@ jobs:
             ls
             cp -r -v Python-OC-Lettings-FR/reports ${NEW_REP}
             cd Python-OC-Lettings-FR
+            ls
+
+        - name: checkout to branch badges
+          uses: actions/checkout@v4
+          with:
+            ref: 'badges'
+
+        - name: copy reports
+          env:
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
+          run: |
+            mkdir -p -v ${NEW_REP}
+            cd ${NEW_REP}
+            mkdir -p -v reports
+            cd ..
+            ls
+            cd ..
+            cp -r -v ${NEW_REP} Python-OC-Lettings-FR
+            cd Python-OC-Lettings-FR
+            ls
+            cd ${NEW_REP}
+            ls
+
+        - name: Commit result and push
+          continue-on-error: true
+          env:
+            NEW_REP: ${{ steps.extract_branch.outputs.branch }}
+          run: |
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
-            git add "../${NEW_REP/reports/}"
+            git add "${NEW_REP/reports/}"
             git commit -m "Add/Update badge"
             git push
