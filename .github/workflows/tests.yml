@@ -78,7 +78,6 @@ jobs:
             cd ..
             cp -r -v Python-OC-Lettings-FR/reports ${NEW_REP}
             cd Python-OC-Lettings-FR
-            ls
 
         - name: checkout to branch badges
           uses: actions/checkout@v4
@@ -95,15 +94,14 @@ jobs:
             cd ..  
             cd ..
             cp -r -v ${NEW_REP} Python-OC-Lettings-FR
-            cd Python-OC-Lettings-FR            
+            cd Python-OC-Lettings-FR
 
         - name: Commit result and push
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            ls
-            git config --local user.email github-actions@github.com
-            git config --local user.name "GitHub Action"
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
             git add "${NEW_REP}/"
             git commit -m "Add/Update badge"
             git push
