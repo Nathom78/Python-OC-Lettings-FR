@@ -72,10 +72,12 @@ jobs:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
             cd ..
+            dir
             mkdir -p -v ${NEW_REP}
             cd ${NEW_REP}
             mkdir -p -v reports
             cd ..
+            ls
             cp -r -v bin/reports ${NEW_REP}
             cd bin
             git config --local user.email github-actions@github.com
