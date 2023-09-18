@@ -75,7 +75,7 @@ jobs:
             cd ${NEW_REP}
             mkdir -p -v reports
             cd ..
-            git checkout badges
+            git branch badges
             cp -r -v reports ${NEW_REP}
             git config --local user.email github-actions@github.com
             git config --local user.name "GitHub Action"
