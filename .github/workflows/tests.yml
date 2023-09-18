@@ -81,4 +81,4 @@ jobs:
             git config --local user.name "GitHub Action"
             git add "${NEW_REP/reports/}"
             git commit -a -m "Add/Update badge"
-            git push 
+            git push
