@@ -88,10 +88,11 @@ jobs:
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
+            rm -r ${NEW_REP}
             mkdir -p -v ${NEW_REP}
             cd ${NEW_REP}
             mkdir -p -v reports
-            cd ..  
+            cd ..
             cd ..
             cp -r -v ${NEW_REP} Python-OC-Lettings-FR
             cd Python-OC-Lettings-FR
