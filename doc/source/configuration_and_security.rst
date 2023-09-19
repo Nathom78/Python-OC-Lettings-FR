@@ -8,11 +8,11 @@ Configuration et sécurité
 .. _Django:
 
 *Django*
---------
+########
 
 
 Django settings:
-^^^^^^^^^^^^^^^^
+****************
 
 .. code-block:: python
 
@@ -28,12 +28,15 @@ Django settings:
 
 * Une variable d'environnement  DEBUG ($Env:DEBUG = True) peut être crée afin de lancer Django en mode developpement.
 * ALLOWED_HOSTS sont les adresses que le serveur Django ou Gunicorn peuvent desservir. Ici sont les adresses du site de
-  déploiement et les adresses afin de pouvoir utiliser le conteneur Docker en locale.
+déploiement et les adresses afin de pouvoir utiliser le conteneur Docker en locale.
 
 
 .. _whitenoise:
 
-`Link WhiteNoise <https://whitenoise.readthedocs.io/en/latest/django.html>`_
+WhiteNoise:
+^^^^^^^^^^^
+
+`WhiteNoise <https://whitenoise.readthedocs.io/en/latest/django.html>`_
 
 WhiteNoise permet de servir les fichiers "static", de django et de l'application Python, en les compressant.
 Il est conçu pour fonctionner sur un serveur WSGI, avec des fonctions intégré pour Django. Adapter pour être déployé,
@@ -69,3 +72,42 @@ Afin d'utiliser whitenoise :
 		}
 
 
+
+.. _sentry:
+
+Sentry:
+^^^^^^^
+
+.. code-block:: python
+
+
+		def profiles_sampler(sampling_context):
+		    # ...
+		    # return a number between 0 and 1 or a boolean
+		    return True
+
+		sentry_sdk.init(
+		    dsn=os.environ.get('DSN'),
+		    # Set traces_sample_rate to 1.0 to capture 100%
+		    # of transactions for performance monitoring.
+		    # We recommend adjusting this value in production.
+		    traces_sample_rate=1.0,
+		    # Set profiles_sample_rate to 1.0 to profile 100%
+		    # of sampled transactions.
+		    # We recommend adjusting this value in production.
+		    profiles_sample_rate=1.0,
+
+		    # Alternatively, to control sampling dynamically
+		    profiles_sampler=profiles_sampler,
+		    integrations=[
+		        DjangoIntegration(
+		            transaction_style='url',
+		            middleware_spans=True,
+		            signals_spans=True,
+		            cache_spans=True,
+		        ),
+		    ],
+		    send_default_pii=True
+		)
+
+`Sentry <https://docs.sentry.io/platforms/python/guides/django/?original_referrer=https%3A%2F%2Fdocs.sentry.io%2Fplatforms%2Fpython%2Fconfiguration%2Fintegrations%2F%3Foriginal_referrer%3Dhttps%253A%252F%252Fwww.google.fr%252F>`_

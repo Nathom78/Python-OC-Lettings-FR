@@ -153,6 +153,7 @@ sentry_sdk.init(
 
     # Alternatively, to control sampling dynamically
     profiles_sampler=profiles_sampler,
+
     integrations=[
         DjangoIntegration(
             transaction_style='url',

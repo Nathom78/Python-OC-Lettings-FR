@@ -136,9 +136,11 @@ Et la clé DSN afin d'avoir toute la journalisation centralisé sur Sentry.
 
 ## - En production 
 
-Via GitHub, d'autre variables sont utilisé pour le déploiement vers Azure, aussi bien pour se connecter à Docker et le passage à l'environemment final , avec le maximum 
-de sécurité de ces var
+Via GitHub, d'autre variables sont utilisé pour le déploiement vers Azure, aussi bien pour se connecter à Docker
+et le passage à l'environnement final, avec le maximum de sécurité pour ces variables.
+Sur GitHub, il existe des variables "secrets" afin de garantir la confidentialité dans les fichiers log. 
 
+![Liste des variables sur GitHub]()
 
 [GitHub Action for Azure Login](https://github.com/azure/login#github-action-for-azure-login)
 
