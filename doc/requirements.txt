@@ -1,5 +1,6 @@
 Django==4.2.5
 sentry-sdk[django]==1.31.0
-Sphinx==7.2.5
+Sphinx==7.2.6
 myst-parser==2.0.0
 pydata-sphinx-theme==0.13.3
+sphinx-copybutton==0.5.2

@@ -45,7 +45,7 @@ lettings.urls module
 lettings.views module
 ---------------------
 
-.. automodule:: lettings.urls
+.. automodule:: lettings.views
    :members:
    :undoc-members:
    :show-inheritance:

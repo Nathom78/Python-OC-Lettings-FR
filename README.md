@@ -2,9 +2,10 @@
 [![Coverage Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/coverage-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/coverage/index.html)
 [![Flake8 Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/flake8-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/flake8/index.html)
 [![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
+
 Documentation avec readthedocs:
 
-[![Documentation Status](https://readthedocs.org/projects/thomas-python-oc-lettings-fr/badge/?version=latest)](https://thomas-python-oc-lettings-fr.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/thomas-python-oc-lettings-fr/badge/?version=latest)](https://thomas-python-oc-lettings-fr.readthedocs.io/fr/latest/?badge=latest)
 
 [**Projet 13** du parcours OpenClassrooms Développeur d'application - Python](https://openclassrooms.com/fr/paths/518/projects/841/assignment)
 
@@ -119,20 +120,21 @@ Et la clé DSN afin d'avoir toute la journalisation centralisé sur Sentry.
 
 * sous windows :
 
-  `$Env:SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"`
+  `$Env:SECRET_KEY = "yourKeyKeepInSafe"`
 
-  `$Env:DSN = "https://7a83d0aa21be11a29138bda53be260e0@o4505539706814464.ingest.sentry.io/4505657522323456`
+  `$Env:DSN = "https://number.ingest.sentry.io/number`
 * sous Linux :
 
-  `export SECRET_KEY="fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"`
+  `export SECRET_KEY="yourKeyKeepInSafe"`
 
   de même avec DSN.
 * sous Apple :
 
-  `% SECRET_KEY="fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"`
+  `% SECRET_KEY="yourKeyKeepInSafe"`
 
   de même avec DSN.
 
+[Lien configuration et sécurité](https://thomas-python-oc-lettings-fr.readthedocs.io/fr/latest/configuration_and_security.html)
 
 ## - En production 
 
@@ -140,10 +142,18 @@ Via GitHub, d'autre variables sont utilisé pour le déploiement vers Azure, aus
 et le passage à l'environnement final, avec le maximum de sécurité pour ces variables.
 Sur GitHub, il existe des variables "secrets" afin de garantir la confidentialité dans les fichiers log. 
 
-![Liste des variables sur GitHub]()
+![Liste des variables sur GitHub](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/master/doc/source/_static/GitHub_secrets.jpeg?raw=true)
 
-[GitHub Action for Azure Login](https://github.com/azure/login#github-action-for-azure-login)
-
+* variable lié à Azure :
+  - APP_NAME : nom de l'application
+  - RESOURCE_GROUP : nom du groupe de ressource utilisé pour la facturation
+  - AZUREAPPSERVICE_PUBLISHPROFILE_ORANGE : contenu du profil de publication
+  - AZURE_CREDENTIALS : voir [GitHub Action for Azure Login](https://github.com/azure/login#github-action-for-azure-login)
+* variable lié à Docker :
+  - DOCKER_PASSWORD : Access token avec des droits d'écriture et lecture 
+  - DOCKER_REPOSITORY : nom du repository
+  - DOCKER_USERNAME : nom du namespace
+* et on retrouve SECRET_KEY et DSN afin de les passer au build final.
 
 ***
 

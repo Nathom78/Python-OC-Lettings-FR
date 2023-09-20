@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>profiles.views &#8212; Documentation Orange County Lettings </title>
+    <title>lettings.views &#8212; Documentation Orange County Lettings </title>
   
   
   
@@ -41,7 +41,7 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/translations.js?v=d99ca74e"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/profiles/views';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/lettings/views';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Recherche" href="../../search.html" />
@@ -386,7 +386,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Code du module</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">profiles.views</li>
+    <li class="breadcrumb-item active" aria-current="page">lettings.views</li>
   </ul>
 </nav>
 </div>
@@ -403,42 +403,46 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <h1>Code source de profiles.views</h1><div class="highlight"><pre>
+  <h1>Code source de lettings.views</h1><div class="highlight"><pre>
 <span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Profile</span>
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Letting</span>
+<span class="linenos"> 3</span>
 <span class="linenos"> 4</span>
-<span class="linenos"> 5</span>
 <div class="viewcode-block" id="index">
-<a class="viewcode-back" href="../../profiles.html#profiles.views.index">[docs]</a>
-<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 8</span><span class="sd">    View for the list of profiles.</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="sd">    :param request: The request for this page.</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="sd">    :return: profiles_list HTML template.</span>
-<span class="linenos">13</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">14</span>    <span class="n">profiles_list</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="linenos">15</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;profiles_list&quot;</span><span class="p">:</span> <span class="n">profiles_list</span><span class="p">}</span>
-<span class="linenos">16</span>    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;profiles/index.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+<a class="viewcode-back" href="../../lettings.html#lettings.views.index">[docs]</a>
+<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 7</span><span class="sd">    View for lettings list.</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="sd">    :param request: the request for this page.</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="sd">    :return: lettings_list in html.</span>
+<span class="linenos">12</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">13</span>    <span class="n">lettings_list</span> <span class="o">=</span> <span class="n">Letting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="linenos">14</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lettings_list&quot;</span><span class="p">:</span> <span class="n">lettings_list</span><span class="p">}</span>
+<span class="linenos">15</span>    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;lettings/index.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
 
+<span class="linenos">16</span>
 <span class="linenos">17</span>
-<span class="linenos">18</span>
-<div class="viewcode-block" id="profile">
-<a class="viewcode-back" href="../../profiles.html#profiles.views.profile">[docs]</a>
-<span class="linenos">19</span><span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
-<span class="linenos">20</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos">21</span><span class="sd">    View for the detail of one profile.</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span><span class="sd">    :param request: The request for this page.</span>
-<span class="linenos">24</span><span class="sd">    :param username: The reference to the profile&#39;s name.</span>
+<div class="viewcode-block" id="letting">
+<a class="viewcode-back" href="../../lettings.html#lettings.views.letting">[docs]</a>
+<span class="linenos">18</span><span class="k">def</span> <span class="nf">letting</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">letting_id</span><span class="p">):</span>
+<span class="linenos">19</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">20</span><span class="sd">    View for a letting detail.</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="sd">    :param request: the request for this page.</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="sd">    :param letting_id: the reference to the letting.</span>
 <span class="linenos">25</span>
-<span class="linenos">26</span><span class="sd">    :return: profile_detail HTML template.</span>
+<span class="linenos">26</span><span class="sd">    :return: letting_detail in html.</span>
 <span class="linenos">27</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">28</span>    <span class="n">profile_detail</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user__username</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
-<span class="linenos">29</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;profile&quot;</span><span class="p">:</span> <span class="n">profile_detail</span><span class="p">}</span>
-<span class="linenos">30</span>    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;profiles/profile.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+<span class="linenos">28</span>    <span class="n">letting_detail</span> <span class="o">=</span> <span class="n">Letting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">letting_id</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">30</span>        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">letting_detail</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+<span class="linenos">31</span>        <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">letting_detail</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
+<span class="linenos">32</span>    <span class="p">}</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;lettings/letting.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
 
 </pre></div>
 
