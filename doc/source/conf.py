@@ -22,7 +22,7 @@ sys.path.insert(1, os.path.abspath('.'))
 sys.path.insert(1, os.path.abspath('../../'))
 sys.path.insert(1, REPORT)
 
-print(sys.path)
+language = 'fr'
 
 # Setup Django
 django.setup()
@@ -41,7 +41,8 @@ extensions = [
     "myst_parser",
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
-    'sphinx.ext.viewcode'
+    'sphinx.ext.viewcode',
+    'sphinx_copybutton'
 ]
 
 myst_enable_extensions = [
@@ -70,17 +71,20 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+html_favicon = "_static/logo.png"
 html_logo = '_static/logo.png'
 html_theme = 'pydata_sphinx_theme'
 html_sidebars = {
     "**": ["sidebar-nav-bs.html"],
 }
 html_theme_options = {
+    "navbar_align": "left",
     "collapse_navigation": True,
-    "navigation_depth": 4,
-    "show_nav_level": 4,
+    "navigation_depth": 3,
+    "show_nav_level": 2,
     "show_toc_level": 3,
     "show_prev_next": False,
+    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
     "icon_links": [
         {
             # Label for this link
@@ -102,3 +106,7 @@ html_theme_options = {
     ]
 }
 html_static_path = ['_static']
+
+
+def setup(app):
+    app.add_css_file("perso.css")

@@ -13,8 +13,8 @@ ARG DSN
 ENV DSN ${DSN}
 # install dependencies
 RUN pip install --upgrade pip
-#
-EXPOSE 8000
+# expose the port 8000
+EXPOSE 8080
 #
 COPY requirements.txt .
 # Don't able to cache pip for the moment
@@ -22,4 +22,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy the app code to image working directory
 COPY . .
 # Run Django!!
-CMD gunicorn --bind=0.0.0.0:8000 --timeout 600 oc_lettings_site.wsgi
+CMD gunicorn --bind=0.0.0.0:8080 --timeout 200 oc_lettings_site.wsgi
