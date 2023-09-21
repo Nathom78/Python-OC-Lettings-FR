@@ -150,6 +150,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -162,13 +169,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -288,6 +303,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -300,13 +322,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -470,12 +500,30 @@ document.write(`
 <dl class="py function">
 <dt class="sig sig-object py" id="oc_lettings_site.tests.test_index_view">
 <span class="sig-prename descclassname"><span class="pre">oc_lettings_site.tests.</span></span><span class="sig-name descname"><span class="pre">test_index_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/tests.html#test_index_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.tests.test_index_view" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Test that the “index” view returns a status code of 200
+and uses the correct template.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="oc_lettings_site.tests.test_profiles_index_url">
 <span class="sig-prename descclassname"><span class="pre">oc_lettings_site.tests.</span></span><span class="sig-name descname"><span class="pre">test_profiles_index_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/tests.html#test_profiles_index_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.tests.test_profiles_index_url" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Test that the URL for the “index” view resolves
+to the correct view function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oc_lettings_site.tests.test_trigger_error_url_resolves">
+<span class="sig-prename descclassname"><span class="pre">oc_lettings_site.tests.</span></span><span class="sig-name descname"><span class="pre">test_trigger_error_url_resolves</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/tests.html#test_trigger_error_url_resolves"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.tests.test_trigger_error_url_resolves" title="Link to this definition">#</a></dt>
+<dd><p>Test that the URL for the “sentrytest” view resolves
+to the correct view function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oc_lettings_site.tests.test_trigger_error_view">
+<span class="sig-prename descclassname"><span class="pre">oc_lettings_site.tests.</span></span><span class="sig-name descname"><span class="pre">test_trigger_error_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/tests.html#test_trigger_error_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.tests.test_trigger_error_view" title="Link to this definition">#</a></dt>
+<dd><p>Test that the “sentrytest” view returns a status code of 500
+and uses the “error.html” template.</p>
+</dd></dl>
 
 </section>
 <section id="module-oc_lettings_site.urls">
@@ -493,6 +541,21 @@ document.write(`
 </dd>
 <dt class="field-even">Renvoie<span class="colon">:</span></dt>
 <dd class="field-even"><p>Home’s HTML template.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oc_lettings_site.views.trigger_error">
+<span class="sig-prename descclassname"><span class="pre">oc_lettings_site.views.</span></span><span class="sig-name descname"><span class="pre">trigger_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/views.html#trigger_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.views.trigger_error" title="Link to this definition">#</a></dt>
+<dd><p>Déclenche une erreur de division par zéro pour tester
+la capture d’exception par Sentry.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (HttpRequest): L’objet HttpRequest
+qui représente la requête HTTP.</p>
+</dd>
+<dt>Returns:</dt><dd><p>HttpResponse: L’objet HttpResponse qui représente
+la réponse HTTP contenant la page d’erreur.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -541,11 +604,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.tests.test_dummy"><code class="docutils literal notranslate"><span class="pre">test_dummy()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.tests.test_index_view"><code class="docutils literal notranslate"><span class="pre">test_index_view()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.tests.test_profiles_index_url"><code class="docutils literal notranslate"><span class="pre">test_profiles_index_url()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.tests.test_trigger_error_url_resolves"><code class="docutils literal notranslate"><span class="pre">test_trigger_error_url_resolves()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.tests.test_trigger_error_view"><code class="docutils literal notranslate"><span class="pre">test_trigger_error_view()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-oc_lettings_site.urls">oc_lettings_site.urls module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-oc_lettings_site.views">oc_lettings_site.views module</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oc_lettings_site.views.trigger_error"><code class="docutils literal notranslate"><span class="pre">trigger_error()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-oc_lettings_site.wsgi">oc_lettings_site.wsgi module</a></li>

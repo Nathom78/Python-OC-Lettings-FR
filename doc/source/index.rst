@@ -16,11 +16,12 @@ Bienvenue dans la documentation d'Orange County Lettings!
 ----
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Sommaire:
 
    README.rst
    configuration_and_security
+   deployment_and_tests
    database
    usage
    modules

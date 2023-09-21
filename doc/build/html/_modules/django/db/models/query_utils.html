@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>django.db.models.query_utils &#8212; Documentation Orange County Lettings </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/perso.css?v=9f767776" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../../_static/documentation_options.js?v=0ef26a9d"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/translations.js?v=d99ca74e"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/django/db/models/query_utils';</script>
+    <link rel="icon" href="../../../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Navigation du site">
+    Navigation du site
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../modules.html">
+                        Code
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Navigation du site">
+    Navigation du site
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../modules.html">
+                        Code
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Fils d'Ariane">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Fil d'Ariane">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Acceuil">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Code du module</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">django.db.models.query_utils</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Code source de django.db.models.query_utils</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  2</span><span class="sd">Various data structures used in query construction.</span>
+<span class="linenos">  3</span>
+<span class="linenos">  4</span><span class="sd">Factored out from django.db.models.query to avoid making the main module very</span>
+<span class="linenos">  5</span><span class="sd">large and/or so that they can be used by other modules without getting into</span>
+<span class="linenos">  6</span><span class="sd">circular import difficulties.</span>
+<span class="linenos">  7</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="linenos">  9</span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="linenos"> 10</span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="linenos"> 11</span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">FieldError</span>
+<span class="linenos"> 14</span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">DEFAULT_DB_ALIAS</span><span class="p">,</span> <span class="n">DatabaseError</span><span class="p">,</span> <span class="n">connections</span>
+<span class="linenos"> 15</span><span class="kn">from</span> <span class="nn">django.db.models.constants</span> <span class="kn">import</span> <span class="n">LOOKUP_SEP</span>
+<span class="linenos"> 16</span><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;django.db.models&quot;</span><span class="p">)</span>
+<span class="linenos"> 19</span>
+<span class="linenos"> 20</span><span class="c1"># PathInfo is used when converting lookups (fk__somecol). The contents</span>
+<span class="linenos"> 21</span><span class="c1"># describe the relation in Model terms (model Options and Fields for both</span>
+<span class="linenos"> 22</span><span class="c1"># sides of the relation. The join_field is the field backing the relation.</span>
+<span class="linenos"> 23</span><span class="n">PathInfo</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
+<span class="linenos"> 24</span>    <span class="s2">&quot;PathInfo&quot;</span><span class="p">,</span>
+<span class="linenos"> 25</span>    <span class="s2">&quot;from_opts to_opts target_fields join_field m2m direct filtered_relation&quot;</span><span class="p">,</span>
+<span class="linenos"> 26</span><span class="p">)</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="k">def</span> <span class="nf">subclasses</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="linenos"> 30</span>    <span class="k">yield</span> <span class="bp">cls</span>
+<span class="linenos"> 31</span>    <span class="k">for</span> <span class="n">subclass</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">():</span>
+<span class="linenos"> 32</span>        <span class="k">yield from</span> <span class="n">subclasses</span><span class="p">(</span><span class="n">subclass</span><span class="p">)</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="k">class</span> <span class="nc">Q</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">Node</span><span class="p">):</span>
+<span class="linenos"> 36</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 37</span><span class="sd">    Encapsulate filters as objects that can then be combined logically (using</span>
+<span class="linenos"> 38</span><span class="sd">    `&amp;` and `|`).</span>
+<span class="linenos"> 39</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span>    <span class="c1"># Connection types</span>
+<span class="linenos"> 42</span>    <span class="n">AND</span> <span class="o">=</span> <span class="s2">&quot;AND&quot;</span>
+<span class="linenos"> 43</span>    <span class="n">OR</span> <span class="o">=</span> <span class="s2">&quot;OR&quot;</span>
+<span class="linenos"> 44</span>    <span class="n">XOR</span> <span class="o">=</span> <span class="s2">&quot;XOR&quot;</span>
+<span class="linenos"> 45</span>    <span class="n">default</span> <span class="o">=</span> <span class="n">AND</span>
+<span class="linenos"> 46</span>    <span class="n">conditional</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos"> 47</span>
+<span class="linenos"> 48</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">_connector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">_negated</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 49</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos"> 50</span>            <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">())],</span>
+<span class="linenos"> 51</span>            <span class="n">connector</span><span class="o">=</span><span class="n">_connector</span><span class="p">,</span>
+<span class="linenos"> 52</span>            <span class="n">negated</span><span class="o">=</span><span class="n">_negated</span><span class="p">,</span>
+<span class="linenos"> 53</span>        <span class="p">)</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span>    <span class="k">def</span> <span class="nf">_combine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">conn</span><span class="p">):</span>
+<span class="linenos"> 56</span>        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="s2">&quot;conditional&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+<span class="linenos"> 57</span>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="linenos"> 58</span>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">:</span>
+<span class="linenos"> 59</span>            <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos"> 60</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">other</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Q</span><span class="p">):</span>
+<span class="linenos"> 61</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span>        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">connector</span><span class="o">=</span><span class="n">conn</span><span class="p">)</span>
+<span class="linenos"> 64</span>        <span class="n">obj</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="linenos"> 65</span>        <span class="n">obj</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="linenos"> 66</span>        <span class="k">return</span> <span class="n">obj</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span>    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="linenos"> 69</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_combine</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">OR</span><span class="p">)</span>
+<span class="linenos"> 70</span>
+<span class="linenos"> 71</span>    <span class="k">def</span> <span class="fm">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="linenos"> 72</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_combine</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">AND</span><span class="p">)</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span>    <span class="k">def</span> <span class="fm">__xor__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="linenos"> 75</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_combine</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">XOR</span><span class="p">)</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span>    <span class="k">def</span> <span class="fm">__invert__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 78</span>        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos"> 79</span>        <span class="n">obj</span><span class="o">.</span><span class="n">negate</span><span class="p">()</span>
+<span class="linenos"> 80</span>        <span class="k">return</span> <span class="n">obj</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span>    <span class="k">def</span> <span class="nf">resolve_expression</span><span class="p">(</span>
+<span class="linenos"> 83</span>        <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allow_joins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reuse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">summarize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">for_save</span><span class="o">=</span><span class="kc">False</span>
+<span class="linenos"> 84</span>    <span class="p">):</span>
+<span class="linenos"> 85</span>        <span class="c1"># We must promote any new joins to left outer joins so that when Q is</span>
+<span class="linenos"> 86</span>        <span class="c1"># used as an expression, rows aren&#39;t filtered due to joins.</span>
+<span class="linenos"> 87</span>        <span class="n">clause</span><span class="p">,</span> <span class="n">joins</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">_add_q</span><span class="p">(</span>
+<span class="linenos"> 88</span>            <span class="bp">self</span><span class="p">,</span>
+<span class="linenos"> 89</span>            <span class="n">reuse</span><span class="p">,</span>
+<span class="linenos"> 90</span>            <span class="n">allow_joins</span><span class="o">=</span><span class="n">allow_joins</span><span class="p">,</span>
+<span class="linenos"> 91</span>            <span class="n">split_subq</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos"> 92</span>            <span class="n">check_filterable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos"> 93</span>            <span class="n">summarize</span><span class="o">=</span><span class="n">summarize</span><span class="p">,</span>
+<span class="linenos"> 94</span>        <span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="n">query</span><span class="o">.</span><span class="n">promote_joins</span><span class="p">(</span><span class="n">joins</span><span class="p">)</span>
+<span class="linenos"> 96</span>        <span class="k">return</span> <span class="n">clause</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span>    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 99</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">100</span><span class="sd">        Recursively yield this Q object and all subexpressions, in depth-first</span>
+<span class="linenos">101</span><span class="sd">        order.</span>
+<span class="linenos">102</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">103</span>        <span class="k">yield</span> <span class="bp">self</span>
+<span class="linenos">104</span>        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+<span class="linenos">105</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="linenos">106</span>                <span class="c1"># Use the lookup.</span>
+<span class="linenos">107</span>                <span class="n">child</span> <span class="o">=</span> <span class="n">child</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">108</span>            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="s2">&quot;flatten&quot;</span><span class="p">):</span>
+<span class="linenos">109</span>                <span class="k">yield from</span> <span class="n">child</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="linenos">110</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">111</span>                <span class="k">yield</span> <span class="n">child</span>
+<span class="linenos">112</span>
+<span class="linenos">113</span>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">against</span><span class="p">,</span> <span class="n">using</span><span class="o">=</span><span class="n">DEFAULT_DB_ALIAS</span><span class="p">):</span>
+<span class="linenos">114</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">115</span><span class="sd">        Do a database query to check if the expressions of the Q instance</span>
+<span class="linenos">116</span><span class="sd">        matches against the expressions.</span>
+<span class="linenos">117</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">118</span>        <span class="c1"># Avoid circular imports.</span>
+<span class="linenos">119</span>        <span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">BooleanField</span><span class="p">,</span> <span class="n">Value</span>
+<span class="linenos">120</span>        <span class="kn">from</span> <span class="nn">django.db.models.functions</span> <span class="kn">import</span> <span class="n">Coalesce</span>
+<span class="linenos">121</span>        <span class="kn">from</span> <span class="nn">django.db.models.sql</span> <span class="kn">import</span> <span class="n">Query</span>
+<span class="linenos">122</span>        <span class="kn">from</span> <span class="nn">django.db.models.sql.constants</span> <span class="kn">import</span> <span class="n">SINGLE</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>        <span class="n">query</span> <span class="o">=</span> <span class="n">Query</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="linenos">125</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">against</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">126</span>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;resolve_expression&quot;</span><span class="p">):</span>
+<span class="linenos">127</span>                <span class="n">value</span> <span class="o">=</span> <span class="n">Value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="linenos">128</span>            <span class="n">query</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">129</span>        <span class="n">query</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="n">Value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;_check&quot;</span><span class="p">)</span>
+<span class="linenos">130</span>        <span class="c1"># This will raise a FieldError if a field is missing in &quot;against&quot;.</span>
+<span class="linenos">131</span>        <span class="k">if</span> <span class="n">connections</span><span class="p">[</span><span class="n">using</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">supports_comparing_boolean_expr</span><span class="p">:</span>
+<span class="linenos">132</span>            <span class="n">query</span><span class="o">.</span><span class="n">add_q</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">Coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">output_field</span><span class="o">=</span><span class="n">BooleanField</span><span class="p">())))</span>
+<span class="linenos">133</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">134</span>            <span class="n">query</span><span class="o">.</span><span class="n">add_q</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos">135</span>        <span class="n">compiler</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">get_compiler</span><span class="p">(</span><span class="n">using</span><span class="o">=</span><span class="n">using</span><span class="p">)</span>
+<span class="linenos">136</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">137</span>            <span class="k">return</span> <span class="n">compiler</span><span class="o">.</span><span class="n">execute_sql</span><span class="p">(</span><span class="n">SINGLE</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="linenos">138</span>        <span class="k">except</span> <span class="n">DatabaseError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="linenos">139</span>            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Got a database error calling check() on </span><span class="si">%r</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="linenos">140</span>            <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">141</span>
+<span class="linenos">142</span>    <span class="k">def</span> <span class="nf">deconstruct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">143</span>        <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="linenos">144</span>        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;django.db.models.query_utils&quot;</span><span class="p">):</span>
+<span class="linenos">145</span>            <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;django.db.models.query_utils&quot;</span><span class="p">,</span> <span class="s2">&quot;django.db.models&quot;</span><span class="p">)</span>
+<span class="linenos">146</span>        <span class="n">args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">)</span>
+<span class="linenos">147</span>        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">148</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">connector</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">:</span>
+<span class="linenos">149</span>            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;_connector&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connector</span>
+<span class="linenos">150</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">negated</span><span class="p">:</span>
+<span class="linenos">151</span>            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;_negated&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">152</span>        <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span>
+<span class="linenos">153</span>
+<span class="linenos">154</span>
+<span class="linenos">155</span><span class="k">class</span> <span class="nc">DeferredAttribute</span><span class="p">:</span>
+<span class="linenos">156</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">157</span><span class="sd">    A wrapper for a deferred-loading field. When the value is read from this</span>
+<span class="linenos">158</span><span class="sd">    object the first time, the query is executed.</span>
+<span class="linenos">159</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">160</span>
+<span class="linenos">161</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="linenos">162</span>        <span class="bp">self</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="n">field</span>
+<span class="linenos">163</span>
+<span class="linenos">164</span>    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">165</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">166</span><span class="sd">        Retrieve and caches the value from the datastore on the first lookup.</span>
+<span class="linenos">167</span><span class="sd">        Return the cached value.</span>
+<span class="linenos">168</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">169</span>        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">170</span>            <span class="k">return</span> <span class="bp">self</span>
+<span class="linenos">171</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span>
+<span class="linenos">172</span>        <span class="n">field_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">attname</span>
+<span class="linenos">173</span>        <span class="k">if</span> <span class="n">field_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<span class="linenos">174</span>            <span class="c1"># Let&#39;s see if the field is part of the parent chain. If so we</span>
+<span class="linenos">175</span>            <span class="c1"># might be able to reuse the already loaded value. Refs #18343.</span>
+<span class="linenos">176</span>            <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_parent_chain</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+<span class="linenos">177</span>            <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">178</span>                <span class="n">instance</span><span class="o">.</span><span class="n">refresh_from_db</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="n">field_name</span><span class="p">])</span>
+<span class="linenos">179</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">180</span>                <span class="n">data</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+<span class="linenos">181</span>        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span>
+<span class="linenos">182</span>
+<span class="linenos">183</span>    <span class="k">def</span> <span class="nf">_check_parent_chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="linenos">184</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">185</span><span class="sd">        Check if the field value can be fetched from a parent field already</span>
+<span class="linenos">186</span><span class="sd">        loaded in the instance. This can be done if the to-be fetched</span>
+<span class="linenos">187</span><span class="sd">        field is a primary key field.</span>
+<span class="linenos">188</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">189</span>        <span class="n">opts</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">_meta</span>
+<span class="linenos">190</span>        <span class="n">link_field</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">get_ancestor_link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+<span class="linenos">191</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">primary_key</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">field</span> <span class="o">!=</span> <span class="n">link_field</span><span class="p">:</span>
+<span class="linenos">192</span>            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">link_field</span><span class="o">.</span><span class="n">attname</span><span class="p">)</span>
+<span class="linenos">193</span>        <span class="k">return</span> <span class="kc">None</span>
+<span class="linenos">194</span>
+<span class="linenos">195</span>
+<span class="linenos">196</span><span class="k">class</span> <span class="nc">class_or_instance_method</span><span class="p">:</span>
+<span class="linenos">197</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">198</span><span class="sd">    Hook used in RegisterLookupMixin to return partial functions depending on</span>
+<span class="linenos">199</span><span class="sd">    the caller type (instance or class of models.Field).</span>
+<span class="linenos">200</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">201</span>
+<span class="linenos">202</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">class_method</span><span class="p">,</span> <span class="n">instance_method</span><span class="p">):</span>
+<span class="linenos">203</span>        <span class="bp">self</span><span class="o">.</span><span class="n">class_method</span> <span class="o">=</span> <span class="n">class_method</span>
+<span class="linenos">204</span>        <span class="bp">self</span><span class="o">.</span><span class="n">instance_method</span> <span class="o">=</span> <span class="n">instance_method</span>
+<span class="linenos">205</span>
+<span class="linenos">206</span>    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">owner</span><span class="p">):</span>
+<span class="linenos">207</span>        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">208</span>            <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">class_method</span><span class="p">,</span> <span class="n">owner</span><span class="p">)</span>
+<span class="linenos">209</span>        <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instance_method</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+<span class="linenos">210</span>
+<span class="linenos">211</span>
+<span class="linenos">212</span><span class="k">class</span> <span class="nc">RegisterLookupMixin</span><span class="p">:</span>
+<span class="linenos">213</span>    <span class="k">def</span> <span class="nf">_get_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lookup_name</span><span class="p">):</span>
+<span class="linenos">214</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_lookups</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">lookup_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="linenos">215</span>
+<span class="linenos">216</span>    <span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="linenos">217</span>    <span class="k">def</span> <span class="nf">get_class_lookups</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="linenos">218</span>        <span class="n">class_lookups</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">219</span>            <span class="n">parent</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;class_lookups&quot;</span><span class="p">,</span> <span class="p">{})</span> <span class="k">for</span> <span class="n">parent</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmro</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+<span class="linenos">220</span>        <span class="p">]</span>
+<span class="linenos">221</span>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">merge_dicts</span><span class="p">(</span><span class="n">class_lookups</span><span class="p">)</span>
+<span class="linenos">222</span>
+<span class="linenos">223</span>    <span class="k">def</span> <span class="nf">get_instance_lookups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">224</span>        <span class="n">class_lookups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_class_lookups</span><span class="p">()</span>
+<span class="linenos">225</span>        <span class="k">if</span> <span class="n">instance_lookups</span> <span class="o">:=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;instance_lookups&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+<span class="linenos">226</span>            <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="n">class_lookups</span><span class="p">,</span> <span class="o">**</span><span class="n">instance_lookups</span><span class="p">}</span>
+<span class="linenos">227</span>        <span class="k">return</span> <span class="n">class_lookups</span>
+<span class="linenos">228</span>
+<span class="linenos">229</span>    <span class="n">get_lookups</span> <span class="o">=</span> <span class="n">class_or_instance_method</span><span class="p">(</span><span class="n">get_class_lookups</span><span class="p">,</span> <span class="n">get_instance_lookups</span><span class="p">)</span>
+<span class="linenos">230</span>    <span class="n">get_class_lookups</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">get_class_lookups</span><span class="p">)</span>
+<span class="linenos">231</span>
+<span class="linenos">232</span>    <span class="k">def</span> <span class="nf">get_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lookup_name</span><span class="p">):</span>
+<span class="linenos">233</span>        <span class="kn">from</span> <span class="nn">django.db.models.lookups</span> <span class="kn">import</span> <span class="n">Lookup</span>
+<span class="linenos">234</span>
+<span class="linenos">235</span>        <span class="n">found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_lookup</span><span class="p">(</span><span class="n">lookup_name</span><span class="p">)</span>
+<span class="linenos">236</span>        <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;output_field&quot;</span><span class="p">):</span>
+<span class="linenos">237</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_field</span><span class="o">.</span><span class="n">get_lookup</span><span class="p">(</span><span class="n">lookup_name</span><span class="p">)</span>
+<span class="linenos">238</span>        <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">Lookup</span><span class="p">):</span>
+<span class="linenos">239</span>            <span class="k">return</span> <span class="kc">None</span>
+<span class="linenos">240</span>        <span class="k">return</span> <span class="n">found</span>
+<span class="linenos">241</span>
+<span class="linenos">242</span>    <span class="k">def</span> <span class="nf">get_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lookup_name</span><span class="p">):</span>
+<span class="linenos">243</span>        <span class="kn">from</span> <span class="nn">django.db.models.lookups</span> <span class="kn">import</span> <span class="n">Transform</span>
+<span class="linenos">244</span>
+<span class="linenos">245</span>        <span class="n">found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_lookup</span><span class="p">(</span><span class="n">lookup_name</span><span class="p">)</span>
+<span class="linenos">246</span>        <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;output_field&quot;</span><span class="p">):</span>
+<span class="linenos">247</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_field</span><span class="o">.</span><span class="n">get_transform</span><span class="p">(</span><span class="n">lookup_name</span><span class="p">)</span>
+<span class="linenos">248</span>        <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">Transform</span><span class="p">):</span>
+<span class="linenos">249</span>            <span class="k">return</span> <span class="kc">None</span>
+<span class="linenos">250</span>        <span class="k">return</span> <span class="n">found</span>
+<span class="linenos">251</span>
+<span class="linenos">252</span>    <span class="nd">@staticmethod</span>
+<span class="linenos">253</span>    <span class="k">def</span> <span class="nf">merge_dicts</span><span class="p">(</span><span class="n">dicts</span><span class="p">):</span>
+<span class="linenos">254</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">255</span><span class="sd">        Merge dicts in reverse to preference the order of the original list. e.g.,</span>
+<span class="linenos">256</span><span class="sd">        merge_dicts([a, b]) will preference the keys in &#39;a&#39; over those in &#39;b&#39;.</span>
+<span class="linenos">257</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">258</span>        <span class="n">merged</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">259</span>        <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">dicts</span><span class="p">):</span>
+<span class="linenos">260</span>            <span class="n">merged</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="linenos">261</span>        <span class="k">return</span> <span class="n">merged</span>
+<span class="linenos">262</span>
+<span class="linenos">263</span>    <span class="nd">@classmethod</span>
+<span class="linenos">264</span>    <span class="k">def</span> <span class="nf">_clear_cached_class_lookups</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="linenos">265</span>        <span class="k">for</span> <span class="n">subclass</span> <span class="ow">in</span> <span class="n">subclasses</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="linenos">266</span>            <span class="n">subclass</span><span class="o">.</span><span class="n">get_class_lookups</span><span class="o">.</span><span class="n">cache_clear</span><span class="p">()</span>
+<span class="linenos">267</span>
+<span class="linenos">268</span>    <span class="k">def</span> <span class="nf">register_class_lookup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lookup</span><span class="p">,</span> <span class="n">lookup_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">269</span>        <span class="k">if</span> <span class="n">lookup_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">270</span>            <span class="n">lookup_name</span> <span class="o">=</span> <span class="n">lookup</span><span class="o">.</span><span class="n">lookup_name</span>
+<span class="linenos">271</span>        <span class="k">if</span> <span class="s2">&quot;class_lookups&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+<span class="linenos">272</span>            <span class="bp">cls</span><span class="o">.</span><span class="n">class_lookups</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">273</span>        <span class="bp">cls</span><span class="o">.</span><span class="n">class_lookups</span><span class="p">[</span><span class="n">lookup_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">lookup</span>
+<span class="linenos">274</span>        <span class="bp">cls</span><span class="o">.</span><span class="n">_clear_cached_class_lookups</span><span class="p">()</span>
+<span class="linenos">275</span>        <span class="k">return</span> <span class="n">lookup</span>
+<span class="linenos">276</span>
+<span class="linenos">277</span>    <span class="k">def</span> <span class="nf">register_instance_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lookup</span><span class="p">,</span> <span class="n">lookup_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">278</span>        <span class="k">if</span> <span class="n">lookup_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">279</span>            <span class="n">lookup_name</span> <span class="o">=</span> <span class="n">lookup</span><span class="o">.</span><span class="n">lookup_name</span>
+<span class="linenos">280</span>        <span class="k">if</span> <span class="s2">&quot;instance_lookups&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+<span class="linenos">281</span>            <span class="bp">self</span><span class="o">.</span><span class="n">instance_lookups</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">282</span>        <span class="bp">self</span><span class="o">.</span><span class="n">instance_lookups</span><span class="p">[</span><span class="n">lookup_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">lookup</span>
+<span class="linenos">283</span>        <span class="k">return</span> <span class="n">lookup</span>
+<span class="linenos">284</span>
+<span class="linenos">285</span>    <span class="n">register_lookup</span> <span class="o">=</span> <span class="n">class_or_instance_method</span><span class="p">(</span>
+<span class="linenos">286</span>        <span class="n">register_class_lookup</span><span class="p">,</span> <span class="n">register_instance_lookup</span>
+<span class="linenos">287</span>    <span class="p">)</span>
+<span class="linenos">288</span>    <span class="n">register_class_lookup</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">register_class_lookup</span><span class="p">)</span>
+<span class="linenos">289</span>
+<span class="linenos">290</span>    <span class="k">def</span> <span class="nf">_unregister_class_lookup</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lookup</span><span class="p">,</span> <span class="n">lookup_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">291</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">292</span><span class="sd">        Remove given lookup from cls lookups. For use in tests only as it&#39;s</span>
+<span class="linenos">293</span><span class="sd">        not thread-safe.</span>
+<span class="linenos">294</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">295</span>        <span class="k">if</span> <span class="n">lookup_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">296</span>            <span class="n">lookup_name</span> <span class="o">=</span> <span class="n">lookup</span><span class="o">.</span><span class="n">lookup_name</span>
+<span class="linenos">297</span>        <span class="k">del</span> <span class="bp">cls</span><span class="o">.</span><span class="n">class_lookups</span><span class="p">[</span><span class="n">lookup_name</span><span class="p">]</span>
+<span class="linenos">298</span>        <span class="bp">cls</span><span class="o">.</span><span class="n">_clear_cached_class_lookups</span><span class="p">()</span>
+<span class="linenos">299</span>
+<span class="linenos">300</span>    <span class="k">def</span> <span class="nf">_unregister_instance_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lookup</span><span class="p">,</span> <span class="n">lookup_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">301</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">302</span><span class="sd">        Remove given lookup from instance lookups. For use in tests only as</span>
+<span class="linenos">303</span><span class="sd">        it&#39;s not thread-safe.</span>
+<span class="linenos">304</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">305</span>        <span class="k">if</span> <span class="n">lookup_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">306</span>            <span class="n">lookup_name</span> <span class="o">=</span> <span class="n">lookup</span><span class="o">.</span><span class="n">lookup_name</span>
+<span class="linenos">307</span>        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance_lookups</span><span class="p">[</span><span class="n">lookup_name</span><span class="p">]</span>
+<span class="linenos">308</span>
+<span class="linenos">309</span>    <span class="n">_unregister_lookup</span> <span class="o">=</span> <span class="n">class_or_instance_method</span><span class="p">(</span>
+<span class="linenos">310</span>        <span class="n">_unregister_class_lookup</span><span class="p">,</span> <span class="n">_unregister_instance_lookup</span>
+<span class="linenos">311</span>    <span class="p">)</span>
+<span class="linenos">312</span>    <span class="n">_unregister_class_lookup</span> <span class="o">=</span> <span class="nb">classmethod</span><span class="p">(</span><span class="n">_unregister_class_lookup</span><span class="p">)</span>
+<span class="linenos">313</span>
+<span class="linenos">314</span>
+<span class="linenos">315</span><span class="k">def</span> <span class="nf">select_related_descend</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">restricted</span><span class="p">,</span> <span class="n">requested</span><span class="p">,</span> <span class="n">select_mask</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="linenos">316</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">317</span><span class="sd">    Return True if this field should be used to descend deeper for</span>
+<span class="linenos">318</span><span class="sd">    select_related() purposes. Used by both the query construction code</span>
+<span class="linenos">319</span><span class="sd">    (compiler.get_related_selections()) and the model instance creation code</span>
+<span class="linenos">320</span><span class="sd">    (compiler.klass_info).</span>
+<span class="linenos">321</span>
+<span class="linenos">322</span><span class="sd">    Arguments:</span>
+<span class="linenos">323</span><span class="sd">     * field - the field to be checked</span>
+<span class="linenos">324</span><span class="sd">     * restricted - a boolean field, indicating if the field list has been</span>
+<span class="linenos">325</span><span class="sd">       manually restricted using a requested clause)</span>
+<span class="linenos">326</span><span class="sd">     * requested - The select_related() dictionary.</span>
+<span class="linenos">327</span><span class="sd">     * select_mask - the dictionary of selected fields.</span>
+<span class="linenos">328</span><span class="sd">     * reverse - boolean, True if we are checking a reverse select related</span>
+<span class="linenos">329</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">330</span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">field</span><span class="o">.</span><span class="n">remote_field</span><span class="p">:</span>
+<span class="linenos">331</span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">332</span>    <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">parent_link</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">reverse</span><span class="p">:</span>
+<span class="linenos">333</span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">334</span>    <span class="k">if</span> <span class="n">restricted</span><span class="p">:</span>
+<span class="linenos">335</span>        <span class="k">if</span> <span class="n">reverse</span> <span class="ow">and</span> <span class="n">field</span><span class="o">.</span><span class="n">related_query_name</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">requested</span><span class="p">:</span>
+<span class="linenos">336</span>            <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">337</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">reverse</span> <span class="ow">and</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">requested</span><span class="p">:</span>
+<span class="linenos">338</span>            <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">339</span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">restricted</span> <span class="ow">and</span> <span class="n">field</span><span class="o">.</span><span class="n">null</span><span class="p">:</span>
+<span class="linenos">340</span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="linenos">341</span>    <span class="k">if</span> <span class="p">(</span>
+<span class="linenos">342</span>        <span class="n">restricted</span>
+<span class="linenos">343</span>        <span class="ow">and</span> <span class="n">select_mask</span>
+<span class="linenos">344</span>        <span class="ow">and</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">requested</span>
+<span class="linenos">345</span>        <span class="ow">and</span> <span class="n">field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">select_mask</span>
+<span class="linenos">346</span>    <span class="p">):</span>
+<span class="linenos">347</span>        <span class="k">raise</span> <span class="n">FieldError</span><span class="p">(</span>
+<span class="linenos">348</span>            <span class="sa">f</span><span class="s2">&quot;Field </span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">object_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> cannot be both &quot;</span>
+<span class="linenos">349</span>            <span class="s2">&quot;deferred and traversed using select_related at the same time.&quot;</span>
+<span class="linenos">350</span>        <span class="p">)</span>
+<span class="linenos">351</span>    <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">352</span>
+<span class="linenos">353</span>
+<span class="linenos">354</span><span class="k">def</span> <span class="nf">refs_expression</span><span class="p">(</span><span class="n">lookup_parts</span><span class="p">,</span> <span class="n">annotations</span><span class="p">):</span>
+<span class="linenos">355</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">356</span><span class="sd">    Check if the lookup_parts contains references to the given annotations set.</span>
+<span class="linenos">357</span><span class="sd">    Because the LOOKUP_SEP is contained in the default annotation names, check</span>
+<span class="linenos">358</span><span class="sd">    each prefix of the lookup_parts for a match.</span>
+<span class="linenos">359</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">360</span>    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lookup_parts</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">361</span>        <span class="n">level_n_lookup</span> <span class="o">=</span> <span class="n">LOOKUP_SEP</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lookup_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">])</span>
+<span class="linenos">362</span>        <span class="k">if</span> <span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">level_n_lookup</span><span class="p">):</span>
+<span class="linenos">363</span>            <span class="k">return</span> <span class="n">level_n_lookup</span><span class="p">,</span> <span class="n">lookup_parts</span><span class="p">[</span><span class="n">n</span><span class="p">:]</span>
+<span class="linenos">364</span>    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="p">()</span>
+<span class="linenos">365</span>
+<span class="linenos">366</span>
+<span class="linenos">367</span><span class="k">def</span> <span class="nf">check_rel_lookup_compatibility</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">target_opts</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<span class="linenos">368</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">369</span><span class="sd">    Check that self.model is compatible with target_opts. Compatibility</span>
+<span class="linenos">370</span><span class="sd">    is OK if:</span>
+<span class="linenos">371</span><span class="sd">      1) model and opts match (where proxy inheritance is removed)</span>
+<span class="linenos">372</span><span class="sd">      2) model is parent of opts&#39; model or the other way around</span>
+<span class="linenos">373</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">374</span>
+<span class="linenos">375</span>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">opts</span><span class="p">):</span>
+<span class="linenos">376</span>        <span class="k">return</span> <span class="p">(</span>
+<span class="linenos">377</span>            <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">concrete_model</span> <span class="o">==</span> <span class="n">opts</span><span class="o">.</span><span class="n">concrete_model</span>
+<span class="linenos">378</span>            <span class="ow">or</span> <span class="n">opts</span><span class="o">.</span><span class="n">concrete_model</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">get_parent_list</span><span class="p">()</span>
+<span class="linenos">379</span>            <span class="ow">or</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">get_parent_list</span><span class="p">()</span>
+<span class="linenos">380</span>        <span class="p">)</span>
+<span class="linenos">381</span>
+<span class="linenos">382</span>    <span class="c1"># If the field is a primary key, then doing a query against the field&#39;s</span>
+<span class="linenos">383</span>    <span class="c1"># model is ok, too. Consider the case:</span>
+<span class="linenos">384</span>    <span class="c1"># class Restaurant(models.Model):</span>
+<span class="linenos">385</span>    <span class="c1">#     place = OneToOneField(Place, primary_key=True):</span>
+<span class="linenos">386</span>    <span class="c1"># Restaurant.objects.filter(pk__in=Restaurant.objects.all()).</span>
+<span class="linenos">387</span>    <span class="c1"># If we didn&#39;t have the primary key check, then pk__in (== place__in) would</span>
+<span class="linenos">388</span>    <span class="c1"># give Place&#39;s opts as the target opts, but Restaurant isn&#39;t compatible</span>
+<span class="linenos">389</span>    <span class="c1"># with that. This logic applies only to primary keys, as when doing __in=qs,</span>
+<span class="linenos">390</span>    <span class="c1"># we are going to turn this into __in=qs.values(&#39;pk&#39;) later on.</span>
+<span class="linenos">391</span>    <span class="k">return</span> <span class="n">check</span><span class="p">(</span><span class="n">target_opts</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="linenos">392</span>        <span class="nb">getattr</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="s2">&quot;primary_key&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="n">check</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="p">)</span>
+<span class="linenos">393</span>    <span class="p">)</span>
+<span class="linenos">394</span>
+<span class="linenos">395</span>
+<span class="linenos">396</span><span class="k">class</span> <span class="nc">FilteredRelation</span><span class="p">:</span>
+<span class="linenos">397</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Specify custom filtering in the ON clause of SQL joins.&quot;&quot;&quot;</span>
+<span class="linenos">398</span>
+<span class="linenos">399</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relation_name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">Q</span><span class="p">()):</span>
+<span class="linenos">400</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">relation_name</span><span class="p">:</span>
+<span class="linenos">401</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;relation_name cannot be empty.&quot;</span><span class="p">)</span>
+<span class="linenos">402</span>        <span class="bp">self</span><span class="o">.</span><span class="n">relation_name</span> <span class="o">=</span> <span class="n">relation_name</span>
+<span class="linenos">403</span>        <span class="bp">self</span><span class="o">.</span><span class="n">alias</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">404</span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">Q</span><span class="p">):</span>
+<span class="linenos">405</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;condition argument must be a Q() instance.&quot;</span><span class="p">)</span>
+<span class="linenos">406</span>        <span class="bp">self</span><span class="o">.</span><span class="n">condition</span> <span class="o">=</span> <span class="n">condition</span>
+<span class="linenos">407</span>        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">408</span>
+<span class="linenos">409</span>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="linenos">410</span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+<span class="linenos">411</span>            <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="linenos">412</span>        <span class="k">return</span> <span class="p">(</span>
+<span class="linenos">413</span>            <span class="bp">self</span><span class="o">.</span><span class="n">relation_name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">relation_name</span>
+<span class="linenos">414</span>            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">alias</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">alias</span>
+<span class="linenos">415</span>            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">condition</span>
+<span class="linenos">416</span>        <span class="p">)</span>
+<span class="linenos">417</span>
+<span class="linenos">418</span>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">419</span>        <span class="n">clone</span> <span class="o">=</span> <span class="n">FilteredRelation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">relation_name</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">)</span>
+<span class="linenos">420</span>        <span class="n">clone</span><span class="o">.</span><span class="n">alias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alias</span>
+<span class="linenos">421</span>        <span class="n">clone</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">[:]</span>
+<span class="linenos">422</span>        <span class="k">return</span> <span class="n">clone</span>
+<span class="linenos">423</span>
+<span class="linenos">424</span>    <span class="k">def</span> <span class="nf">resolve_expression</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos">425</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">426</span><span class="sd">        QuerySet.annotate() only accepts expression-like arguments</span>
+<span class="linenos">427</span><span class="sd">        (with a resolve_expression() method).</span>
+<span class="linenos">428</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">429</span>        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;FilteredRelation.resolve_expression() is unused.&quot;</span><span class="p">)</span>
+<span class="linenos">430</span>
+<span class="linenos">431</span>    <span class="k">def</span> <span class="nf">as_sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compiler</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
+<span class="linenos">432</span>        <span class="c1"># Resolve the condition in Join.filtered_relation.</span>
+<span class="linenos">433</span>        <span class="n">query</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">query</span>
+<span class="linenos">434</span>        <span class="n">where</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">build_filtered_relation_q</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">reuse</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">))</span>
+<span class="linenos">435</span>        <span class="k">return</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">where</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, LECOMTE Thomas.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Construit avec le <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">Thème PyData Sphinx</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -149,6 +149,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -161,13 +168,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -287,6 +302,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -299,13 +321,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -389,71 +419,36 @@ document.write(`
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="README.html">Démarrage rapide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="README.html#resume"><em>Résumé</em></a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#developpement-local"><em>Développement local</em></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="README.html#prerequis">- Prérequis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#macos-linux">- macOS / Linux</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#windows">- Windows</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#variables-d-environnements"><em>Variables d’environnements</em></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="README.html#en-locale">- En locale</a></li>
-<li class="toctree-l3"><a class="reference internal" href="README.html#en-production">- En production</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#developpement-local"><em>Développement local</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#variables-d-environnements"><em>Variables d’environnements</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#technologies"><em>Technologies</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="README.html#conventions-de-nommage-et-de-codes"><em>Conventions de nommage et de codes :</em></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configuration_and_security.html">Configuration et sécurité</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="configuration_and_security.html#django"><em>Django</em></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuration_and_security.html#django-settings">Django settings:</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_and_security.html#django"><em>Django</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration_and_security.html#microsoft-azure"><em>Microsoft Azure</em></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Base de donnée</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_and_tests.html">Déploiement et tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment_and_tests.html#tag-de-l-image"><em>Tag de l’image</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_and_tests.html#tests"><em>Tests</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment_and_tests.html#resultats"><em>Résultats</em></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Base de donnée</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#sqlite3"><em>SQLite3</em></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#running"><em>Running</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#developpement-amelioration"><em>Developpement - Amélioration</em></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lettings.html">lettings package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings.admin">lettings.admin module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings.apps">lettings.apps module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings.models">lettings.models module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings.tests">lettings.tests module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings.urls">lettings.urls module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings.views">lettings.views module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lettings.html#module-lettings">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="oc_lettings_site.html">oc_lettings_site package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#subpackages">Subpackages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.apps">oc_lettings_site.apps module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.asgi">oc_lettings_site.asgi module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.settings">oc_lettings_site.settings module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.tests">oc_lettings_site.tests module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.urls">oc_lettings_site.urls module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.views">oc_lettings_site.views module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site.wsgi">oc_lettings_site.wsgi module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oc_lettings_site.html#module-oc_lettings_site">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="profiles.html">profiles package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#subpackages">Subpackages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles.admin">profiles.admin module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles.apps">profiles.apps module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles.models">profiles.models module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles.tests">profiles.tests module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles.urls">profiles.urls module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles.views">profiles.views module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="profiles.html#module-profiles">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="lettings.html">lettings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oc_lettings_site.html">oc_lettings_site package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html">profiles package</a></li>
 </ul>
 </li>
 </ul>

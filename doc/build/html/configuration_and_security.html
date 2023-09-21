@@ -46,7 +46,7 @@
     <link rel="icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Base de donnée" href="database.html" />
+    <link rel="next" title="Déploiement et tests" href="deployment_and_tests.html" />
     <link rel="prev" title="Démarrage rapide" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
@@ -150,6 +150,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -162,13 +169,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -288,6 +303,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -300,13 +322,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -512,8 +542,8 @@ et Vary pour la réutilisation du cache.</p>
 </section>
 <section id="sentry">
 <h4><a class="toc-backref" href="#id7" role="doc-backlink">Sentry:</a><a class="headerlink" href="#sentry" title="Link to this heading">#</a></h4>
-<p>« « Agissez sur les lignes de code brisées, les plantages et les appels d’API interrompus avec la seule
-plate-forme de surveillance des applications axée sur les développeurs, conçue pour vous donner des réponses, et non des indices. » »</p>
+<p>« Agissez sur les lignes de code brisées, les plantages et les appels d’API interrompus avec la seule
+plate-forme de surveillance des applications axée sur les développeurs, conçue pour vous donner des réponses, et non des indices. »</p>
 <p>Nous avons choisi Sentry comme outil de surveillance afin de garder notre application competitive dans le temps.
 (à insérer dans settings.py)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">profiles_sampler</span><span class="p">(</span><span class="n">sampling_context</span><span class="p">):</span>
@@ -546,21 +576,73 @@ plate-forme de surveillance des applications axée sur les développeurs, conçu
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Pour l’instant 100% des erreurs sont échantillonnés.
-Voir la documentation ci dessous afin d’obtenir le DSN, et autres configuration possible pour Django.
-<a class="reference external" href="https://docs.sentry.io/platforms/python/guides/django">Sentry Platform Django</a></p>
+<p>Pour l’instant 100% des erreurs sont échantillonnés.</p>
+<dl class="std envvar">
+<dt class="sig sig-object std" id="envvar-DSN">
+<span class="sig-name descname"><span class="pre">DSN</span></span><a class="headerlink" href="#envvar-DSN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p>A utiliser comme variable d’environnement.</p>
+<p>Voir la documentation ci dessous afin d’obtenir le DSN, et autres configuration possible pour Django.</p>
+<p><a class="reference external" href="https://docs.sentry.io/platforms/python/guides/django">Documentation officiel Sentry Platform Django</a></p>
 </section>
 <section id="gunicorn">
 <h4><a class="toc-backref" href="#id8" role="doc-backlink">Gunicorn</a><a class="headerlink" href="#gunicorn" title="Link to this heading">#</a></h4>
 <p>Déploiement de Django avec Gunicorn :</p>
 <p><a class="reference external" href="https://gunicorn.org/">Gunicorn</a> (« Green Unicorn ») est un serveur WSGI en pur Python pour UNIX. Il n’a aucune dépendance et peut être installé avec pip.
 Microsoft Azure conseil pour une meilleure compatibilité avec les applications en Python de le mettre en place, ainsi que Django</p>
+<p>La configuration se trouve dans le fichier <em>dockerfile</em>, situé à la racine du projet, comme ceci :</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Gunicorn s’exécute seulement sous un system UNIX.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CMD</span> <span class="n">gunicorn</span> <span class="o">--</span><span class="n">bind</span><span class="o">=</span><span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">8080</span> <span class="o">--</span><span class="n">timeout</span> <span class="mi">200</span> <span class="n">oc_lettings_site</span><span class="o">.</span><span class="n">wsgi</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://learn.microsoft.com/fr-fr/azure/app-service/configure-language-python#example-startup-commands">Exemple de commandes de démarrage, pour Python, avec Azure.</a></p>
 </section>
 </section>
 </section>
 <hr class="docutils" />
 <section id="microsoft-azure">
 <h2><a class="toc-backref" href="#id9" role="doc-backlink"><em>Microsoft Azure</em></a><a class="headerlink" href="#microsoft-azure" title="Link to this heading">#</a></h2>
+<p>Le site est déployé avec un minimum de sécurité, en HTTPS avec protocole TLS 1.2, le certificat est fournis automatiquement par Microsoft Azure.</p>
+<p>Variables “secrets” utilisé par GitHub actions :</p>
+<dl class="std envvar">
+<dt class="sig sig-object std" id="envvar-APP_NAME">
+<span class="sig-name descname"><span class="pre">APP_NAME</span></span><a class="headerlink" href="#envvar-APP_NAME" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p>nom de l’application</p></li>
+</ul>
+<dl class="std envvar">
+<dt class="sig sig-object std" id="envvar-RESOURCE_GROUP">
+<span class="sig-name descname"><span class="pre">RESOURCE_GROUP</span></span><a class="headerlink" href="#envvar-RESOURCE_GROUP" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p>nom du groupe de ressource utilisé pour la facturation</p></li>
+</ul>
+<dl class="std envvar">
+<dt class="sig sig-object std" id="envvar-AZUREAPPSERVICE_PUBLISHPROFILE_ORANGE">
+<span class="sig-name descname"><span class="pre">AZUREAPPSERVICE_PUBLISHPROFILE_ORANGE</span></span><a class="headerlink" href="#envvar-AZUREAPPSERVICE_PUBLISHPROFILE_ORANGE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p>contenu du profil de publication</p></li>
+</ul>
+<dl class="std envvar">
+<dt class="sig sig-object std" id="envvar-AZURE_CREDENTIALS">
+<span class="sig-name descname"><span class="pre">AZURE_CREDENTIALS</span></span><a class="headerlink" href="#envvar-AZURE_CREDENTIALS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<ul class="simple">
+<li><p>voir <a class="reference external" href="https://github.com/azure/login#github-action-for-azure-login">GitHub Action for Azure Login</a>.
+Permet de pouvoir relancer l’application via <em>Azure CLI</em>, afin que le déploiement soit bien effectif.</p></li>
+</ul>
+<img alt="Azure_App_main_page" class="align-center" src="_images/portal_azure_com.png" />
+<img alt="Azure_App_main_page" class="align-center" src="_images/Configuration_Azure_webb_app.png" />
 </section>
 </section>
 

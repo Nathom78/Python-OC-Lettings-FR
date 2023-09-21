@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>django.db.models.manager &#8212; Documentation Orange County Lettings </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/perso.css?v=9f767776" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../../_static/documentation_options.js?v=0ef26a9d"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/translations.js?v=d99ca74e"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/django/db/models/manager';</script>
+    <link rel="icon" href="../../../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Navigation du site">
+    Navigation du site
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../modules.html">
+                        Code
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Navigation du site">
+    Navigation du site
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../modules.html">
+                        Code
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../../_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Fils d'Ariane">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Fil d'Ariane">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Acceuil">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Code du module</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">django.db.models.manager</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Code source de django.db.models.manager</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="linenos">  3</span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="linenos">  4</span><span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">router</span>
+<span class="linenos">  7</span><span class="kn">from</span> <span class="nn">django.db.models.query</span> <span class="kn">import</span> <span class="n">QuerySet</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="k">class</span> <span class="nc">BaseManager</span><span class="p">:</span>
+<span class="linenos"> 11</span>    <span class="c1"># To retain order, track each time a Manager instance is created.</span>
+<span class="linenos"> 12</span>    <span class="n">creation_counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 13</span>
+<span class="linenos"> 14</span>    <span class="c1"># Set to True for the &#39;objects&#39; managers that are automatically created.</span>
+<span class="linenos"> 15</span>    <span class="n">auto_created</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos"> 16</span>
+<span class="linenos"> 17</span>    <span class="c1">#: If set to True the manager will be serialized into migrations and will</span>
+<span class="linenos"> 18</span>    <span class="c1">#: thus be available in e.g. RunPython operations.</span>
+<span class="linenos"> 19</span>    <span class="n">use_in_migrations</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos"> 20</span>
+<span class="linenos"> 21</span>    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 22</span>        <span class="c1"># Capture the arguments to make returning them trivial.</span>
+<span class="linenos"> 23</span>        <span class="n">obj</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+<span class="linenos"> 24</span>        <span class="n">obj</span><span class="o">.</span><span class="n">_constructor_args</span> <span class="o">=</span> <span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos"> 25</span>        <span class="k">return</span> <span class="n">obj</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 28</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 29</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_set_creation_counter</span><span class="p">()</span>
+<span class="linenos"> 30</span>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 31</span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 32</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 33</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_hints</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 36</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return &quot;app_label.model_label.manager_name&quot;.&quot;&quot;&quot;</span>
+<span class="linenos"> 37</span>        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span>    <span class="k">def</span> <span class="nf">__class_getitem__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 40</span>        <span class="k">return</span> <span class="bp">cls</span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span>    <span class="k">def</span> <span class="nf">deconstruct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 43</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 44</span><span class="sd">        Return a 5-tuple of the form (as_manager (True), manager_class,</span>
+<span class="linenos"> 45</span><span class="sd">        queryset_class, args, kwargs).</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span><span class="sd">        Raise a ValueError if the manager is dynamically generated.</span>
+<span class="linenos"> 48</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 49</span>        <span class="n">qs_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_queryset_class</span>
+<span class="linenos"> 50</span>        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_built_with_as_manager&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="linenos"> 51</span>            <span class="c1"># using MyQuerySet.as_manager()</span>
+<span class="linenos"> 52</span>            <span class="k">return</span> <span class="p">(</span>
+<span class="linenos"> 53</span>                <span class="kc">True</span><span class="p">,</span>  <span class="c1"># as_manager</span>
+<span class="linenos"> 54</span>                <span class="kc">None</span><span class="p">,</span>  <span class="c1"># manager_class</span>
+<span class="linenos"> 55</span>                <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">qs_class</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="n">qs_class</span><span class="o">.</span><span class="vm">__name__</span><span class="p">),</span>  <span class="c1"># qs_class</span>
+<span class="linenos"> 56</span>                <span class="kc">None</span><span class="p">,</span>  <span class="c1"># args</span>
+<span class="linenos"> 57</span>                <span class="kc">None</span><span class="p">,</span>  <span class="c1"># kwargs</span>
+<span class="linenos"> 58</span>            <span class="p">)</span>
+<span class="linenos"> 59</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 60</span>            <span class="n">module_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__module__</span>
+<span class="linenos"> 61</span>            <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="linenos"> 62</span>            <span class="c1"># Make sure it&#39;s actually there and not an inner class</span>
+<span class="linenos"> 63</span>            <span class="n">module</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+<span class="linenos"> 64</span>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="linenos"> 65</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="linenos"> 66</span>                    <span class="s2">&quot;Could not find manager </span><span class="si">%s</span><span class="s2"> in </span><span class="si">%s</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="linenos"> 67</span>                    <span class="s2">&quot;Please note that you need to inherit from managers you &quot;</span>
+<span class="linenos"> 68</span>                    <span class="s2">&quot;dynamically generated with &#39;from_queryset()&#39;.&quot;</span>
+<span class="linenos"> 69</span>                    <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">module_name</span><span class="p">)</span>
+<span class="linenos"> 70</span>                <span class="p">)</span>
+<span class="linenos"> 71</span>            <span class="k">return</span> <span class="p">(</span>
+<span class="linenos"> 72</span>                <span class="kc">False</span><span class="p">,</span>  <span class="c1"># as_manager</span>
+<span class="linenos"> 73</span>                <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span>  <span class="c1"># manager_class</span>
+<span class="linenos"> 74</span>                <span class="kc">None</span><span class="p">,</span>  <span class="c1"># qs_class</span>
+<span class="linenos"> 75</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_constructor_args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="c1"># args</span>
+<span class="linenos"> 76</span>                <span class="bp">self</span><span class="o">.</span><span class="n">_constructor_args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># kwargs</span>
+<span class="linenos"> 77</span>            <span class="p">)</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 80</span>        <span class="k">return</span> <span class="p">[]</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span>    <span class="nd">@classmethod</span>
+<span class="linenos"> 83</span>    <span class="k">def</span> <span class="nf">_get_queryset_methods</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">queryset_class</span><span class="p">):</span>
+<span class="linenos"> 84</span>        <span class="k">def</span> <span class="nf">create_method</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+<span class="linenos"> 85</span>            <span class="nd">@wraps</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+<span class="linenos"> 86</span>            <span class="k">def</span> <span class="nf">manager_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 87</span>                <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">(),</span> <span class="n">name</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span>            <span class="k">return</span> <span class="n">manager_method</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span>        <span class="n">new_methods</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos"> 92</span>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span>
+<span class="linenos"> 93</span>            <span class="n">queryset_class</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="n">inspect</span><span class="o">.</span><span class="n">isfunction</span>
+<span class="linenos"> 94</span>        <span class="p">):</span>
+<span class="linenos"> 95</span>            <span class="c1"># Only copy missing methods.</span>
+<span class="linenos"> 96</span>            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="linenos"> 97</span>                <span class="k">continue</span>
+<span class="linenos"> 98</span>            <span class="c1"># Only copy public methods or methods with the attribute</span>
+<span class="linenos"> 99</span>            <span class="c1"># queryset_only=False.</span>
+<span class="linenos">100</span>            <span class="n">queryset_only</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="s2">&quot;queryset_only&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="linenos">101</span>            <span class="k">if</span> <span class="n">queryset_only</span> <span class="ow">or</span> <span class="p">(</span><span class="n">queryset_only</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)):</span>
+<span class="linenos">102</span>                <span class="k">continue</span>
+<span class="linenos">103</span>            <span class="c1"># Copy the method onto the manager.</span>
+<span class="linenos">104</span>            <span class="n">new_methods</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_method</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+<span class="linenos">105</span>        <span class="k">return</span> <span class="n">new_methods</span>
+<span class="linenos">106</span>
+<span class="linenos">107</span>    <span class="nd">@classmethod</span>
+<span class="linenos">108</span>    <span class="k">def</span> <span class="nf">from_queryset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">queryset_class</span><span class="p">,</span> <span class="n">class_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">109</span>        <span class="k">if</span> <span class="n">class_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">110</span>            <span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">From</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">queryset_class</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="linenos">111</span>        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span>
+<span class="linenos">112</span>            <span class="n">class_name</span><span class="p">,</span>
+<span class="linenos">113</span>            <span class="p">(</span><span class="bp">cls</span><span class="p">,),</span>
+<span class="linenos">114</span>            <span class="p">{</span>
+<span class="linenos">115</span>                <span class="s2">&quot;_queryset_class&quot;</span><span class="p">:</span> <span class="n">queryset_class</span><span class="p">,</span>
+<span class="linenos">116</span>                <span class="o">**</span><span class="bp">cls</span><span class="o">.</span><span class="n">_get_queryset_methods</span><span class="p">(</span><span class="n">queryset_class</span><span class="p">),</span>
+<span class="linenos">117</span>            <span class="p">},</span>
+<span class="linenos">118</span>        <span class="p">)</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span>    <span class="k">def</span> <span class="nf">contribute_to_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="linenos">121</span>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="n">name</span>
+<span class="linenos">122</span>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">cls</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>        <span class="nb">setattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ManagerDescriptor</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span>        <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">add_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos">127</span>
+<span class="linenos">128</span>    <span class="k">def</span> <span class="nf">_set_creation_counter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">129</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">130</span><span class="sd">        Set the creation counter value for this instance and increment the</span>
+<span class="linenos">131</span><span class="sd">        class-level copy.</span>
+<span class="linenos">132</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">133</span>        <span class="bp">self</span><span class="o">.</span><span class="n">creation_counter</span> <span class="o">=</span> <span class="n">BaseManager</span><span class="o">.</span><span class="n">creation_counter</span>
+<span class="linenos">134</span>        <span class="n">BaseManager</span><span class="o">.</span><span class="n">creation_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">135</span>
+<span class="linenos">136</span>    <span class="k">def</span> <span class="nf">db_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hints</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">137</span>        <span class="n">obj</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos">138</span>        <span class="n">obj</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">using</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span>
+<span class="linenos">139</span>        <span class="n">obj</span><span class="o">.</span><span class="n">_hints</span> <span class="o">=</span> <span class="n">hints</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hints</span>
+<span class="linenos">140</span>        <span class="k">return</span> <span class="n">obj</span>
+<span class="linenos">141</span>
+<span class="linenos">142</span>    <span class="nd">@property</span>
+<span class="linenos">143</span>    <span class="k">def</span> <span class="nf">db</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">144</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="ow">or</span> <span class="n">router</span><span class="o">.</span><span class="n">db_for_read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_hints</span><span class="p">)</span>
+<span class="linenos">145</span>
+<span class="linenos">146</span>    <span class="c1">#######################</span>
+<span class="linenos">147</span>    <span class="c1"># PROXIES TO QUERYSET #</span>
+<span class="linenos">148</span>    <span class="c1">#######################</span>
+<span class="linenos">149</span>
+<span class="linenos">150</span>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">151</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">152</span><span class="sd">        Return a new QuerySet object. Subclasses can override this method to</span>
+<span class="linenos">153</span><span class="sd">        customize the behavior of the Manager.</span>
+<span class="linenos">154</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">155</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_queryset_class</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">using</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="p">,</span> <span class="n">hints</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_hints</span><span class="p">)</span>
+<span class="linenos">156</span>
+<span class="linenos">157</span>    <span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">158</span>        <span class="c1"># We can&#39;t proxy this method through the `QuerySet` like we do for the</span>
+<span class="linenos">159</span>        <span class="c1"># rest of the `QuerySet` methods. This is because `QuerySet.all()`</span>
+<span class="linenos">160</span>        <span class="c1"># works by creating a &quot;copy&quot; of the current queryset and in making said</span>
+<span class="linenos">161</span>        <span class="c1"># copy, all the cached `prefetch_related` lookups are lost. See the</span>
+<span class="linenos">162</span>        <span class="c1"># implementation of `RelatedManager.get_queryset()` for a better</span>
+<span class="linenos">163</span>        <span class="c1"># understanding of how this comes into play.</span>
+<span class="linenos">164</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span>
+<span class="linenos">165</span>
+<span class="linenos">166</span>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="linenos">167</span>        <span class="k">return</span> <span class="p">(</span>
+<span class="linenos">168</span>            <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="linenos">169</span>            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor_args</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_constructor_args</span>
+<span class="linenos">170</span>        <span class="p">)</span>
+<span class="linenos">171</span>
+<span class="linenos">172</span>    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">173</span>        <span class="k">return</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="linenos">174</span>
+<span class="linenos">175</span>
+<span class="linenos">176</span><span class="k">class</span> <span class="nc">Manager</span><span class="p">(</span><span class="n">BaseManager</span><span class="o">.</span><span class="n">from_queryset</span><span class="p">(</span><span class="n">QuerySet</span><span class="p">)):</span>
+<span class="linenos">177</span>    <span class="k">pass</span>
+<span class="linenos">178</span>
+<span class="linenos">179</span>
+<span class="linenos">180</span><span class="k">class</span> <span class="nc">ManagerDescriptor</span><span class="p">:</span>
+<span class="linenos">181</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">):</span>
+<span class="linenos">182</span>        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">manager</span>
+<span class="linenos">183</span>
+<span class="linenos">184</span>    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">185</span>        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">186</span>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="linenos">187</span>                <span class="s2">&quot;Manager isn&#39;t accessible via </span><span class="si">%s</span><span class="s2"> instances&quot;</span> <span class="o">%</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="linenos">188</span>            <span class="p">)</span>
+<span class="linenos">189</span>
+<span class="linenos">190</span>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">abstract</span><span class="p">:</span>
+<span class="linenos">191</span>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="linenos">192</span>                <span class="s2">&quot;Manager isn&#39;t available; </span><span class="si">%s</span><span class="s2"> is abstract&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">object_name</span><span class="p">,)</span>
+<span class="linenos">193</span>            <span class="p">)</span>
+<span class="linenos">194</span>
+<span class="linenos">195</span>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">swapped</span><span class="p">:</span>
+<span class="linenos">196</span>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="linenos">197</span>                <span class="s2">&quot;Manager isn&#39;t available; &#39;</span><span class="si">%s</span><span class="s2">&#39; has been swapped for &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
+<span class="linenos">198</span>                <span class="o">%</span> <span class="p">(</span>
+<span class="linenos">199</span>                    <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">label</span><span class="p">,</span>
+<span class="linenos">200</span>                    <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">swapped</span><span class="p">,</span>
+<span class="linenos">201</span>                <span class="p">)</span>
+<span class="linenos">202</span>            <span class="p">)</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">managers_map</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+<span class="linenos">205</span>
+<span class="linenos">206</span>
+<span class="linenos">207</span><span class="k">class</span> <span class="nc">EmptyManager</span><span class="p">(</span><span class="n">Manager</span><span class="p">):</span>
+<span class="linenos">208</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="linenos">209</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos">210</span>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+<span class="linenos">211</span>
+<span class="linenos">212</span>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">213</span>        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, LECOMTE Thomas.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Construit avec le <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">Thème PyData Sphinx</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

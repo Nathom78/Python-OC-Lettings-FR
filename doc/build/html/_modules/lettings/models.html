@@ -147,6 +147,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../database.html">
                         Base de donnée
                       </a>
@@ -159,13 +166,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -281,6 +296,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../database.html">
                         Base de donnée
                       </a>
@@ -293,13 +315,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -411,29 +441,65 @@ document.write(`
 <div class="viewcode-block" id="Address">
 <a class="viewcode-back" href="../../lettings.html#lettings.models.Address">[docs]</a>
 <span class="linenos"> 5</span><span class="k">class</span> <span class="nc">Address</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<span class="linenos"> 6</span>    <span class="n">number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">9999</span><span class="p">)])</span>
-<span class="linenos"> 7</span>    <span class="n">street</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
-<span class="linenos"> 8</span>    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
-<span class="linenos"> 9</span>    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MinLengthValidator</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
-<span class="linenos">10</span>    <span class="n">zip_code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">99999</span><span class="p">)])</span>
-<span class="linenos">11</span>    <span class="n">country_iso_code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MinLengthValidator</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">14</span>        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">street</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 7</span><span class="sd">    Modèle représentant une adresse.</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="sd">    Attributes:</span>
+<span class="linenos">10</span><span class="sd">        number (PositiveIntegerField): Le numéro de l&#39;adresse (entre 1 et 9999).</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="sd">        street (CharField): Le nom de la rue (max 64 caractères).</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="sd">        city (CharField): Le nom de la ville (max 64 caractères).</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
-<span class="linenos">17</span>        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s2">&quot;Addresses&quot;</span></div>
-
-<span class="linenos">18</span>
+<span class="linenos">16</span><span class="sd">        state (CharField): Le code d&#39;État ou de province (2 caractères min).</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="sd">        zip_code (PositiveIntegerField): Le code postal (entre 1 et 99999).</span>
 <span class="linenos">19</span>
+<span class="linenos">20</span><span class="sd">        country_iso_code (CharField): Le code ISO du pays (3 caractères min).</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="sd">    Methods:</span>
+<span class="linenos">23</span><span class="sd">        __str__: Retourne une représentation sous forme</span>
+<span class="linenos">24</span><span class="sd">            de chaîne de caractères de l&#39;adresse.</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="sd">    Meta:</span>
+<span class="linenos">27</span><span class="sd">        verbose_name_plural: Nom au pluriel utilisé dans l&#39;administration.</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">30</span>    <span class="n">number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">9999</span><span class="p">)])</span>
+<span class="linenos">31</span>    <span class="n">street</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<span class="linenos">32</span>    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<span class="linenos">33</span>    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MinLengthValidator</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
+<span class="linenos">34</span>    <span class="n">zip_code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">99999</span><span class="p">)])</span>
+<span class="linenos">35</span>    <span class="n">country_iso_code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MinLengthValidator</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">38</span>        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">street</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<span class="linenos">41</span>        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s2">&quot;Addresses&quot;</span></div>
+
+<span class="linenos">42</span>
+<span class="linenos">43</span>
 <div class="viewcode-block" id="Letting">
 <a class="viewcode-back" href="../../lettings.html#lettings.models.Letting">[docs]</a>
-<span class="linenos">20</span><span class="k">class</span> <span class="nc">Letting</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<span class="linenos">21</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
-<span class="linenos">22</span>    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">25</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span></div>
+<span class="linenos">44</span><span class="k">class</span> <span class="nc">Letting</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="linenos">45</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">46</span><span class="sd">    Modèle représentant une location.</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="sd">    Attributes:</span>
+<span class="linenos">49</span><span class="sd">        title (CharField): Le titre de la location (max 256 caractères).</span>
+<span class="linenos">50</span>
+<span class="linenos">51</span><span class="sd">        address (OneToOneField): L&#39;adresse de la location (relation un-à-un avec le modèle Address).</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="sd">    Methods:</span>
+<span class="linenos">54</span><span class="sd">        __str__: Retourne une représentation sous forme de chaîne de caractères de la location.</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">57</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+<span class="linenos">58</span>    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">61</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span></div>
 
 </pre></div>
 

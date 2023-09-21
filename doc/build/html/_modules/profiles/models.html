@@ -147,6 +147,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../database.html">
                         Base de donnée
                       </a>
@@ -159,13 +166,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -281,6 +296,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../database.html">
                         Base de donnée
                       </a>
@@ -293,13 +315,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -411,11 +441,24 @@ document.write(`
 <div class="viewcode-block" id="Profile">
 <a class="viewcode-back" href="../../profiles.html#profiles.models.Profile">[docs]</a>
 <span class="linenos"> 5</span><span class="k">class</span> <span class="nc">Profile</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<span class="linenos"> 6</span>    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
-<span class="linenos"> 7</span>    <span class="n">favorite_city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 7</span><span class="sd">    Modèle représentant un profil utilisateur.</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">10</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span></div>
+<span class="linenos"> 9</span><span class="sd">    Attributes:</span>
+<span class="linenos">10</span><span class="sd">        user (OneToOneField): La relation un-à-un avec le modèle User</span>
+<span class="linenos">11</span><span class="sd">            pour lier le profil à un utilisateur.</span>
+<span class="linenos">12</span><span class="sd">        favorite_city (CharField): La ville préférée de l&#39;utilisateur</span>
+<span class="linenos">13</span><span class="sd">            (max 64 caractères, facultatif).</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="sd">    Methods:</span>
+<span class="linenos">16</span><span class="sd">        __str__: Retourne une représentation sous forme</span>
+<span class="linenos">17</span><span class="sd">            de chaîne de caractères du profil.</span>
+<span class="linenos">18</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">19</span>    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="n">favorite_city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">23</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span></div>
 
 </pre></div>
 

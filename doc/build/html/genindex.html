@@ -147,6 +147,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -159,13 +166,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -281,6 +296,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -293,13 +315,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -682,13 +712,13 @@ document.write(`
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="profiles.html#profiles.models.Profile">Profile (classe dans profiles.models)</a>
+      <li><a href="database.html#profiles.models.Profile">Profile (classe dans profiles.models)</a>, <a href="profiles.html#profiles.models.Profile">[1]</a>
 </li>
       <li><a href="profiles.html#profiles.views.profile">profile() (dans le module profiles.views)</a>
 </li>
-      <li><a href="profiles.html#profiles.models.Profile.DoesNotExist">Profile.DoesNotExist</a>
+      <li><a href="database.html#profiles.models.Profile.DoesNotExist">Profile.DoesNotExist</a>, <a href="profiles.html#profiles.models.Profile.DoesNotExist">[1]</a>
 </li>
-      <li><a href="profiles.html#profiles.models.Profile.MultipleObjectsReturned">Profile.MultipleObjectsReturned</a>
+      <li><a href="database.html#profiles.models.Profile.MultipleObjectsReturned">Profile.MultipleObjectsReturned</a>, <a href="profiles.html#profiles.models.Profile.MultipleObjectsReturned">[1]</a>
 </li>
       <li>
     profiles
@@ -781,10 +811,10 @@ document.write(`
 </li>
       <li><a href="lettings.html#lettings.tests.test_lettings_letting_view">test_lettings_letting_view() (dans le module lettings.tests)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="profiles.html#profiles.tests.test_profile_model">test_profile_model() (dans le module profiles.tests)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="oc_lettings_site.html#oc_lettings_site.tests.test_profiles_index_url">test_profiles_index_url() (dans le module oc_lettings_site.tests)</a>
 
       <ul>
@@ -797,9 +827,15 @@ document.write(`
 </li>
       <li><a href="profiles.html#profiles.tests.test_profiles_profile_view">test_profiles_profile_view() (dans le module profiles.tests)</a>
 </li>
+      <li><a href="oc_lettings_site.html#oc_lettings_site.tests.test_trigger_error_url_resolves">test_trigger_error_url_resolves() (dans le module oc_lettings_site.tests)</a>
+</li>
+      <li><a href="oc_lettings_site.html#oc_lettings_site.tests.test_trigger_error_view">test_trigger_error_view() (dans le module oc_lettings_site.tests)</a>
+</li>
       <li><a href="lettings.html#lettings.tests.TestModels">TestModels (classe dans lettings.tests)</a>
 </li>
       <li><a href="lettings.html#lettings.models.Letting.title">title (attribut lettings.models.Letting)</a>
+</li>
+      <li><a href="oc_lettings_site.html#oc_lettings_site.views.trigger_error">trigger_error() (dans le module oc_lettings_site.views)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -823,7 +859,17 @@ document.write(`
     variable d&#39;environnement
 
       <ul>
+        <li><a href="configuration_and_security.html#envvar-APP_NAME">APP_NAME</a>
+</li>
+        <li><a href="configuration_and_security.html#envvar-AZURE_CREDENTIALS">AZURE_CREDENTIALS</a>
+</li>
+        <li><a href="configuration_and_security.html#envvar-AZUREAPPSERVICE_PUBLISHPROFILE_ORANGE">AZUREAPPSERVICE_PUBLISHPROFILE_ORANGE</a>
+</li>
         <li><a href="configuration_and_security.html#envvar-DEBUG">DEBUG</a>
+</li>
+        <li><a href="configuration_and_security.html#envvar-DSN">DSN</a>
+</li>
+        <li><a href="configuration_and_security.html#envvar-RESOURCE_GROUP">RESOURCE_GROUP</a>
 </li>
         <li><a href="configuration_and_security.html#envvar-SECRET_KEY">SECRET_KEY</a>
 </li>

@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>_pytest.mark.structures &#8212; Documentation Orange County Lettings </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/perso.css?v=9f767776" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../../../_static/documentation_options.js?v=0ef26a9d"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/translations.js?v=d99ca74e"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/_pytest/mark/structures';</script>
+    <link rel="icon" href="../../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Navigation du site">
+    Navigation du site
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../modules.html">
+                        Code
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Navigation du site">
+    Navigation du site
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../README.html">
+                        Démarrage rapide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../configuration_and_security.html">
+                        Configuration et sécurité
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../database.html">
+                        Base de donnée
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../modules.html">
+                        Code
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Nathom78/Python-OC-Lettings-FR" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://orange-county-lettings.azurewebsites.net/" title="Azure site" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/Microsoft-Azure.png" class="icon-link-image" alt="Azure site"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Fils d'Ariane">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Fil d'Ariane">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Acceuil">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Code du module</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">_pytest.mark.structures</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Code source de _pytest.mark.structures</h1><div class="highlight"><pre>
+<span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">collections.abc</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">dataclasses</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos">  5</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="linenos">  6</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="linenos">  7</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Collection</span>
+<span class="linenos">  8</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
+<span class="linenos">  9</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span>
+<span class="linenos"> 10</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="linenos"> 11</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Mapping</span>
+<span class="linenos"> 12</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">MutableMapping</span>
+<span class="linenos"> 13</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+<span class="linenos"> 14</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="linenos"> 15</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">overload</span>
+<span class="linenos"> 16</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span>
+<span class="linenos"> 17</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Set</span>
+<span class="linenos"> 18</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="linenos"> 19</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
+<span class="linenos"> 20</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="linenos"> 21</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypeVar</span>
+<span class="linenos"> 22</span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="linenos"> 23</span>
+<span class="linenos"> 24</span><span class="kn">from</span> <span class="nn">.._code</span> <span class="kn">import</span> <span class="n">getfslineno</span>
+<span class="linenos"> 25</span><span class="kn">from</span> <span class="nn">..compat</span> <span class="kn">import</span> <span class="n">ascii_escaped</span>
+<span class="linenos"> 26</span><span class="kn">from</span> <span class="nn">..compat</span> <span class="kn">import</span> <span class="n">final</span>
+<span class="linenos"> 27</span><span class="kn">from</span> <span class="nn">..compat</span> <span class="kn">import</span> <span class="n">NOTSET</span>
+<span class="linenos"> 28</span><span class="kn">from</span> <span class="nn">..compat</span> <span class="kn">import</span> <span class="n">NotSetType</span>
+<span class="linenos"> 29</span><span class="kn">from</span> <span class="nn">_pytest.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="linenos"> 30</span><span class="kn">from</span> <span class="nn">_pytest.deprecated</span> <span class="kn">import</span> <span class="n">check_ispytest</span>
+<span class="linenos"> 31</span><span class="kn">from</span> <span class="nn">_pytest.outcomes</span> <span class="kn">import</span> <span class="n">fail</span>
+<span class="linenos"> 32</span><span class="kn">from</span> <span class="nn">_pytest.warning_types</span> <span class="kn">import</span> <span class="n">PytestUnknownMarkWarning</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="linenos"> 35</span>    <span class="kn">from</span> <span class="nn">..nodes</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="linenos"> 36</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="n">EMPTY_PARAMETERSET_OPTION</span> <span class="o">=</span> <span class="s2">&quot;empty_parameter_set_mark&quot;</span>
+<span class="linenos"> 39</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="k">def</span> <span class="nf">istestfunc</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos"> 42</span>    <span class="k">return</span> <span class="nb">callable</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;__name__&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;lambda&gt;&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;&lt;lambda&gt;&quot;</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span><span class="k">def</span> <span class="nf">get_empty_parameterset_mark</span><span class="p">(</span>
+<span class="linenos"> 46</span>    <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">,</span> <span class="n">argnames</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">func</span>
+<span class="linenos"> 47</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MarkDecorator&quot;</span><span class="p">:</span>
+<span class="linenos"> 48</span>    <span class="kn">from</span> <span class="nn">..nodes</span> <span class="kn">import</span> <span class="n">Collector</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>    <span class="n">fs</span><span class="p">,</span> <span class="n">lineno</span> <span class="o">=</span> <span class="n">getfslineno</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos"> 51</span>    <span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;got empty parameter set </span><span class="si">%r</span><span class="s2">, function </span><span class="si">%s</span><span class="s2"> at </span><span class="si">%s</span><span class="s2">:</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="linenos"> 52</span>        <span class="n">argnames</span><span class="p">,</span>
+<span class="linenos"> 53</span>        <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+<span class="linenos"> 54</span>        <span class="n">fs</span><span class="p">,</span>
+<span class="linenos"> 55</span>        <span class="n">lineno</span><span class="p">,</span>
+<span class="linenos"> 56</span>    <span class="p">)</span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span>    <span class="n">requested_mark</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">getini</span><span class="p">(</span><span class="n">EMPTY_PARAMETERSET_OPTION</span><span class="p">)</span>
+<span class="linenos"> 59</span>    <span class="k">if</span> <span class="n">requested_mark</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;skip&quot;</span><span class="p">):</span>
+<span class="linenos"> 60</span>        <span class="n">mark</span> <span class="o">=</span> <span class="n">MARK_GEN</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
+<span class="linenos"> 61</span>    <span class="k">elif</span> <span class="n">requested_mark</span> <span class="o">==</span> <span class="s2">&quot;xfail&quot;</span><span class="p">:</span>
+<span class="linenos"> 62</span>        <span class="n">mark</span> <span class="o">=</span> <span class="n">MARK_GEN</span><span class="o">.</span><span class="n">xfail</span><span class="p">(</span><span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span> <span class="n">run</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos"> 63</span>    <span class="k">elif</span> <span class="n">requested_mark</span> <span class="o">==</span> <span class="s2">&quot;fail_at_collect&quot;</span><span class="p">:</span>
+<span class="linenos"> 64</span>        <span class="n">f_name</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="linenos"> 65</span>        <span class="n">_</span><span class="p">,</span> <span class="n">lineno</span> <span class="o">=</span> <span class="n">getfslineno</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos"> 66</span>        <span class="k">raise</span> <span class="n">Collector</span><span class="o">.</span><span class="n">CollectError</span><span class="p">(</span>
+<span class="linenos"> 67</span>            <span class="s2">&quot;Empty parameter set in &#39;</span><span class="si">%s</span><span class="s2">&#39; at line </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f_name</span><span class="p">,</span> <span class="n">lineno</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 68</span>        <span class="p">)</span>
+<span class="linenos"> 69</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 70</span>        <span class="k">raise</span> <span class="ne">LookupError</span><span class="p">(</span><span class="n">requested_mark</span><span class="p">)</span>
+<span class="linenos"> 71</span>    <span class="k">return</span> <span class="n">mark</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span><span class="k">class</span> <span class="nc">ParameterSet</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="linenos"> 75</span>    <span class="n">values</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">object</span><span class="p">,</span> <span class="n">NotSetType</span><span class="p">]]</span>
+<span class="linenos"> 76</span>    <span class="n">marks</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;MarkDecorator&quot;</span><span class="p">,</span> <span class="s2">&quot;Mark&quot;</span><span class="p">]]</span>
+<span class="linenos"> 77</span>    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span>    <span class="nd">@classmethod</span>
+<span class="linenos"> 80</span>    <span class="k">def</span> <span class="nf">param</span><span class="p">(</span>
+<span class="linenos"> 81</span>        <span class="bp">cls</span><span class="p">,</span>
+<span class="linenos"> 82</span>        <span class="o">*</span><span class="n">values</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
+<span class="linenos"> 83</span>        <span class="n">marks</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;MarkDecorator&quot;</span><span class="p">,</span> <span class="n">Collection</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;MarkDecorator&quot;</span><span class="p">,</span> <span class="s2">&quot;Mark&quot;</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">(),</span>
+<span class="linenos"> 84</span>        <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos"> 85</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterSet&quot;</span><span class="p">:</span>
+<span class="linenos"> 86</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos"> 87</span>            <span class="n">marks</span> <span class="o">=</span> <span class="p">(</span><span class="n">marks</span><span class="p">,)</span>
+<span class="linenos"> 88</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 89</span>            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Collection</span><span class="p">)</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span>        <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 92</span>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos"> 93</span>                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected id to be a string, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">id</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 94</span>            <span class="nb">id</span> <span class="o">=</span> <span class="n">ascii_escaped</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">marks</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>    <span class="nd">@classmethod</span>
+<span class="linenos"> 98</span>    <span class="k">def</span> <span class="nf">extract_from</span><span class="p">(</span>
+<span class="linenos"> 99</span>        <span class="bp">cls</span><span class="p">,</span>
+<span class="linenos">100</span>        <span class="n">parameterset</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;ParameterSet&quot;</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">],</span> <span class="nb">object</span><span class="p">],</span>
+<span class="linenos">101</span>        <span class="n">force_tuple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos">102</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterSet&quot;</span><span class="p">:</span>
+<span class="linenos">103</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract from an object or objects.</span>
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="sd">        :param parameterset:</span>
+<span class="linenos">106</span><span class="sd">            A legacy style parameterset that may or may not be a tuple,</span>
+<span class="linenos">107</span><span class="sd">            and may or may not be wrapped into a mess of mark objects.</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="sd">        :param force_tuple:</span>
+<span class="linenos">110</span><span class="sd">            Enforce tuple wrapping so single argument tuple values</span>
+<span class="linenos">111</span><span class="sd">            don&#39;t get decomposed and break tests.</span>
+<span class="linenos">112</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameterset</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+<span class="linenos">115</span>            <span class="k">return</span> <span class="n">parameterset</span>
+<span class="linenos">116</span>        <span class="k">if</span> <span class="n">force_tuple</span><span class="p">:</span>
+<span class="linenos">117</span>            <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">parameterset</span><span class="p">)</span>
+<span class="linenos">118</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">119</span>            <span class="c1"># TODO: Refactor to fix this type-ignore. Currently the following</span>
+<span class="linenos">120</span>            <span class="c1"># passes type-checking but crashes:</span>
+<span class="linenos">121</span>            <span class="c1">#</span>
+<span class="linenos">122</span>            <span class="c1">#   @pytest.mark.parametrize((&#39;x&#39;, &#39;y&#39;), [1, 2])</span>
+<span class="linenos">123</span>            <span class="c1">#   def test_foo(x, y): pass</span>
+<span class="linenos">124</span>            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">parameterset</span><span class="p">,</span> <span class="n">marks</span><span class="o">=</span><span class="p">[],</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span>    <span class="nd">@staticmethod</span>
+<span class="linenos">127</span>    <span class="k">def</span> <span class="nf">_parse_parametrize_args</span><span class="p">(</span>
+<span class="linenos">128</span>        <span class="n">argnames</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="linenos">129</span>        <span class="n">argvalues</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;ParameterSet&quot;</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">],</span> <span class="nb">object</span><span class="p">]],</span>
+<span class="linenos">130</span>        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="linenos">131</span>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="linenos">132</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]:</span>
+<span class="linenos">133</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">argnames</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos">134</span>            <span class="n">argnames</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">argnames</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+<span class="linenos">135</span>            <span class="n">force_tuple</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">argnames</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="linenos">136</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">137</span>            <span class="n">force_tuple</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos">138</span>        <span class="k">return</span> <span class="n">argnames</span><span class="p">,</span> <span class="n">force_tuple</span>
+<span class="linenos">139</span>
+<span class="linenos">140</span>    <span class="nd">@staticmethod</span>
+<span class="linenos">141</span>    <span class="k">def</span> <span class="nf">_parse_parametrize_parameters</span><span class="p">(</span>
+<span class="linenos">142</span>        <span class="n">argvalues</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;ParameterSet&quot;</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">],</span> <span class="nb">object</span><span class="p">]],</span>
+<span class="linenos">143</span>        <span class="n">force_tuple</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="linenos">144</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;ParameterSet&quot;</span><span class="p">]:</span>
+<span class="linenos">145</span>        <span class="k">return</span> <span class="p">[</span>
+<span class="linenos">146</span>            <span class="n">ParameterSet</span><span class="o">.</span><span class="n">extract_from</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">force_tuple</span><span class="o">=</span><span class="n">force_tuple</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">argvalues</span>
+<span class="linenos">147</span>        <span class="p">]</span>
+<span class="linenos">148</span>
+<span class="linenos">149</span>    <span class="nd">@classmethod</span>
+<span class="linenos">150</span>    <span class="k">def</span> <span class="nf">_for_parametrize</span><span class="p">(</span>
+<span class="linenos">151</span>        <span class="bp">cls</span><span class="p">,</span>
+<span class="linenos">152</span>        <span class="n">argnames</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="linenos">153</span>        <span class="n">argvalues</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;ParameterSet&quot;</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">],</span> <span class="nb">object</span><span class="p">]],</span>
+<span class="linenos">154</span>        <span class="n">func</span><span class="p">,</span>
+<span class="linenos">155</span>        <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">,</span>
+<span class="linenos">156</span>        <span class="n">nodeid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="linenos">157</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="s2">&quot;ParameterSet&quot;</span><span class="p">]]:</span>
+<span class="linenos">158</span>        <span class="n">argnames</span><span class="p">,</span> <span class="n">force_tuple</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_parse_parametrize_args</span><span class="p">(</span><span class="n">argnames</span><span class="p">,</span> <span class="n">argvalues</span><span class="p">)</span>
+<span class="linenos">159</span>        <span class="n">parameters</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_parse_parametrize_parameters</span><span class="p">(</span><span class="n">argvalues</span><span class="p">,</span> <span class="n">force_tuple</span><span class="p">)</span>
+<span class="linenos">160</span>        <span class="k">del</span> <span class="n">argvalues</span>
+<span class="linenos">161</span>
+<span class="linenos">162</span>        <span class="k">if</span> <span class="n">parameters</span><span class="p">:</span>
+<span class="linenos">163</span>            <span class="c1"># Check all parameter sets have the correct number of values.</span>
+<span class="linenos">164</span>            <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
+<span class="linenos">165</span>                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">argnames</span><span class="p">):</span>
+<span class="linenos">166</span>                    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="linenos">167</span>                        <span class="s1">&#39;</span><span class="si">{nodeid}</span><span class="s1">: in &quot;parametrize&quot; the number of names (</span><span class="si">{names_len}</span><span class="s1">):</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="linenos">168</span>                        <span class="s2">&quot;  </span><span class="si">{names}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="linenos">169</span>                        <span class="s2">&quot;must be equal to the number of values (</span><span class="si">{values_len}</span><span class="s2">):</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="linenos">170</span>                        <span class="s2">&quot;  </span><span class="si">{values}</span><span class="s2">&quot;</span>
+<span class="linenos">171</span>                    <span class="p">)</span>
+<span class="linenos">172</span>                    <span class="n">fail</span><span class="p">(</span>
+<span class="linenos">173</span>                        <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">174</span>                            <span class="n">nodeid</span><span class="o">=</span><span class="n">nodeid</span><span class="p">,</span>
+<span class="linenos">175</span>                            <span class="n">values</span><span class="o">=</span><span class="n">param</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+<span class="linenos">176</span>                            <span class="n">names</span><span class="o">=</span><span class="n">argnames</span><span class="p">,</span>
+<span class="linenos">177</span>                            <span class="n">names_len</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">argnames</span><span class="p">),</span>
+<span class="linenos">178</span>                            <span class="n">values_len</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">values</span><span class="p">),</span>
+<span class="linenos">179</span>                        <span class="p">),</span>
+<span class="linenos">180</span>                        <span class="n">pytrace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">181</span>                    <span class="p">)</span>
+<span class="linenos">182</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">183</span>            <span class="c1"># Empty parameter set (likely computed at runtime): create a single</span>
+<span class="linenos">184</span>            <span class="c1"># parameter set with NOTSET values, with the &quot;empty parameter set&quot; mark applied to it.</span>
+<span class="linenos">185</span>            <span class="n">mark</span> <span class="o">=</span> <span class="n">get_empty_parameterset_mark</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">argnames</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+<span class="linenos">186</span>            <span class="n">parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="linenos">187</span>                <span class="n">ParameterSet</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">NOTSET</span><span class="p">,)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">argnames</span><span class="p">),</span> <span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">mark</span><span class="p">],</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="linenos">188</span>            <span class="p">)</span>
+<span class="linenos">189</span>        <span class="k">return</span> <span class="n">argnames</span><span class="p">,</span> <span class="n">parameters</span>
+<span class="linenos">190</span>
+<span class="linenos">191</span>
+<span class="linenos">192</span><span class="nd">@final</span>
+<span class="linenos">193</span><span class="nd">@dataclasses</span><span class="o">.</span><span class="n">dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">194</span><span class="k">class</span> <span class="nc">Mark</span><span class="p">:</span>
+<span class="linenos">195</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;A pytest mark.&quot;&quot;&quot;</span>
+<span class="linenos">196</span>
+<span class="linenos">197</span>    <span class="c1">#: Name of the mark.</span>
+<span class="linenos">198</span>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+<span class="linenos">199</span>    <span class="c1">#: Positional arguments of the mark decorator.</span>
+<span class="linenos">200</span>    <span class="n">args</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="linenos">201</span>    <span class="c1">#: Keyword arguments of the mark decorator.</span>
+<span class="linenos">202</span>    <span class="n">kwargs</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span>    <span class="c1">#: Source Mark for ids with parametrize Marks.</span>
+<span class="linenos">205</span>    <span class="n">_param_ids_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;Mark&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataclasses</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">206</span>    <span class="c1">#: Resolved/generated ids with parametrize Marks.</span>
+<span class="linenos">207</span>    <span class="n">_param_ids_generated</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dataclasses</span><span class="o">.</span><span class="n">field</span><span class="p">(</span>
+<span class="linenos">208</span>        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="kc">False</span>
+<span class="linenos">209</span>    <span class="p">)</span>
+<span class="linenos">210</span>
+<span class="linenos">211</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="linenos">212</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">213</span>        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="linenos">214</span>        <span class="n">args</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+<span class="linenos">215</span>        <span class="n">kwargs</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+<span class="linenos">216</span>        <span class="n">param_ids_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;Mark&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">217</span>        <span class="n">param_ids_generated</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="linenos">218</span>        <span class="o">*</span><span class="p">,</span>
+<span class="linenos">219</span>        <span class="n">_ispytest</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos">220</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">221</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;:meta private:&quot;&quot;&quot;</span>
+<span class="linenos">222</span>        <span class="n">check_ispytest</span><span class="p">(</span><span class="n">_ispytest</span><span class="p">)</span>
+<span class="linenos">223</span>        <span class="c1"># Weirdness to bypass frozen=True.</span>
+<span class="linenos">224</span>        <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="linenos">225</span>        <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+<span class="linenos">226</span>        <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;kwargs&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">227</span>        <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_param_ids_from&quot;</span><span class="p">,</span> <span class="n">param_ids_from</span><span class="p">)</span>
+<span class="linenos">228</span>        <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_param_ids_generated&quot;</span><span class="p">,</span> <span class="n">param_ids_generated</span><span class="p">)</span>
+<span class="linenos">229</span>
+<span class="linenos">230</span>    <span class="k">def</span> <span class="nf">_has_param_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">231</span>        <span class="k">return</span> <span class="s2">&quot;ids&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span>
+<span class="linenos">232</span>
+<span class="linenos">233</span>    <span class="k">def</span> <span class="nf">combined_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Mark&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Mark&quot;</span><span class="p">:</span>
+<span class="linenos">234</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a new Mark which is a combination of this</span>
+<span class="linenos">235</span><span class="sd">        Mark and another Mark.</span>
+<span class="linenos">236</span>
+<span class="linenos">237</span><span class="sd">        Combines by appending args and merging kwargs.</span>
+<span class="linenos">238</span>
+<span class="linenos">239</span><span class="sd">        :param Mark other: The mark to combine with.</span>
+<span class="linenos">240</span><span class="sd">        :rtype: Mark</span>
+<span class="linenos">241</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">242</span>        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+<span class="linenos">243</span>
+<span class="linenos">244</span>        <span class="c1"># Remember source of ids with parametrize Marks.</span>
+<span class="linenos">245</span>        <span class="n">param_ids_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mark</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">246</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;parametrize&quot;</span><span class="p">:</span>
+<span class="linenos">247</span>            <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">_has_param_ids</span><span class="p">():</span>
+<span class="linenos">248</span>                <span class="n">param_ids_from</span> <span class="o">=</span> <span class="n">other</span>
+<span class="linenos">249</span>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_param_ids</span><span class="p">():</span>
+<span class="linenos">250</span>                <span class="n">param_ids_from</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="linenos">251</span>
+<span class="linenos">252</span>        <span class="k">return</span> <span class="n">Mark</span><span class="p">(</span>
+<span class="linenos">253</span>            <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<span class="linenos">254</span>            <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">args</span><span class="p">,</span>
+<span class="linenos">255</span>            <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">other</span><span class="o">.</span><span class="n">kwargs</span><span class="p">),</span>
+<span class="linenos">256</span>            <span class="n">param_ids_from</span><span class="o">=</span><span class="n">param_ids_from</span><span class="p">,</span>
+<span class="linenos">257</span>            <span class="n">_ispytest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">258</span>        <span class="p">)</span>
+<span class="linenos">259</span>
+<span class="linenos">260</span>
+<span class="linenos">261</span><span class="c1"># A generic parameter designating an object to which a Mark may</span>
+<span class="linenos">262</span><span class="c1"># be applied -- a test function (callable) or class.</span>
+<span class="linenos">263</span><span class="c1"># Note: a lambda is not allowed, but this can&#39;t be represented.</span>
+<span class="linenos">264</span><span class="n">Markable</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;Markable&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Union</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">object</span><span class="p">],</span> <span class="nb">type</span><span class="p">])</span>
+<span class="linenos">265</span>
+<span class="linenos">266</span>
+<span class="linenos">267</span><span class="nd">@dataclasses</span><span class="o">.</span><span class="n">dataclass</span>
+<span class="linenos">268</span><span class="k">class</span> <span class="nc">MarkDecorator</span><span class="p">:</span>
+<span class="linenos">269</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;A decorator for applying a mark on test functions and classes.</span>
+<span class="linenos">270</span>
+<span class="linenos">271</span><span class="sd">    ``MarkDecorators`` are created with ``pytest.mark``::</span>
+<span class="linenos">272</span>
+<span class="linenos">273</span><span class="sd">        mark1 = pytest.mark.NAME              # Simple MarkDecorator</span>
+<span class="linenos">274</span><span class="sd">        mark2 = pytest.mark.NAME(name1=value) # Parametrized MarkDecorator</span>
+<span class="linenos">275</span>
+<span class="linenos">276</span><span class="sd">    and can then be applied as decorators to test functions::</span>
+<span class="linenos">277</span>
+<span class="linenos">278</span><span class="sd">        @mark2</span>
+<span class="linenos">279</span><span class="sd">        def test_function():</span>
+<span class="linenos">280</span><span class="sd">            pass</span>
+<span class="linenos">281</span>
+<span class="linenos">282</span><span class="sd">    When a ``MarkDecorator`` is called, it does the following:</span>
+<span class="linenos">283</span>
+<span class="linenos">284</span><span class="sd">    1. If called with a single class as its only positional argument and no</span>
+<span class="linenos">285</span><span class="sd">       additional keyword arguments, it attaches the mark to the class so it</span>
+<span class="linenos">286</span><span class="sd">       gets applied automatically to all test cases found in that class.</span>
+<span class="linenos">287</span>
+<span class="linenos">288</span><span class="sd">    2. If called with a single function as its only positional argument and</span>
+<span class="linenos">289</span><span class="sd">       no additional keyword arguments, it attaches the mark to the function,</span>
+<span class="linenos">290</span><span class="sd">       containing all the arguments already stored internally in the</span>
+<span class="linenos">291</span><span class="sd">       ``MarkDecorator``.</span>
+<span class="linenos">292</span>
+<span class="linenos">293</span><span class="sd">    3. When called in any other case, it returns a new ``MarkDecorator``</span>
+<span class="linenos">294</span><span class="sd">       instance with the original ``MarkDecorator``&#39;s content updated with</span>
+<span class="linenos">295</span><span class="sd">       the arguments passed to this call.</span>
+<span class="linenos">296</span>
+<span class="linenos">297</span><span class="sd">    Note: The rules above prevent a ``MarkDecorator`` from storing only a</span>
+<span class="linenos">298</span><span class="sd">    single function or class reference as its positional argument with no</span>
+<span class="linenos">299</span><span class="sd">    additional keyword or positional arguments. You can work around this by</span>
+<span class="linenos">300</span><span class="sd">    using `with_args()`.</span>
+<span class="linenos">301</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">302</span>
+<span class="linenos">303</span>    <span class="n">mark</span><span class="p">:</span> <span class="n">Mark</span>
+<span class="linenos">304</span>
+<span class="linenos">305</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mark</span><span class="p">:</span> <span class="n">Mark</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">_ispytest</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">306</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;:meta private:&quot;&quot;&quot;</span>
+<span class="linenos">307</span>        <span class="n">check_ispytest</span><span class="p">(</span><span class="n">_ispytest</span><span class="p">)</span>
+<span class="linenos">308</span>        <span class="bp">self</span><span class="o">.</span><span class="n">mark</span> <span class="o">=</span> <span class="n">mark</span>
+<span class="linenos">309</span>
+<span class="linenos">310</span>    <span class="nd">@property</span>
+<span class="linenos">311</span>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos">312</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for mark.name.&quot;&quot;&quot;</span>
+<span class="linenos">313</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">name</span>
+<span class="linenos">314</span>
+<span class="linenos">315</span>    <span class="nd">@property</span>
+<span class="linenos">316</span>    <span class="k">def</span> <span class="nf">args</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="linenos">317</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for mark.args.&quot;&quot;&quot;</span>
+<span class="linenos">318</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">args</span>
+<span class="linenos">319</span>
+<span class="linenos">320</span>    <span class="nd">@property</span>
+<span class="linenos">321</span>    <span class="k">def</span> <span class="nf">kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="linenos">322</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for mark.kwargs.&quot;&quot;&quot;</span>
+<span class="linenos">323</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">kwargs</span>
+<span class="linenos">324</span>
+<span class="linenos">325</span>    <span class="nd">@property</span>
+<span class="linenos">326</span>    <span class="k">def</span> <span class="nf">markname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos">327</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;:meta private:&quot;&quot;&quot;</span>
+<span class="linenos">328</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># for backward-compat (2.4.1 had this attr)</span>
+<span class="linenos">329</span>
+<span class="linenos">330</span>    <span class="k">def</span> <span class="nf">with_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MarkDecorator&quot;</span><span class="p">:</span>
+<span class="linenos">331</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a MarkDecorator with extra arguments added.</span>
+<span class="linenos">332</span>
+<span class="linenos">333</span><span class="sd">        Unlike calling the MarkDecorator, with_args() can be used even</span>
+<span class="linenos">334</span><span class="sd">        if the sole argument is a callable/class.</span>
+<span class="linenos">335</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">336</span>        <span class="n">mark</span> <span class="o">=</span> <span class="n">Mark</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">_ispytest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">337</span>        <span class="k">return</span> <span class="n">MarkDecorator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">combined_with</span><span class="p">(</span><span class="n">mark</span><span class="p">),</span> <span class="n">_ispytest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">338</span>
+<span class="linenos">339</span>    <span class="c1"># Type ignored because the overloads overlap with an incompatible</span>
+<span class="linenos">340</span>    <span class="c1"># return type. Not much we can do about that. Thankfully mypy picks</span>
+<span class="linenos">341</span>    <span class="c1"># the first match so it works out even if we break the rules.</span>
+<span class="linenos">342</span>    <span class="nd">@overload</span>
+<span class="linenos">343</span>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">:</span> <span class="n">Markable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markable</span><span class="p">:</span>  <span class="c1"># type: ignore[misc]</span>
+<span class="linenos">344</span>        <span class="k">pass</span>
+<span class="linenos">345</span>
+<span class="linenos">346</span>    <span class="nd">@overload</span>
+<span class="linenos">347</span>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MarkDecorator&quot;</span><span class="p">:</span>
+<span class="linenos">348</span>        <span class="k">pass</span>
+<span class="linenos">349</span>
+<span class="linenos">350</span>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">):</span>
+<span class="linenos">351</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the MarkDecorator.&quot;&quot;&quot;</span>
+<span class="linenos">352</span>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">kwargs</span><span class="p">:</span>
+<span class="linenos">353</span>            <span class="n">func</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">354</span>            <span class="n">is_class</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="linenos">355</span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">istestfunc</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_class</span><span class="p">):</span>
+<span class="linenos">356</span>                <span class="n">store_mark</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mark</span><span class="p">)</span>
+<span class="linenos">357</span>                <span class="k">return</span> <span class="n">func</span>
+<span class="linenos">358</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="linenos">359</span>
+<span class="linenos">360</span>
+<span class="linenos">361</span><span class="k">def</span> <span class="nf">get_unpacked_marks</span><span class="p">(</span>
+<span class="linenos">362</span>    <span class="n">obj</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">object</span><span class="p">,</span> <span class="nb">type</span><span class="p">],</span>
+<span class="linenos">363</span>    <span class="o">*</span><span class="p">,</span>
+<span class="linenos">364</span>    <span class="n">consider_mro</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos">365</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Mark</span><span class="p">]:</span>
+<span class="linenos">366</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Obtain the unpacked marks that are stored on an object.</span>
+<span class="linenos">367</span>
+<span class="linenos">368</span><span class="sd">    If obj is a class and consider_mro is true, return marks applied to</span>
+<span class="linenos">369</span><span class="sd">    this class and all of its super-classes in MRO order. If consider_mro</span>
+<span class="linenos">370</span><span class="sd">    is false, only return marks applied directly to this class.</span>
+<span class="linenos">371</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">372</span>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+<span class="linenos">373</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">consider_mro</span><span class="p">:</span>
+<span class="linenos">374</span>            <span class="n">mark_lists</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pytestmark&quot;</span><span class="p">,</span> <span class="p">[])]</span>
+<span class="linenos">375</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">376</span>            <span class="n">mark_lists</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pytestmark&quot;</span><span class="p">,</span> <span class="p">[])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">]</span>
+<span class="linenos">377</span>        <span class="n">mark_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">378</span>        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">mark_lists</span><span class="p">:</span>
+<span class="linenos">379</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+<span class="linenos">380</span>                <span class="n">mark_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="linenos">381</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">382</span>                <span class="n">mark_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="linenos">383</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">384</span>        <span class="n">mark_attribute</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;pytestmark&quot;</span><span class="p">,</span> <span class="p">[])</span>
+<span class="linenos">385</span>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mark_attribute</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+<span class="linenos">386</span>            <span class="n">mark_list</span> <span class="o">=</span> <span class="n">mark_attribute</span>
+<span class="linenos">387</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">388</span>            <span class="n">mark_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">mark_attribute</span><span class="p">]</span>
+<span class="linenos">389</span>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">normalize_mark_list</span><span class="p">(</span><span class="n">mark_list</span><span class="p">))</span>
+<span class="linenos">390</span>
+<span class="linenos">391</span>
+<span class="linenos">392</span><span class="k">def</span> <span class="nf">normalize_mark_list</span><span class="p">(</span>
+<span class="linenos">393</span>    <span class="n">mark_list</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Mark</span><span class="p">,</span> <span class="n">MarkDecorator</span><span class="p">]]</span>
+<span class="linenos">394</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Mark</span><span class="p">]:</span>
+<span class="linenos">395</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">396</span><span class="sd">    Normalize an iterable of Mark or MarkDecorator objects into a list of marks</span>
+<span class="linenos">397</span><span class="sd">    by retrieving the `mark` attribute on MarkDecorator instances.</span>
+<span class="linenos">398</span>
+<span class="linenos">399</span><span class="sd">    :param mark_list: marks to normalize</span>
+<span class="linenos">400</span><span class="sd">    :returns: A new list of the extracted Mark objects</span>
+<span class="linenos">401</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">402</span>    <span class="k">for</span> <span class="n">mark</span> <span class="ow">in</span> <span class="n">mark_list</span><span class="p">:</span>
+<span class="linenos">403</span>        <span class="n">mark_obj</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="s2">&quot;mark&quot;</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+<span class="linenos">404</span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mark_obj</span><span class="p">,</span> <span class="n">Mark</span><span class="p">):</span>
+<span class="linenos">405</span>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;got </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">mark_obj</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead of Mark&quot;</span><span class="p">)</span>
+<span class="linenos">406</span>        <span class="k">yield</span> <span class="n">mark_obj</span>
+<span class="linenos">407</span>
+<span class="linenos">408</span>
+<span class="linenos">409</span><span class="k">def</span> <span class="nf">store_mark</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">mark</span><span class="p">:</span> <span class="n">Mark</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">410</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Store a Mark on an object.</span>
+<span class="linenos">411</span>
+<span class="linenos">412</span><span class="sd">    This is used to implement the Mark declarations/decorators correctly.</span>
+<span class="linenos">413</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">414</span>    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">Mark</span><span class="p">),</span> <span class="n">mark</span>
+<span class="linenos">415</span>    <span class="c1"># Always reassign name to avoid updating pytestmark in a reference that</span>
+<span class="linenos">416</span>    <span class="c1"># was only borrowed.</span>
+<span class="linenos">417</span>    <span class="n">obj</span><span class="o">.</span><span class="n">pytestmark</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">get_unpacked_marks</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">consider_mro</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">mark</span><span class="p">]</span>
+<span class="linenos">418</span>
+<span class="linenos">419</span>
+<span class="linenos">420</span><span class="c1"># Typing for builtin pytest marks. This is cheating; it gives builtin marks</span>
+<span class="linenos">421</span><span class="c1"># special privilege, and breaks modularity. But practicality beats purity...</span>
+<span class="linenos">422</span><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="linenos">423</span>    <span class="kn">from</span> <span class="nn">_pytest.scope</span> <span class="kn">import</span> <span class="n">_ScopeName</span>
+<span class="linenos">424</span>
+<span class="linenos">425</span>    <span class="k">class</span> <span class="nc">_SkipMarkDecorator</span><span class="p">(</span><span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos">426</span>        <span class="nd">@overload</span>  <span class="c1"># type: ignore[override,misc,no-overload-impl]</span>
+<span class="linenos">427</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">:</span> <span class="n">Markable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markable</span><span class="p">:</span>
+<span class="linenos">428</span>            <span class="o">...</span>
+<span class="linenos">429</span>
+<span class="linenos">430</span>        <span class="nd">@overload</span>
+<span class="linenos">431</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;MarkDecorator&quot;</span><span class="p">:</span>
+<span class="linenos">432</span>            <span class="o">...</span>
+<span class="linenos">433</span>
+<span class="linenos">434</span>    <span class="k">class</span> <span class="nc">_SkipifMarkDecorator</span><span class="p">(</span><span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos">435</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>  <span class="c1"># type: ignore[override]</span>
+<span class="linenos">436</span>            <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">437</span>            <span class="n">condition</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">438</span>            <span class="o">*</span><span class="n">conditions</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span>
+<span class="linenos">439</span>            <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">440</span>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MarkDecorator</span><span class="p">:</span>
+<span class="linenos">441</span>            <span class="o">...</span>
+<span class="linenos">442</span>
+<span class="linenos">443</span>    <span class="k">class</span> <span class="nc">_XfailMarkDecorator</span><span class="p">(</span><span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos">444</span>        <span class="nd">@overload</span>  <span class="c1"># type: ignore[override,misc,no-overload-impl]</span>
+<span class="linenos">445</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">:</span> <span class="n">Markable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markable</span><span class="p">:</span>
+<span class="linenos">446</span>            <span class="o">...</span>
+<span class="linenos">447</span>
+<span class="linenos">448</span>        <span class="nd">@overload</span>
+<span class="linenos">449</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+<span class="linenos">450</span>            <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">451</span>            <span class="n">condition</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">452</span>            <span class="o">*</span><span class="n">conditions</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span>
+<span class="linenos">453</span>            <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">454</span>            <span class="n">run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">455</span>            <span class="n">raises</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="ne">BaseException</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="ne">BaseException</span><span class="p">],</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">456</span>            <span class="n">strict</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">457</span>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MarkDecorator</span><span class="p">:</span>
+<span class="linenos">458</span>            <span class="o">...</span>
+<span class="linenos">459</span>
+<span class="linenos">460</span>    <span class="k">class</span> <span class="nc">_ParametrizeMarkDecorator</span><span class="p">(</span><span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos">461</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>  <span class="c1"># type: ignore[override]</span>
+<span class="linenos">462</span>            <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">463</span>            <span class="n">argnames</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="linenos">464</span>            <span class="n">argvalues</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ParameterSet</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">],</span> <span class="nb">object</span><span class="p">]],</span>
+<span class="linenos">465</span>            <span class="o">*</span><span class="p">,</span>
+<span class="linenos">466</span>            <span class="n">indirect</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">467</span>            <span class="n">ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
+<span class="linenos">468</span>                <span class="n">Union</span><span class="p">[</span>
+<span class="linenos">469</span>                    <span class="n">Iterable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]],</span>
+<span class="linenos">470</span>                    <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+<span class="linenos">471</span>                <span class="p">]</span>
+<span class="linenos">472</span>            <span class="p">]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">473</span>            <span class="n">scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_ScopeName</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+<span class="linenos">474</span>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MarkDecorator</span><span class="p">:</span>
+<span class="linenos">475</span>            <span class="o">...</span>
+<span class="linenos">476</span>
+<span class="linenos">477</span>    <span class="k">class</span> <span class="nc">_UsefixturesMarkDecorator</span><span class="p">(</span><span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos">478</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fixtures</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MarkDecorator</span><span class="p">:</span>  <span class="c1"># type: ignore[override]</span>
+<span class="linenos">479</span>            <span class="o">...</span>
+<span class="linenos">480</span>
+<span class="linenos">481</span>    <span class="k">class</span> <span class="nc">_FilterwarningsMarkDecorator</span><span class="p">(</span><span class="n">MarkDecorator</span><span class="p">):</span>
+<span class="linenos">482</span>        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">filters</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MarkDecorator</span><span class="p">:</span>  <span class="c1"># type: ignore[override]</span>
+<span class="linenos">483</span>            <span class="o">...</span>
+<span class="linenos">484</span>
+<span class="linenos">485</span>
+<span class="linenos">486</span><span class="nd">@final</span>
+<span class="linenos">487</span><span class="k">class</span> <span class="nc">MarkGenerator</span><span class="p">:</span>
+<span class="linenos">488</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Factory for :class:`MarkDecorator` objects - exposed as</span>
+<span class="linenos">489</span><span class="sd">    a ``pytest.mark`` singleton instance.</span>
+<span class="linenos">490</span>
+<span class="linenos">491</span><span class="sd">    Example::</span>
+<span class="linenos">492</span>
+<span class="linenos">493</span><span class="sd">         import pytest</span>
+<span class="linenos">494</span>
+<span class="linenos">495</span><span class="sd">         @pytest.mark.slowtest</span>
+<span class="linenos">496</span><span class="sd">         def test_function():</span>
+<span class="linenos">497</span><span class="sd">            pass</span>
+<span class="linenos">498</span>
+<span class="linenos">499</span><span class="sd">    applies a &#39;slowtest&#39; :class:`Mark` on ``test_function``.</span>
+<span class="linenos">500</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">501</span>
+<span class="linenos">502</span>    <span class="c1"># See TYPE_CHECKING above.</span>
+<span class="linenos">503</span>    <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="linenos">504</span>        <span class="n">skip</span><span class="p">:</span> <span class="n">_SkipMarkDecorator</span>
+<span class="linenos">505</span>        <span class="n">skipif</span><span class="p">:</span> <span class="n">_SkipifMarkDecorator</span>
+<span class="linenos">506</span>        <span class="n">xfail</span><span class="p">:</span> <span class="n">_XfailMarkDecorator</span>
+<span class="linenos">507</span>        <span class="n">parametrize</span><span class="p">:</span> <span class="n">_ParametrizeMarkDecorator</span>
+<span class="linenos">508</span>        <span class="n">usefixtures</span><span class="p">:</span> <span class="n">_UsefixturesMarkDecorator</span>
+<span class="linenos">509</span>        <span class="n">filterwarnings</span><span class="p">:</span> <span class="n">_FilterwarningsMarkDecorator</span>
+<span class="linenos">510</span>
+<span class="linenos">511</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">_ispytest</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">512</span>        <span class="n">check_ispytest</span><span class="p">(</span><span class="n">_ispytest</span><span class="p">)</span>
+<span class="linenos">513</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Config</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">514</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos">515</span>
+<span class="linenos">516</span>    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MarkDecorator</span><span class="p">:</span>
+<span class="linenos">517</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a new :class:`MarkDecorator` with the given name.&quot;&quot;&quot;</span>
+<span class="linenos">518</span>        <span class="k">if</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span><span class="p">:</span>
+<span class="linenos">519</span>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Marker name must NOT start with underscore&quot;</span><span class="p">)</span>
+<span class="linenos">520</span>
+<span class="linenos">521</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">522</span>            <span class="c1"># We store a set of markers as a performance optimisation - if a mark</span>
+<span class="linenos">523</span>            <span class="c1"># name is in the set we definitely know it, but a mark may be known and</span>
+<span class="linenos">524</span>            <span class="c1"># not in the set.  We therefore start by updating the set!</span>
+<span class="linenos">525</span>            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="p">:</span>
+<span class="linenos">526</span>                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">getini</span><span class="p">(</span><span class="s2">&quot;markers&quot;</span><span class="p">):</span>
+<span class="linenos">527</span>                    <span class="c1"># example lines: &quot;skipif(condition): skip the given test if...&quot;</span>
+<span class="linenos">528</span>                    <span class="c1"># or &quot;hypothesis: tests which use Hypothesis&quot;, so to get the</span>
+<span class="linenos">529</span>                    <span class="c1"># marker name we split on both `:` and `(`.</span>
+<span class="linenos">530</span>                    <span class="n">marker</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="linenos">531</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
+<span class="linenos">532</span>
+<span class="linenos">533</span>            <span class="c1"># If the name is not in the set of known marks after updating,</span>
+<span class="linenos">534</span>            <span class="c1"># then it really is time to issue a warning or an error.</span>
+<span class="linenos">535</span>            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="p">:</span>
+<span class="linenos">536</span>                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">strict_markers</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">strict</span><span class="p">:</span>
+<span class="linenos">537</span>                    <span class="n">fail</span><span class="p">(</span>
+<span class="linenos">538</span>                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2"> not found in `markers` configuration option&quot;</span><span class="p">,</span>
+<span class="linenos">539</span>                        <span class="n">pytrace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">540</span>                    <span class="p">)</span>
+<span class="linenos">541</span>
+<span class="linenos">542</span>                <span class="c1"># Raise a specific error for common misspellings of &quot;parametrize&quot;.</span>
+<span class="linenos">543</span>                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;parameterize&quot;</span><span class="p">,</span> <span class="s2">&quot;parametrise&quot;</span><span class="p">,</span> <span class="s2">&quot;parameterise&quot;</span><span class="p">]:</span>
+<span class="linenos">544</span>                    <span class="n">__tracebackhide__</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="linenos">545</span>                    <span class="n">fail</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; mark, did you mean &#39;parametrize&#39;?&quot;</span><span class="p">)</span>
+<span class="linenos">546</span>
+<span class="linenos">547</span>                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="linenos">548</span>                    <span class="s2">&quot;Unknown pytest.mark.</span><span class="si">%s</span><span class="s2"> - is this a typo?  You can register &quot;</span>
+<span class="linenos">549</span>                    <span class="s2">&quot;custom marks to avoid this warning - for details, see &quot;</span>
+<span class="linenos">550</span>                    <span class="s2">&quot;https://docs.pytest.org/en/stable/how-to/mark.html&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">,</span>
+<span class="linenos">551</span>                    <span class="n">PytestUnknownMarkWarning</span><span class="p">,</span>
+<span class="linenos">552</span>                    <span class="mi">2</span><span class="p">,</span>
+<span class="linenos">553</span>                <span class="p">)</span>
+<span class="linenos">554</span>
+<span class="linenos">555</span>        <span class="k">return</span> <span class="n">MarkDecorator</span><span class="p">(</span><span class="n">Mark</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{},</span> <span class="n">_ispytest</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">_ispytest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">556</span>
+<span class="linenos">557</span>
+<span class="linenos">558</span><span class="n">MARK_GEN</span> <span class="o">=</span> <span class="n">MarkGenerator</span><span class="p">(</span><span class="n">_ispytest</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">559</span>
+<span class="linenos">560</span>
+<span class="linenos">561</span><span class="nd">@final</span>
+<span class="linenos">562</span><span class="k">class</span> <span class="nc">NodeKeywords</span><span class="p">(</span><span class="n">MutableMapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+<span class="linenos">563</span>    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="s2">&quot;parent&quot;</span><span class="p">,</span> <span class="s2">&quot;_markers&quot;</span><span class="p">)</span>
+<span class="linenos">564</span>
+<span class="linenos">565</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="s2">&quot;Node&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">566</span>        <span class="bp">self</span><span class="o">.</span><span class="n">node</span> <span class="o">=</span> <span class="n">node</span>
+<span class="linenos">567</span>        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">parent</span>
+<span class="linenos">568</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="linenos">569</span>
+<span class="linenos">570</span>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="linenos">571</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">572</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="linenos">573</span>        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="linenos">574</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">575</span>                <span class="k">raise</span>
+<span class="linenos">576</span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="linenos">577</span>
+<span class="linenos">578</span>    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">579</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+<span class="linenos">580</span>
+<span class="linenos">581</span>    <span class="c1"># Note: we could&#39;ve avoided explicitly implementing some of the methods</span>
+<span class="linenos">582</span>    <span class="c1"># below and use the collections.abc fallback, but that would be slow.</span>
+<span class="linenos">583</span>
+<span class="linenos">584</span>    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">585</span>        <span class="k">return</span> <span class="p">(</span>
+<span class="linenos">586</span>            <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span>
+<span class="linenos">587</span>            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="linenos">588</span>            <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">keywords</span>
+<span class="linenos">589</span>        <span class="p">)</span>
+<span class="linenos">590</span>
+<span class="linenos">591</span>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>  <span class="c1"># type: ignore[override]</span>
+<span class="linenos">592</span>        <span class="bp">self</span><span class="p">,</span>
+<span class="linenos">593</span>        <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">(),</span>
+<span class="linenos">594</span>        <span class="o">**</span><span class="n">kwds</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="linenos">595</span>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">596</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="linenos">597</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds</span><span class="p">)</span>
+<span class="linenos">598</span>
+<span class="linenos">599</span>    <span class="k">def</span> <span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">600</span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;cannot delete key in keywords dict&quot;</span><span class="p">)</span>
+<span class="linenos">601</span>
+<span class="linenos">602</span>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="linenos">603</span>        <span class="c1"># Doesn&#39;t need to be fast.</span>
+<span class="linenos">604</span>        <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span>
+<span class="linenos">605</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">606</span>            <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">keywords</span><span class="p">:</span>
+<span class="linenos">607</span>                <span class="c1"># self._marks and self.parent.keywords can have duplicates.</span>
+<span class="linenos">608</span>                <span class="k">if</span> <span class="n">keyword</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markers</span><span class="p">:</span>
+<span class="linenos">609</span>                    <span class="k">yield</span> <span class="n">keyword</span>
+<span class="linenos">610</span>
+<span class="linenos">611</span>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="linenos">612</span>        <span class="c1"># Doesn&#39;t need to be fast.</span>
+<span class="linenos">613</span>        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span>
+<span class="linenos">614</span>
+<span class="linenos">615</span>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="linenos">616</span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;NodeKeywords for node </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, LECOMTE Thomas.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Construit avec le <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">Thème PyData Sphinx</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

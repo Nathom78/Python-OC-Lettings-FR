@@ -147,6 +147,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../database.html">
                         Base de donnée
                       </a>
@@ -159,13 +166,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -281,6 +296,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../database.html">
                         Base de donnée
                       </a>
@@ -293,13 +315,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -415,31 +445,73 @@ document.write(`
 <a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.tests.test_profiles_index_url">[docs]</a>
 <span class="linenos"> 8</span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
 <span class="linenos"> 9</span><span class="k">def</span> <span class="nf">test_profiles_index_url</span><span class="p">():</span>
-<span class="linenos">10</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>    <span class="k">assert</span> <span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;/&quot;</span>
-<span class="linenos">13</span>    <span class="k">assert</span> <span class="n">resolve</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">view_name</span> <span class="o">==</span> <span class="s2">&quot;index&quot;</span></div>
-
-<span class="linenos">14</span>
+<span class="linenos">10</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">11</span><span class="sd">    Test that the URL for the &#39;index&#39; view resolves</span>
+<span class="linenos">12</span><span class="sd">    to the correct view function.</span>
+<span class="linenos">13</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">14</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
 <span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="k">assert</span> <span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;/&quot;</span>
+<span class="linenos">17</span>    <span class="k">assert</span> <span class="n">resolve</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">view_name</span> <span class="o">==</span> <span class="s2">&quot;index&quot;</span></div>
+
+<span class="linenos">18</span>
+<span class="linenos">19</span>
+<div class="viewcode-block" id="test_trigger_error_url_resolves">
+<a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.tests.test_trigger_error_url_resolves">[docs]</a>
+<span class="linenos">20</span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
+<span class="linenos">21</span><span class="k">def</span> <span class="nf">test_trigger_error_url_resolves</span><span class="p">():</span>
+<span class="linenos">22</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">23</span><span class="sd">    Test that the URL for the &#39;sentrytest&#39; view resolves</span>
+<span class="linenos">24</span><span class="sd">    to the correct view function.</span>
+<span class="linenos">25</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">26</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;sentrytest&quot;</span><span class="p">)</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>    <span class="k">assert</span> <span class="n">path</span> <span class="o">==</span> <span class="s2">&quot;/sentry-debug/&quot;</span>
+<span class="linenos">29</span>    <span class="k">assert</span> <span class="n">resolve</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">view_name</span> <span class="o">==</span> <span class="s2">&quot;sentrytest&quot;</span></div>
+
+<span class="linenos">30</span>
+<span class="linenos">31</span>
 <div class="viewcode-block" id="test_index_view">
 <a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.tests.test_index_view">[docs]</a>
-<span class="linenos">16</span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
-<span class="linenos">17</span><span class="k">def</span> <span class="nf">test_index_view</span><span class="p">():</span>
-<span class="linenos">18</span>    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-<span class="linenos">19</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="linenos">22</span>
-<span class="linenos">23</span>    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
-<span class="linenos">24</span>    <span class="n">assertTemplateUsed</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s2">&quot;index.html&quot;</span><span class="p">)</span></div>
+<span class="linenos">32</span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
+<span class="linenos">33</span><span class="k">def</span> <span class="nf">test_index_view</span><span class="p">():</span>
+<span class="linenos">34</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">35</span><span class="sd">    Test that the &#39;index&#39; view returns a status code of 200</span>
+<span class="linenos">36</span><span class="sd">    and uses the correct template.</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">39</span>    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="linenos">40</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span>    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+<span class="linenos">45</span>    <span class="n">assertTemplateUsed</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s2">&quot;oc_lettings_site/index.html&quot;</span><span class="p">)</span></div>
 
-<span class="linenos">25</span>
-<span class="linenos">26</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span>
+<div class="viewcode-block" id="test_trigger_error_view">
+<a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.tests.test_trigger_error_view">[docs]</a>
+<span class="linenos">48</span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
+<span class="linenos">49</span><span class="k">def</span> <span class="nf">test_trigger_error_view</span><span class="p">():</span>
+<span class="linenos">50</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">51</span><span class="sd">    Test that the &#39;sentrytest&#39; view returns a status code of 500</span>
+<span class="linenos">52</span><span class="sd">    and uses the &#39;error.html&#39; template.</span>
+<span class="linenos">53</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">54</span>    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="linenos">55</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;sentrytest&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span>    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">500</span>
+<span class="linenos">60</span>    <span class="n">assertTemplateUsed</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s1">&#39;error.html&#39;</span><span class="p">)</span></div>
+
+<span class="linenos">61</span>
+<span class="linenos">62</span>
 <div class="viewcode-block" id="test_dummy">
 <a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.tests.test_dummy">[docs]</a>
-<span class="linenos">27</span><span class="k">def</span> <span class="nf">test_dummy</span><span class="p">():</span>
-<span class="linenos">28</span>    <span class="k">assert</span> <span class="mi">1</span></div>
+<span class="linenos">63</span><span class="k">def</span> <span class="nf">test_dummy</span><span class="p">():</span>
+<span class="linenos">64</span>    <span class="k">assert</span> <span class="mi">1</span></div>
 
 </pre></div>
 

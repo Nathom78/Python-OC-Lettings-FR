@@ -150,6 +150,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -162,13 +169,21 @@
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
       
@@ -288,6 +303,13 @@ document.write(`
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="deployment_and_tests.html">
+                        Déploiement et tests
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="database.html">
                         Base de donnée
                       </a>
@@ -300,13 +322,21 @@ document.write(`
                       </a>
                     </li>
                 
-
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="modules.html">
                         Code
                       </a>
                     </li>
                 
+                </div>
+            </div>
+            
   </ul>
 </nav></div>
         
@@ -444,8 +474,25 @@ document.write(`
 <span id="lettings-models-module"></span><h2>lettings.models module<a class="headerlink" href="#module-lettings.models" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="lettings.models.Address">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zip_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_iso_code</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/models.html#Address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Address" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/models.html#Address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Address" title="Link to this definition">#</a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Modèle représentant une adresse.</p>
+<dl>
+<dt>Attributes:</dt><dd><p>number (PositiveIntegerField): Le numéro de l’adresse (entre 1 et 9999).</p>
+<p>street (CharField): Le nom de la rue (max 64 caractères).</p>
+<p>city (CharField): Le nom de la ville (max 64 caractères).</p>
+<p>state (CharField): Le code d’État ou de province (2 caractères min).</p>
+<p>zip_code (PositiveIntegerField): Le code postal (entre 1 et 99999).</p>
+<p>country_iso_code (CharField): Le code ISO du pays (3 caractères min).</p>
+</dd>
+<dt>Methods:</dt><dd><dl class="simple">
+<dt>__str__: Retourne une représentation sous forme</dt><dd><p>de chaîne de caractères de l’adresse.</p>
+</dd>
+</dl>
+</dd>
+<dt>Meta:</dt><dd><p>verbose_name_plural: Nom au pluriel utilisé dans l’administration.</p>
+</dd>
+</dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lettings.models.Address.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Address.DoesNotExist" title="Link to this definition">#</a></dt>
@@ -529,8 +576,16 @@ object the first time, the query is executed.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lettings.models.Letting">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/models.html#Letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Letting" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/models.html#Letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Letting" title="Link to this definition">#</a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Modèle représentant une location.</p>
+<dl>
+<dt>Attributes:</dt><dd><p>title (CharField): Le titre de la location (max 256 caractères).</p>
+<p>address (OneToOneField): L’adresse de la location (relation un-à-un avec le modèle Address).</p>
+</dd>
+<dt>Methods:</dt><dd><p>__str__: Retourne une représentation sous forme de chaîne de caractères de la location.</p>
+</dd>
+</dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lettings.models.Letting.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Letting.DoesNotExist" title="Link to this definition">#</a></dt>
