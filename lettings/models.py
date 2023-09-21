@@ -48,7 +48,8 @@ class Letting(models.Model):
     Attributes:
         title (CharField): Le titre de la location (max 256 caractères).
 
-        address (OneToOneField): L'adresse de la location (relation un-à-un avec le modèle Address).
+        address (OneToOneField): L'adresse de la location
+            (relation un-à-un avec le modèle Address).
 
     Methods:
         __str__: Retourne une représentation sous forme de chaîne de caractères de la location.
