@@ -6,6 +6,25 @@ Usage
    :local:
 
 
+*Chemins URL d'accès du site*
+-----------------------------
+
+- **Adresse du site Django admin :**
+
+Pour accéder au site admin utiliser l'adresse *'/admin/'*
+
+Avec les identifiants via ce lien : `<https://github.com/Nathom78/Python-OC-Lettings-FR#panel-dadministration>`_
+
+`Lien vers le site admin <https://orange-county-lettings.azurewebsites.net/admin/>`_
+
+- **Adresse test sentry :**
+
+Afin de tester grace à une erreur de division par zero, que la liaison avec Sentry est bien effective, il suffit d'aller à l'adresse suivante du site :
+*'/sentry-debug/'*.
+
+`Lien vers le site <https://orange-county-lettings.azurewebsites.net/sentry-debug/>`_
+
+
 *Developpement - Amélioration*
 ------------------------------
 
