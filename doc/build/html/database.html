@@ -439,8 +439,24 @@ document.write(`
                   
   <section id="base-de-donnee">
 <h1>Base de donnée<a class="headerlink" href="#base-de-donnee" title="Link to this heading">#</a></h1>
+<nav class="contents local" id="sommaire">
+<ul class="simple">
+<li><p><a class="reference internal" href="#sqlite3" id="id1"><em>SQLite3</em></a></p>
+<ul>
+<li><p><a class="reference internal" href="#presentation-des-objets-et-de-l-erd" id="id2">Présentation des objets et de l’ERD</a></p></li>
+<li><p><a class="reference internal" href="#presentation-des-modeles" id="id3">Présentation des modèles</a></p>
+<ul>
+<li><p><a class="reference internal" href="#profile-representant-un-client" id="id4"><strong>Profile : Représentant un client.</strong></a></p></li>
+<li><p><a class="reference internal" href="#letting-representant-une-location" id="id5"><strong>Letting : Représentant une location.</strong></a></p></li>
+<li><p><a class="reference internal" href="#address-representant-une-propriete-a-loue" id="id6"><strong>Address : Représentant une propriété a loué.</strong></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
 <section id="sqlite3">
-<h2><em>SQLite3</em><a class="headerlink" href="#sqlite3" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink"><em>SQLite3</em></a><a class="headerlink" href="#sqlite3" title="Link to this heading">#</a></h2>
 <p>La base de données que nous utilisons pour cette application est SQLite (ici SQLite3).</p>
 <p>SQLite est un moteur de base de données SQL léger, orienté fichier autonome.
 Souvent utilisé pour des applications de petite et moyenne taille, en raison de sa facilité d’installation et d’utilisation.</p>
@@ -452,7 +468,7 @@ SQLite ne nécessite pas de processus serveur distinct. Toutes les données sont
 <p>3/ Portabilité : Puisque la base de données SQLite est simplement un fichier,
 il est facile de copier et de déplacer vers un autre emplacement ou système</p>
 <section id="presentation-des-objets-et-de-l-erd">
-<h3>Présentation des objets et de l’ERD<a class="headerlink" href="#presentation-des-objets-et-de-l-erd" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Présentation des objets et de l’ERD</a><a class="headerlink" href="#presentation-des-objets-et-de-l-erd" title="Link to this heading">#</a></h3>
 <p>Trois objets sont représenté dans la base de donnée : Profile, Letting, Address.</p>
 <ul class="simple">
 <li><p>Profile : représente un client.  Il est liée au modèle “User” de Django (django.contrib.auth.models).
@@ -462,8 +478,9 @@ Permet l’identification d’un utilisateur.</p></li>
 </ul>
 </section>
 <section id="presentation-des-modeles">
-<h3>Présentation des modèles<a class="headerlink" href="#presentation-des-modeles" title="Link to this heading">#</a></h3>
-<p><strong>Profile : Représentant un client.</strong></p>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Présentation des modèles</a><a class="headerlink" href="#presentation-des-modeles" title="Link to this heading">#</a></h3>
+<section id="profile-representant-un-client">
+<h4><a class="toc-backref" href="#id4" role="doc-backlink"><strong>Profile : Représentant un client.</strong></a><a class="headerlink" href="#profile-representant-un-client" title="Link to this heading">#</a></h4>
 <blockquote>
 <div><dl class="py class">
 <dt class="sig sig-object py" id="profiles.models.Profile">
@@ -496,7 +513,9 @@ Permet l’identification d’un utilisateur.</p></li>
 </dd></dl>
 
 </div></blockquote>
-<p><strong>Letting : Représentant une location.</strong></p>
+</section>
+<section id="letting-representant-une-location">
+<h4><a class="toc-backref" href="#id5" role="doc-backlink"><strong>Letting : Représentant une location.</strong></a><a class="headerlink" href="#letting-representant-une-location" title="Link to this heading">#</a></h4>
 <blockquote>
 <div><dl class="py class">
 <dt class="sig sig-object py">
@@ -504,7 +523,10 @@ Permet l’identification d’un utilisateur.</p></li>
 <dd><p>Modèle représentant une location.</p>
 <dl>
 <dt>Attributes:</dt><dd><p>title (CharField): Le titre de la location (max 256 caractères).</p>
-<p>address (OneToOneField): L’adresse de la location (relation un-à-un avec le modèle Address).</p>
+<dl class="simple">
+<dt>address (OneToOneField): L’adresse de la location</dt><dd><p>(relation un-à-un avec le modèle Address).</p>
+</dd>
+</dl>
 </dd>
 <dt>Methods:</dt><dd><p>__str__: Retourne une représentation sous forme de chaîne de caractères de la location.</p>
 </dd>
@@ -522,7 +544,9 @@ Permet l’identification d’un utilisateur.</p></li>
 </dd></dl>
 
 </div></blockquote>
-<p><strong>Address : Représentant une propriété a loué.</strong></p>
+</section>
+<section id="address-representant-une-propriete-a-loue">
+<h4><a class="toc-backref" href="#id6" role="doc-backlink"><strong>Address : Représentant une propriété a loué.</strong></a><a class="headerlink" href="#address-representant-une-propriete-a-loue" title="Link to this heading">#</a></h4>
 <blockquote>
 <div><dl class="py class">
 <dt class="sig sig-object py">
@@ -560,6 +584,7 @@ Permet l’identification d’un utilisateur.</p></li>
 </section>
 </section>
 </section>
+</section>
 
 
                 </article>
@@ -581,11 +606,16 @@ Permet l’identification d’un utilisateur.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite3"><em>SQLite3</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-des-objets-et-de-l-erd">Présentation des objets et de l’ERD</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation-des-modeles">Présentation des modèles</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles.models.Profile"><code class="docutils literal notranslate"><span class="pre">Profile</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles.models.Profile.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Profile.DoesNotExist</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles.models.Profile.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Profile.MultipleObjectsReturned</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-representant-un-client"><strong>Profile : Représentant un client.</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles.models.Profile"><code class="docutils literal notranslate"><span class="pre">Profile</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles.models.Profile.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Profile.DoesNotExist</span></code></a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles.models.Profile.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Profile.MultipleObjectsReturned</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#letting-representant-une-location"><strong>Letting : Représentant une location.</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#address-representant-une-propriete-a-loue"><strong>Address : Représentant une propriété a loué.</strong></a></li>
 </ul>
 </li>
 </ul>

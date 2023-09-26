@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-=========================================================
+#########################################################
 Bienvenue dans la documentation d'Orange County Lettings!
-=========================================================
+#########################################################
 
 .. image:: _static/Orange_County_Lettings_Ad.png
       :height: 156
@@ -29,7 +29,10 @@ Bienvenue dans la documentation d'Orange County Lettings!
 
 ----
 
-* :ref:`genindex`
+Le code entier est en index :doc:`modules`.
+
 * :ref:`modindex`
+
+* :ref:`genindex`
 * :ref:`search`
 

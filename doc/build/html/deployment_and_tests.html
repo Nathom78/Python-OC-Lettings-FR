@@ -441,18 +441,19 @@ document.write(`
 <h1>Déploiement et tests<a class="headerlink" href="#deploiement-et-tests" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="sommaire">
 <ul class="simple">
-<li><p><a class="reference internal" href="#tag-de-l-image" id="id1"><em>Tag de l’image</em></a></p></li>
-<li><p><a class="reference internal" href="#tests" id="id2"><em>Tests</em></a></p>
+<li><p><a class="reference internal" href="#workflow" id="id1"><em>Workflow</em></a></p></li>
+<li><p><a class="reference internal" href="#tag-de-l-image" id="id2"><em>Tag de l’image</em></a></p></li>
+<li><p><a class="reference internal" href="#tests" id="id3"><em>Tests</em></a></p>
 <ul>
-<li><p><a class="reference internal" href="#linting" id="id3">Linting</a></p></li>
-<li><p><a class="reference internal" href="#tests-unitaires" id="id4">Tests unitaires</a></p></li>
-<li><p><a class="reference internal" href="#couverture" id="id5">Couverture</a></p></li>
+<li><p><a class="reference internal" href="#linting" id="id4">Linting</a></p></li>
+<li><p><a class="reference internal" href="#tests-unitaires" id="id5">Tests unitaires</a></p></li>
+<li><p><a class="reference internal" href="#couverture" id="id6">Couverture</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#resultats" id="id6"><em>Résultats</em></a></p>
+<li><p><a class="reference internal" href="#resultats" id="id7"><em>Résultats</em></a></p>
 <ul>
-<li><p><a class="reference internal" href="#badges" id="id7">Badges</a></p></li>
-<li><p><a class="reference internal" href="#rapports" id="id8">Rapports</a></p></li>
+<li><p><a class="reference internal" href="#badges" id="id8">Badges</a></p></li>
+<li><p><a class="reference internal" href="#rapports" id="id9">Rapports</a></p></li>
 </ul>
 </li>
 </ul>
@@ -465,8 +466,24 @@ document.write(`
 <li><p>Alors une image du site est construite et poussé vers le registre des conteneurs du Docker Hub.</p></li>
 <li><p>Puis si la conteneurisation est réussis alors l’image du conteneur est déployé et mis en production sur Microsoft Azure.</p></li>
 </ul>
+<section id="workflow">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink"><em>Workflow</em></a><a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/Nathom78/Python-OC-Lettings-FR/actions">Lien GithHub Actions</a></p>
+<p>Il y a trois workflows sous GitHub :</p>
+<ul class="simple">
+<li><p><em>“master_ORANGE_COUNTY_LETTINGS.yml”</em> se déclenche lors d’un nouveau « push » sous la branche “master”, utilisé pour le pipeline CI/CD.</p></li>
+<li><p><em>“tests.yml”</em> un workflow réutilisable qui réalise tous les tests lorsqu’il est appelé, et créer les badges et rapports sous la branche badge.</p></li>
+<li><p><em>“tests_for_others_branches.yml”</em> Lance les tests lors de “push” sur toutes nouvelles branche.</p></li>
+</ul>
+<p>Dans la mesure du possible nous utilisons un cache afin d’accélérer le workflow.</p>
+<p>Exemple du pipeline CI/CD, sous GitHub :</p>
+<a class="reference internal image-reference" href="_images/GitHub_actions_workflow.png"><img alt="GitHub actions" src="_images/GitHub_actions_workflow.png" style="width: 385px; height: 327px;" /></a>
+<p><span class="raw-html"><br /></span></p>
+<p>On y trouve sous <em>Artifacts</em> les rapports des tests, à télécharger.</p>
+<p><a class="reference download internal" download="" href="_downloads/e20df8a3913ea70b5880db13e300f7a3/tests-reports.zip"><code class="xref download docutils literal notranslate"><span class="pre">Exemple</span></code></a>.</p>
+</section>
 <section id="tag-de-l-image">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><em>Tag de l’image</em></a><a class="headerlink" href="#tag-de-l-image" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><em>Tag de l’image</em></a><a class="headerlink" href="#tag-de-l-image" title="Link to this heading">#</a></h2>
 <p>Le nom de l’image Docker utilisé pour le déploiement, est composé des tags suivant:
 - “master”
 - “latest”</p>
@@ -479,7 +496,7 @@ Cela ne fait pas perdre de temps ou négligeable, sur le temps mis par le workfl
 <p>Il existe une amélioration, afin de rendre plus propre l’opération.</p>
 </section>
 <section id="tests">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><em>Tests</em></a><a class="headerlink" href="#tests" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><em>Tests</em></a><a class="headerlink" href="#tests" title="Link to this heading">#</a></h2>
 <p>Les tests, sont prévu pour garantir une uniformisation du code et une maintenabilité, même en équipe.
 Même lors de commit sur une branche autre que <em>“master”</em>, les tests seront lancé.</p>
 <p>Pour cela il suffit de garder l’organisation mise en place.</p>
@@ -501,7 +518,7 @@ Sinon le workflow <em>“test.yml”</em> situé sous la branche <em>master</em>
 pour enlever cette obligation.</p>
 </div>
 <section id="linting">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Linting</a><a class="headerlink" href="#linting" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Linting</a><a class="headerlink" href="#linting" title="Link to this heading">#</a></h3>
 <p>Flake8 est utilisé comme linter, qui respecte la PEP8.
 La configuration est comme ceci :</p>
 <p>voir <a class="reference external" href="https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-count">documentation officiel Flake8</a></p>
@@ -520,7 +537,7 @@ La configuration est comme ceci :</p>
 </div>
 </section>
 <section id="tests-unitaires">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Tests unitaires</a><a class="headerlink" href="#tests-unitaires" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Tests unitaires</a><a class="headerlink" href="#tests-unitaires" title="Link to this heading">#</a></h3>
 <p>Les tests unitaires sont configuré avec pytest.</p>
 <p><a class="reference external" href="https://docs.pytest.org/en/stable/contents.html">Documentation officiel de pytest</a></p>
 <p>setup.cfg</p>
@@ -533,7 +550,7 @@ La configuration est comme ceci :</p>
 <p>–no migration : <a class="reference external" href="https://pytest-django.readthedocs.io/en/latest/database.html">pytest-django</a></p>
 </section>
 <section id="couverture">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Couverture</a><a class="headerlink" href="#couverture" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Couverture</a><a class="headerlink" href="#couverture" title="Link to this heading">#</a></h3>
 <p>La couverture des tests unitaires est réalisé par coverage, qui utilise comme configuration :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">coverage</span><span class="p">:</span><span class="n">run</span><span class="p">]</span>
 <span class="n">omit</span> <span class="o">=</span>
@@ -564,19 +581,33 @@ Pour notre cas enregistrer dans le fichier log de GitHub actions. Mais n’est p
 </section>
 </section>
 <section id="resultats">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><em>Résultats</em></a><a class="headerlink" href="#resultats" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><em>Résultats</em></a><a class="headerlink" href="#resultats" title="Link to this heading">#</a></h2>
 <p>Une branche <em>“badges”</em> à été crée afin de recueillir les résultats.
 Les résultats sont catalogué par branche, d’où à été lancé les tests.
 Les résultats comprennent un rapport HTML accompagné d’un badge.</p>
 <section id="badges">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Badges</a><a class="headerlink" href="#badges" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Badges</a><a class="headerlink" href="#badges" title="Link to this heading">#</a></h3>
 <p>Ces badges sont les tampons, de l’état des tests, avec les rapports associés.
 Ils sont crées lors d’un commits, grace à un workflow GitHub actions <em>“tests.yml”</em> réutilisable.
-Ils sont accéssible sous</p>
+Ils sont accéssible sous la branche <em>“badges”</em>, dans le repertoire rapports de la branche testé.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour avoir un lien web depuis le repository GitHub, voici un exemple :</p>
+<p><a class="github reference external" href="https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/tests-badge.svg?raw=true">Nathom78/Python-OC-Lettings-FR</a></p>
+</div>
 </section>
 <section id="rapports">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Rapports</a><a class="headerlink" href="#rapports" title="Link to this heading">#</a></h3>
-<p>Ils sont accéssibles, en version HTML, en ouvrant le fichier <em>“index.html”</em> dans le repertoire associé.</p>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Rapports</a><a class="headerlink" href="#rapports" title="Link to this heading">#</a></h3>
+<p>Ils sont accéssibles, en version HTML, en ouvrant le fichier <em>“index.html”</em> dans le repertoire associé.
+Ou pour la branche <em>“master”</em>, via le fichier README.md et ainsi dans la documentation, section démarrage rapide (README).
+| Le rapport des tests unitaires avec pytest, se situe dans le repertoire <em>“junit”</em>.
+| Le rapport du linting avec flake8, se situe dans le repertoire <em>“flake8”</em>.
+| Le rapport de la couverture des tests, se situe dans le repertoire <em>“coverage”</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour avoir un lien web depuis le repository GitHub, voici un exemple :</p>
+<p><a class="reference external" href="http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/junit/index.html">http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/junit/index.html</a></p>
+</div>
 </section>
 </section>
 </section>
@@ -598,6 +629,7 @@ Ils sont accéssible sous</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow"><em>Workflow</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tag-de-l-image"><em>Tag de l’image</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests"><em>Tests</em></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linting">Linting</a></li>

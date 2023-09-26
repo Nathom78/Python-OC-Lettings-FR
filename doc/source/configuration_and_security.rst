@@ -8,11 +8,12 @@ Configuration et sécurité
 .. _Django:
 
 *Django*
-########
+--------
 
 
 Django settings:
-****************
+^^^^^^^^^^^^^^^^
+
 `Documentation Django <https://docs.djangoproject.com/fr/4.2/ref/settings/>`_
 
 
@@ -63,7 +64,7 @@ Une solution pour la générer:
 
 
 WhiteNoise:
-^^^^^^^^^^^
+"""""""""""
 
 `WhiteNoise <https://whitenoise.readthedocs.io/en/latest/django.html>`_
 
@@ -105,7 +106,7 @@ Afin d'utiliser whitenoise : (à insérer dans settings.py)
 
 
 Sentry:
-^^^^^^^
+"""""""
 
 "Agissez sur les lignes de code brisées, les plantages et les appels d’API interrompus avec la seule
 plate-forme de surveillance des applications axée sur les développeurs, conçue pour vous donner des réponses, et non des indices."
@@ -155,8 +156,8 @@ Voir la documentation ci dessous afin d'obtenir le DSN, et autres configuration 
 
 `Documentation officiel Sentry Platform Django <https://docs.sentry.io/platforms/python/guides/django>`_
 
-Gunicorn
-^^^^^^^^
+Gunicorn:
+"""""""""
 
 Déploiement de Django avec Gunicorn :
 
@@ -181,11 +182,22 @@ La configuration se trouve dans le fichier *dockerfile*, situé à la racine du 
 
 
 *Microsoft Azure*
-#################
+-----------------
 
-Le site est déployé avec un minimum de sécurité, en HTTPS avec protocole TLS 1.2, le certificat est fournis automatiquement par Microsoft Azure.
+`Documentation officiel <https://learn.microsoft.com/fr-fr/azure/?product=popular>`_
 
-Variables 'secrets' utilisé par GitHub actions :
+.. image:: _static/azure_web_app.png
+      :height: 495
+      :width: 934
+      :alt: Azure_App_main_page
+
+.. role:: raw-html(raw)
+    :format: html
+
+:raw-html:`<br />`
+
+Variables secrets utilisé par GitHub actions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. envvar:: APP_NAME
 
@@ -205,11 +217,12 @@ Variables 'secrets' utilisé par GitHub actions :
   Permet de pouvoir relancer l'application via *Azure CLI*, afin que le déploiement soit bien effectif.
 
 
-.. image:: _static/portal_azure_com.png
-      :align: center
-      :alt: Azure_App_main_page
+.. image:: _static/configuration_Azure_webb_app.png
+      :height: 390
+      :width: 758
+      :alt: Config_Webb_App
 
-.. image:: _static/Configuration_Azure_webb_app.png
-      :align: center
-      :alt: Azure_App_main_page
+:raw-html:`<br />`
+
+**Le site est déployé avec un minimum de sécurité, en HTTPS avec protocole TLS 1.2, le certificat est fournis automatiquement par Microsoft Azure.**
 

@@ -1,8 +1,13 @@
 Base de donnée
 ==============
 
+.. contents::
+   :depth: 4
+   :local:
+
+
 *SQLite3*
-#########
+---------
 
 La base de données que nous utilisons pour cette application est SQLite (ici SQLite3).
 
@@ -22,7 +27,7 @@ il est facile de copier et de déplacer vers un autre emplacement ou système
 
 
 Présentation des objets et de l'ERD
-***********************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Trois objets sont représenté dans la base de donnée : Profile, Letting, Address.
 
@@ -36,15 +41,17 @@ Trois objets sont représenté dans la base de donnée : Profile, Letting, Addre
 
 
 Présentation des modèles
-************************
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Profile : Représentant un client.**
+"""""""""""""""""""""""""""""""""""""
 
                     .. autoclass:: profiles.models.Profile
                        :members:
 
 
 **Letting : Représentant une location.**
+""""""""""""""""""""""""""""""""""""""""
 
                     .. autoclass:: lettings.models.Letting
                        :members:
@@ -52,6 +59,7 @@ Présentation des modèles
 
 
 **Address : Représentant une propriété a loué.**
+""""""""""""""""""""""""""""""""""""""""""""""""
 
                     .. autoclass:: lettings.models.Address
                        :members:

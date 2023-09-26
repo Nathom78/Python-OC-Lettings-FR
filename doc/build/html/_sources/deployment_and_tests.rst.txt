@@ -14,8 +14,36 @@ Tout nouveau commit, sous la branche master, déclenche l'automatisation qui est
 - Alors une image du site est construite et poussé vers le registre des conteneurs du Docker Hub.
 - Puis si la conteneurisation est réussis alors l'image du conteneur est déployé et mis en production sur Microsoft Azure.
 
+*Workflow*
+----------
+
+`Lien GithHub Actions <https://github.com/Nathom78/Python-OC-Lettings-FR/actions>`_
+
+Il y a trois workflows sous GitHub :
+
+- *'master_ORANGE_COUNTY_LETTINGS.yml'* se déclenche lors d'un nouveau "push" sous la branche 'master', utilisé pour le pipeline CI/CD.
+- *'tests.yml'* un workflow réutilisable qui réalise tous les tests lorsqu'il est appelé, et créer les badges et rapports sous la branche badge.
+- *'tests_for_others_branches.yml'* Lance les tests lors de 'push' sur toutes nouvelles branche.
+
+Dans la mesure du possible nous utilisons un cache afin d'accélérer le workflow.
+
+Exemple du pipeline CI/CD, sous GitHub :
+
+.. image:: _static/GitHub_actions_workflow.png
+      :height: 327
+      :width: 385
+      :alt: GitHub actions
+.. role:: raw-html(raw)
+    :format: html
+
+:raw-html:`<br />`
+
+On y trouve sous *Artifacts* les rapports des tests, à télécharger.
+
+:download:`Exemple <_static/tests-reports.zip>`.
+
 *Tag de l'image*
-################
+----------------
 
 Le nom de l'image Docker utilisé pour le déploiement, est composé des tags suivant:
 - 'master'
@@ -32,7 +60,7 @@ Cela ne fait pas perdre de temps ou négligeable, sur le temps mis par le workfl
 Il existe une amélioration, afin de rendre plus propre l'opération.
 
 *Tests*
-#######
+-------
 
 Les tests, sont prévu pour garantir une uniformisation du code et une maintenabilité, même en équipe.
 Même lors de commit sur une branche autre que *'master'*, les tests seront lancé.
@@ -54,7 +82,7 @@ Il faut au minimum:
           pour enlever cette obligation.
 
 Linting
-*******
+^^^^^^^
 
 Flake8 est utilisé comme linter, qui respecte la PEP8.
 La configuration est comme ceci :
@@ -79,7 +107,7 @@ setup.cfg
 
 
 Tests unitaires
-***************
+^^^^^^^^^^^^^^^
 
 Les tests unitaires sont configuré avec pytest.
 
@@ -99,7 +127,7 @@ setup.cfg
 
 
 Couverture
-**********
+^^^^^^^^^^
 
 La couverture des tests unitaires est réalisé par coverage, qui utilise comme configuration :
 
@@ -134,7 +162,7 @@ Enfin un fichier HTML pour l'affichage du rapport.
 
 
 *Résultats*
-###########
+-----------
 
 Une branche *'badges'* à été crée afin de recueillir les résultats.
 Les résultats sont catalogué par branche, d'où à été lancé les tests.
@@ -142,13 +170,31 @@ Les résultats comprennent un rapport HTML accompagné d'un badge.
 
 
 Badges
-******
+^^^^^^
 
 Ces badges sont les tampons, de l'état des tests, avec les rapports associés.
 Ils sont crées lors d'un commits, grace à un workflow GitHub actions *'tests.yml'* réutilisable.
-Ils sont accéssible sous
+Ils sont accéssible sous la branche *'badges'*, dans le repertoire rapports de la branche testé.
+
+.. note::
+          Pour avoir un lien web depuis le repository GitHub, voici un exemple :
+
+          https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/tests-badge.svg?raw=true
+
+
+
 
 Rapports
-********
+^^^^^^^^
 
 Ils sont accéssibles, en version HTML, en ouvrant le fichier *'index.html'* dans le repertoire associé.
+Ou pour la branche *'master'*, via le fichier README.md et ainsi dans la documentation, section démarrage rapide (README).
+| Le rapport des tests unitaires avec pytest, se situe dans le repertoire *'junit'*.
+| Le rapport du linting avec flake8, se situe dans le repertoire *'flake8'*.
+| Le rapport de la couverture des tests, se situe dans le repertoire *'coverage'*.
+
+.. note::
+
+          Pour avoir un lien web depuis le repository GitHub, voici un exemple :
+
+          http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/junit/index.html

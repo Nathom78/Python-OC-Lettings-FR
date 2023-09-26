@@ -1,4 +1,4 @@
-[![Tests Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/tests-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/junit/report.html)
+[![Tests Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/tests-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/junit/index.html)
 [![Coverage Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/coverage-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/coverage/index.html)
 [![Flake8 Status](https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/flake8-badge.svg?raw=true)](http://htmlpreview.github.io/?https://github.com/Nathom78/Python-OC-Lettings-FR/blob/badges/master/reports/flake8/index.html)
 [![Build and deploy container app to Azure Web App - Orange-County-Lettings](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml/badge.svg)](https://github.com/Nathom78/Python-OC-Lettings-FR/actions/workflows/master_ORANGE_COUNTY_LETTINGS.yml)
@@ -169,6 +169,6 @@ Sur GitHub, il existe des variables "secrets" afin de garantir la confidentialit
 <a href="https://peps.python.org/pep-0008/">ici</a>.
 </p>
 
-Un rapport **flake8** au format HTML est disponible dans le repertoire `\reports\flake8`, à la racine du projet.
+Un rapport **flake8** au format HTML est disponible dans le repertoire `\reports\flake8`, dans la branche badges.
 
 PS: De cliquer sur les badges ou le nom du projet vous dirige vers les rapports des tests, ou le site concerné pour la documentation

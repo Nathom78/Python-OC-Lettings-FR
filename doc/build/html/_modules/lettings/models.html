@@ -489,17 +489,18 @@ document.write(`
 <span class="linenos">48</span><span class="sd">    Attributes:</span>
 <span class="linenos">49</span><span class="sd">        title (CharField): Le titre de la location (max 256 caractères).</span>
 <span class="linenos">50</span>
-<span class="linenos">51</span><span class="sd">        address (OneToOneField): L&#39;adresse de la location (relation un-à-un avec le modèle Address).</span>
-<span class="linenos">52</span>
-<span class="linenos">53</span><span class="sd">    Methods:</span>
-<span class="linenos">54</span><span class="sd">        __str__: Retourne une représentation sous forme de chaîne de caractères de la location.</span>
-<span class="linenos">55</span>
-<span class="linenos">56</span><span class="sd">    &quot;&quot;&quot;</span>
-<span class="linenos">57</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
-<span class="linenos">58</span>    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
-<span class="linenos">59</span>
-<span class="linenos">60</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">61</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span></div>
+<span class="linenos">51</span><span class="sd">        address (OneToOneField): L&#39;adresse de la location</span>
+<span class="linenos">52</span><span class="sd">            (relation un-à-un avec le modèle Address).</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="sd">    Methods:</span>
+<span class="linenos">55</span><span class="sd">        __str__: Retourne une représentation sous forme de chaîne de caractères de la location.</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">58</span>    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+<span class="linenos">59</span>    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">Address</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">62</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span></div>
 
 </pre></div>
 

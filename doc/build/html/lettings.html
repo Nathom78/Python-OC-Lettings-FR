@@ -581,7 +581,10 @@ object the first time, the query is executed.</p>
 <p>Modèle représentant une location.</p>
 <dl>
 <dt>Attributes:</dt><dd><p>title (CharField): Le titre de la location (max 256 caractères).</p>
-<p>address (OneToOneField): L’adresse de la location (relation un-à-un avec le modèle Address).</p>
+<dl class="simple">
+<dt>address (OneToOneField): L’adresse de la location</dt><dd><p>(relation un-à-un avec le modèle Address).</p>
+</dd>
+</dl>
 </dd>
 <dt>Methods:</dt><dd><p>__str__: Retourne une représentation sous forme de chaîne de caractères de la location.</p>
 </dd>
