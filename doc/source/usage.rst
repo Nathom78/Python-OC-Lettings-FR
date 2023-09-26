@@ -13,7 +13,7 @@ Usage
 
 Pour accéder au site admin utiliser l'adresse *'/admin/'*
 
-Avec les identifiants via ce lien : `<https://github.com/Nathom78/Python-OC-Lettings-FR#panel-dadministration>`_
+Avec les identifiants via ce lien : `<https://thomas-python-oc-lettings-fr.readthedocs.io/fr/master/README.html#panel-d-administration>`_
 
 `Lien vers le site admin <https://orange-county-lettings.azurewebsites.net/admin/>`_
 
