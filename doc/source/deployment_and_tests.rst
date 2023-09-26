@@ -189,6 +189,7 @@ Rapports
 
 Ils sont accéssibles, en version HTML, en ouvrant le fichier *'index.html'* dans le repertoire associé.
 Ou pour la branche *'master'*, via le fichier README.md et ainsi dans la documentation, section démarrage rapide (README).
+
 | Le rapport des tests unitaires avec pytest, se situe dans le repertoire *'junit'*.
 | Le rapport du linting avec flake8, se situe dans le repertoire *'flake8'*.
 | Le rapport de la couverture des tests, se situe dans le repertoire *'coverage'*.

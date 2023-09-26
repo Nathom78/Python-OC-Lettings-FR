@@ -84,7 +84,7 @@ html_theme_options = {
     "show_nav_level": 2,
     "show_toc_level": 3,
     "show_prev_next": False,
-    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink"],
+    "secondary_sidebar_items": ["page-toc", "edit-this-page", "sourcelink", "flyout"],
     "icon_links": [
         {
             # Label for this link
