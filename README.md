@@ -118,21 +118,24 @@ Utilisé par Django pour le setup dans settings.py :
 Il y a la clé secréte de Django pour la sécurité.
 Et la clé DSN afin d'avoir toute la journalisation centralisé sur Sentry.
 
+Ps : la variable d'environnement DEBUG, n'est utile qu'en local, et s'il faut activer le mode débogage de Django.
 * sous windows :
 
   `$Env:SECRET_KEY = "yourKeyKeepInSafe"`
 
   `$Env:DSN = "https://number.ingest.sentry.io/number`
+
+  `**$Env:DEBUG = "True"**`
 * sous Linux :
 
   `export SECRET_KEY="yourKeyKeepInSafe"`
 
-  de même avec DSN.
+  de même avec DSN, et voir DEBUG.
 * sous Apple :
 
   `% SECRET_KEY="yourKeyKeepInSafe"`
 
-  de même avec DSN.
+  de même avec DSN, et voir DEBUG.
 
 [Lien configuration et sécurité](https://thomas-python-oc-lettings-fr.readthedocs.io/fr/latest/configuration_and_security.html)
 
@@ -171,4 +174,4 @@ Sur GitHub, il existe des variables "secrets" afin de garantir la confidentialit
 
 Un rapport **flake8** au format HTML est disponible dans le repertoire `\reports\flake8`, dans la branche badges.
 
-PS: De cliquer sur les badges ou le nom du projet vous dirige vers les rapports des tests, ou le site concerné pour la documentation
+PS : De cliquer sur les badges ou le nom du projet vous dirige vers les rapports des tests, ou le site concerné pour la documentation

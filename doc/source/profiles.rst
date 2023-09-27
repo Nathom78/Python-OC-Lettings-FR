@@ -1,15 +1,9 @@
 profiles package
 ================
 
-Subpackages
------------
 
 .. toctree::
    :maxdepth: 4
-
-
-Submodules
-----------
 
 profiles.admin module
 ---------------------

@@ -1,6 +1,9 @@
 lettings package
 ================
 
+.. toctree::
+   :maxdepth: 4
+
 
 lettings.admin module
 ---------------------
@@ -15,7 +18,7 @@ lettings.apps module
 
 .. automodule:: lettings.apps
    :members:
-
+   :undoc-members:
    :show-inheritance:
 
 lettings.models module

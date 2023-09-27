@@ -1,16 +1,6 @@
 oc\_lettings\_site package
 ==========================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Application
-
-
-Submodules
-----------
 
 oc\_lettings\_site.apps module
 ------------------------------

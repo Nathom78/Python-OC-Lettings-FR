@@ -393,7 +393,9 @@ document.write(`
      aria-label="Navigation de la section">
   <p class="bd-links__title" role="heading" aria-level="1">Navigation de la section</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">lettings package</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">lettings package</a><input checked class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="oc_lettings_site.html">oc_lettings_site package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profiles.html">profiles package</a></li>
 </ul>
@@ -455,19 +457,28 @@ document.write(`
                   
   <section id="lettings-package">
 <h1>lettings package<a class="headerlink" href="#lettings-package" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 <section id="module-lettings.admin">
 <span id="lettings-admin-module"></span><h2>lettings.admin module<a class="headerlink" href="#module-lettings.admin" title="Link to this heading">#</a></h2>
 </section>
 <section id="module-lettings.apps">
 <span id="lettings-apps-module"></span><h2>lettings.apps module<a class="headerlink" href="#module-lettings.apps" title="Link to this heading">#</a></h2>
-<dl class="field-list simple">
-<dt class="field-odd">show-inheritance<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="lettings.apps.LettingsConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.apps.</span></span><span class="sig-name descname"><span class="pre">LettingsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/apps.html#LettingsConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.apps.LettingsConfig" title="Link to this definition">#</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.apps.LettingsConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#lettings.apps.LettingsConfig.default_auto_field" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.apps.LettingsConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'lettings'</span></em><a class="headerlink" href="#lettings.apps.LettingsConfig.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </section>
 <section id="module-lettings.models">
@@ -753,7 +764,11 @@ object the first time, the query is executed.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-lettings.admin">lettings.admin module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-lettings.apps">lettings.apps module</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lettings.apps.LettingsConfig"><code class="docutils literal notranslate"><span class="pre">LettingsConfig</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lettings.apps.LettingsConfig"><code class="docutils literal notranslate"><span class="pre">LettingsConfig</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lettings.apps.LettingsConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">LettingsConfig.default_auto_field</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lettings.apps.LettingsConfig.name"><code class="docutils literal notranslate"><span class="pre">LettingsConfig.name</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-lettings.models">lettings.models module</a><ul class="visible nav section-nav flex-column">

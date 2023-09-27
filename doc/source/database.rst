@@ -48,7 +48,7 @@ Présentation des modèles
 
                     .. autoclass:: profiles.models.Profile
                        :members:
-
+                       :no-index:
 
 **Letting : Représentant une location.**
 """"""""""""""""""""""""""""""""""""""""
