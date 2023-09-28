@@ -89,7 +89,7 @@ jobs:
           env:
             NEW_REP: ${{ steps.extract_branch.outputs.branch }}
           run: |
-            rm -r ${NEW_REP}
+            rm -rf ${NEW_REP}
             mkdir -p -v ${NEW_REP}
             cd ${NEW_REP}
             mkdir -p -v reports
