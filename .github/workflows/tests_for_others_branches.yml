@@ -9,3 +9,4 @@ on:
 jobs:
   call-tests:
     uses: ./.github/workflows/tests.yml
+    secrets: inherit
